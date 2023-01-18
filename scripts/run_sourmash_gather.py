@@ -30,3 +30,6 @@ if __name__=='__main__':
 
     cmd = 'sourmash sketch translate -f -p scaled=' + scaled + ',k=' + ksize + ' ' + metagenome_file + ' -o ' + metagenome_signature_file + ' --merge ' + metagenome_signature_file
     subprocess.call( cmd.split(' ') )
+
+    cmd = 'sourmash gather --protein -k ' + ksize + ' --estimate-ani-ci --threshold-bp ' + threshold_bp + ' ' + metagenome_signature_file + ' ' + ko_signature_filename + ' -o ' + gather_output_filename
+    subprocess.call( cmd.split(' ') )
