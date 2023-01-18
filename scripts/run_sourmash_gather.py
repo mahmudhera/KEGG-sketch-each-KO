@@ -10,7 +10,7 @@ def parse_args():
     parser.add_argument("--metagenome", type=str, help="Full path to the metagenome")
     parser.add_argument("--kosig", type=str, help="Full path to the sketch of the KOs")
     parser.add_argument("--outfile", type=str, help="Full path to the output filename")
-    parser.add_argument("--scaled", type=float, help="Scale factor, integer.", default=1000)
+    parser.add_argument("--scaled", type=int, help="Scale factor, integer.", default=1000)
     args = parser.parse_args()
     return args
 
