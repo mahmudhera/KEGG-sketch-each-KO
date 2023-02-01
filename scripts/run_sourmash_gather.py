@@ -38,5 +38,7 @@ if __name__=='__main__':
     subprocess.call( cmd.split(' ') )
 
     df = pd.read_csv(gather_output_filename, delimiter=',')
-    print(df['name'].tolist()[:10])
-    print(df['f_unique_weighted'].tolist()[:10])
+    df_new = df[ ['name', 'f_unique_weighted'] ]
+    df_new['f_unique_weighted'] = df_new['f_unique_weighted']/df_new['f_unique_weighted'].sum(axis=0)
+    df_new.columns = ['koid', 'abundance']
+    df_new.to_csv(ko_abundance_filename)
