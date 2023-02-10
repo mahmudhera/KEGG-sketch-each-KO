@@ -9,6 +9,8 @@ genomePath="../reference_genomes"
 genomeDatabaseFull="$dataDir/genome_ref_full.fa"
 genomeDatabaseTruncated="$dataDir/genome_ref_truncated.fa"
 simulatedMetagenome="$dataDir/simulatedMetagenome.fastq"
+proteinDatabaseFull="$dataDir/protein_db_full.fa"
+proteinDatabaseTruncated="$dataDir/protein_db_truncated.fa"
 
 numGenomes=5
 numGenomesFullDB=$numGenomes
