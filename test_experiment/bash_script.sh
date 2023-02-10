@@ -6,6 +6,8 @@ dataDir="../data"
 resourceDir='../resources'
 genomePath="../reference_genomes"
 
+presentGenesFile="../resources/present_genes_and_koids.csv"
+
 genomeDatabaseFull="$dataDir/genome_ref_full.fa"
 genomeDatabaseTruncated="$dataDir/genome_ref_truncated.fa"
 simulatedMetagenome="$dataDir/simulatedMetagenome.fastq"
@@ -44,9 +46,10 @@ $scriptDir/simulate_metagenome.py -r $genomeDatabaseFull -o $simulatedMetagenome
 
 # get the abundance estimates for the simulated metagenome
 echo "$scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv"
-"$scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv"
+"$scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv --num_genomes $numGenomesFullDB"
 
 # summarize to KO level
+echo "../scripts/create_ko_ground_truth.py --present_genes $presentGenesFile --gene_abundance $dataDir/ground_truth.csv --out_file $dataDir/ground_truth_ko.csv"
 
 # run sourmash to find KOs
 
