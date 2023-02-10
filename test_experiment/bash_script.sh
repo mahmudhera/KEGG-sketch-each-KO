@@ -59,7 +59,7 @@ echo "python $scriptDir/run_sourmash_gather.py --ksize $kSize --threshold $thres
 python $scriptDir/run_sourmash_gather.py --ksize $kSize --threshold $thresholdBP --metagenome $dataDir/simulatedMetagenome.fastq --kosig $koSigFileName --gatherfile $dataDir/sm_gather_output.csv --outfile $dataDir/sourmash_kos.csv --scaled $queryScale
 
 # find sourmash performance metrics
-echo "python $scriptDir/calculate_sourmash_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv"
+echo "python $scriptDir/calculate_tool_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv"
 python $scriptDir/calculate_sourmash_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv
 
 # Run Diamond
