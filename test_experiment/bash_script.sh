@@ -46,6 +46,7 @@ echo "$scriptDir/simulate_metagenome.py -r $genomeDatabaseFull -o $simulatedMeta
 $scriptDir/simulate_metagenome.py -r $genomeDatabaseFull -o $simulatedMetagenome -n $numReads -l $readLen --num_orgs $numGenomes
 
 # get the abundance estimates for the simulated metagenome
+echo $(pwd)
 echo "$scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv"
 "python $scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv --num_genomes $numGenomesFullDB"
 
