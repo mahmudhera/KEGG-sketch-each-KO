@@ -7,6 +7,7 @@ resourceDir='../resources'
 genomePath="../reference_genomes"
 
 presentGenesFile="../resources/present_genes_and_koids.csv"
+koSigFileName="../sketched_references/KOs_sketched_scaled_1000.sig.zip"
 
 genomeDatabaseFull="$dataDir/genome_ref_full.fa"
 genomeDatabaseTruncated="$dataDir/genome_ref_truncated.fa"
@@ -52,15 +53,20 @@ echo "$scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $s
 echo "../scripts/create_ko_ground_truth.py --present_genes $presentGenesFile --gene_abundance $dataDir/ground_truth.csv --out_file $dataDir/ground_truth_ko.csv"
 
 # run sourmash to find KOs
+echo "python $scriptDir/run_sourmash_gather.py --ksize $kSize --threshold $thresholdBP --metagenome $dataDir/simulatedMetagenome.fastq --kosig $koSigFileName --gatherfile $dataDir/sm_gather_output.csv --outfile $dataDir/sourmash_kos.csv --scaled queryScale"
+"python $scriptDir/run_sourmash_gather.py --ksize $kSize --threshold $thresholdBP --metagenome $dataDir/simulatedMetagenome.fastq --kosig $koSigFileName --gatherfile $dataDir/sm_gather_output.csv --outfile $dataDir/sourmash_kos.csv --scaled queryScale"
 
 # find sourmash performance metrics
+echo "python $scriptDir/calculate_sourmash_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv"
+"python $scriptDir/calculate_sourmash_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv"
 
 # Run Diamond
-/usr/bin/time $scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir
+echo "$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir"
+"$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir"
 diamondFile="$dataDir/$(basename $simulatedMetagenome)_$(basename $proteinDatabaseTruncated).dmnd_matches.csv"
 echo "diamondFile: $diamondFile"
 
-# summarize to KO level
+# summarize Diamond results to KO level
 
 # find performance metrics
 
