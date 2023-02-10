@@ -23,7 +23,7 @@ thresholdBP=5000
 
 # create the full genome reference database
 echo "$scriptDir/create_genome_ref_db.py $genomePath $genomeDatabaseFull $numGenomesFullDB"
-$scriptDir/create_genome_ref_db.py $dataDir $genomeDatabaseFull $numGenomesFullDB
+python $scriptDir/create_genome_ref_db.py $dataDir $genomeDatabaseFull $numGenomesFullDB
 
 # create the truncated genome reference database
 echo "$scriptDir/create_genome_ref_db.py $genomePath $genomeDatabaseTruncated $numGenomesTruncatedDB"
