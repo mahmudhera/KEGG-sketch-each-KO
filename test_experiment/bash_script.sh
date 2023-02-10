@@ -44,6 +44,7 @@ $scriptDir/simulate_metagenome.py -r $genomeDatabaseFull -o $simulatedMetagenome
 
 # get the abundance estimates for the simulated metagenome
 echo "$scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv"
+"$scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv"
 
 # summarize to KO level
 
