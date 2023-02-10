@@ -48,24 +48,24 @@ $scriptDir/simulate_metagenome.py -r $genomeDatabaseFull -o $simulatedMetagenome
 # get the abundance estimates for the simulated metagenome
 echo $(pwd)
 echo "$scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv"
-"python $scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv --num_genomes $numGenomesFullDB"
+python $scriptDir/find_genes_in_sim.py --database_dir $genomePath --simulation $simulatedMetagenome --output_file $dataDir/ground_truth.csv --num_genomes $numGenomesFullDB
 
 # summarize to KO level
 echo "$scriptDir/create_ko_ground_truth.py --present_genes $presentGenesFile --gene_abundance $dataDir/ground_truth.csv --out_file $dataDir/ground_truth_ko.csv"
-"python $scriptDir/create_ko_ground_truth.py --present_genes $presentGenesFile --gene_abundance $dataDir/ground_truth.csv --out_file $dataDir/ground_truth_ko.csv"
+python $scriptDir/create_ko_ground_truth.py --present_genes $presentGenesFile --gene_abundance $dataDir/ground_truth.csv --out_file $dataDir/ground_truth_ko.csv
 
 # run sourmash to find KOs
 echo "python $scriptDir/run_sourmash_gather.py --ksize $kSize --threshold $thresholdBP --metagenome $dataDir/simulatedMetagenome.fastq --kosig $koSigFileName --gatherfile $dataDir/sm_gather_output.csv --outfile $dataDir/sourmash_kos.csv --scaled queryScale"
-"python $scriptDir/run_sourmash_gather.py --ksize $kSize --threshold $thresholdBP --metagenome $dataDir/simulatedMetagenome.fastq --kosig $koSigFileName --gatherfile $dataDir/sm_gather_output.csv --outfile $dataDir/sourmash_kos.csv --scaled queryScale"
+python $scriptDir/run_sourmash_gather.py --ksize $kSize --threshold $thresholdBP --metagenome $dataDir/simulatedMetagenome.fastq --kosig $koSigFileName --gatherfile $dataDir/sm_gather_output.csv --outfile $dataDir/sourmash_kos.csv --scaled queryScale
 
 # find sourmash performance metrics
 echo "python $scriptDir/calculate_sourmash_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv"
-"python $scriptDir/calculate_sourmash_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv"
+python $scriptDir/calculate_sourmash_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv
 
 # Run Diamond
 echo "$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir"
-"$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir"
-diamondFile="$dataDir/$(basename $simulatedMetagenome)_$(basename $proteinDatabaseTruncated).dmnd_matches.csv"
+$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir"
+diamondFile="$dataDir/$(basename $simulatedMetagenome)_$(basename $proteinDatabaseTruncated).dmnd_matches.csv
 echo "diamondFile: $diamondFile"
 
 # summarize Diamond results to KO level
