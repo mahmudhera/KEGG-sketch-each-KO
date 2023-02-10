@@ -64,7 +64,7 @@ python $scriptDir/calculate_tool_KO_performance.py $dataDir/ground_truth_ko.csv 
 
 # Run Diamond
 echo "$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir"
-$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir"
+$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir
 
 # summarize Diamond results to KO level
 
