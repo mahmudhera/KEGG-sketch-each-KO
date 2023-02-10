@@ -40,6 +40,7 @@ if __name__=='__main__':
     df = pd.read_csv(gather_output_filename, delimiter=',')
     df_new = df[ ['name', 'f_unique_weighted'] ]
     sum_weights = df_new['f_unique_weighted'].sum(axis=0)
-    df_out = df_new.divide([1, sum_weights])
+    df_tmp = df_new['f_unique_weighted'].divide(sum_weights)
+    df_out = pd.concat([df['name'], df_tmp], axis=1)
     df_out.columns = ['ko_id', 'abundance']
     df_out.to_csv(ko_abundance_filename)
