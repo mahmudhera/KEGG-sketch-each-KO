@@ -28,7 +28,7 @@ $scriptDir/create_genome_ref_db.py $genomePath $genomeDatabaseFull $numGenomesFu
 
 # create the truncated genome reference database
 echo "$scriptDir/create_genome_ref_db.py $genomePath $genomeDatabaseTruncated $numGenomesTruncatedDB"
-$scriptDir/create_genome_ref_db.py $dataDir $genomeDatabaseTruncated $numGenomesTruncatedDB
+$scriptDir/create_genome_ref_db.py $genomePath $genomeDatabaseTruncated $numGenomesTruncatedDB
 
 # create the protein reference database
 echo "$scriptDir/create_gene_ref_db.py "$dataDir/reference_genomes" $proteinDatabaseFull $numGenomesFullDB"
