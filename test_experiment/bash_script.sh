@@ -7,6 +7,7 @@ resourceDir='../resources'
 genomePath="../reference_genomes"
 
 genomeDatabaseFull="$dataDir/genome_ref_full.fa"
+genomeDatabaseTruncated="$dataDir/genome_ref_truncated.fa"
 simulatedMetagenome="$dataDir/simulatedMetagenome.fastq"
 
 numGenomes=5
