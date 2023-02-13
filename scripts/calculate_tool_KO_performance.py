@@ -54,7 +54,7 @@ if __name__ == '__main__':
             recall = 1.0*TP/(TP+FN)
             precision = 1.0*(TP)/(TP+FP)
             try:
-                F1 = 1.0/( 1.0/recall + 1.0/precision )
+                F1 = 2.0/( 1.0/recall + 1.0/precision )
             except:
                 F1 = 0.0
             lst.append(precision)
