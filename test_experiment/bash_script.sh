@@ -63,7 +63,7 @@ echo "python $scriptDir/calculate_tool_KO_performance.py $dataDir/ground_truth_k
 python $scriptDir/calculate_tool_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv
 
 # Run Diamond and find KOs
-echo "$scriptDir/run_diamond_for_ko.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir -d diamond_output_file.csv -k diamond_kos.csv -p $presentGenesFile"
+echo "$scriptDir/run_diamond_for_ko.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir -d $dataDir/diamond_output_file.csv -k $dataDir/diamond_kos.csv -p $presentGenesFile"
 $scriptDir/run_diamond_for_ko.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir -d diamond_output_file.csv -k diamond_kos.csv -p $presentGenesFile
 
 # find performance metrics for Diamond
