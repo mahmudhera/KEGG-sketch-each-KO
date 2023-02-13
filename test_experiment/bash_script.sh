@@ -68,6 +68,7 @@ $scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagen
 
 # summarize Diamond results to KO level
 
+
 # find performance metrics
 
 # run kofam scan
