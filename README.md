@@ -7,3 +7,5 @@ David, and this repository is simply using those. Long term plans:
 1. Add code to get TP TN etc.
 1. Add code to visualize these.
 1. Add snakefile.
+
+Running kofam-scan: exec_annotation -o kofamscan_result simulatedMetagenome.fastq

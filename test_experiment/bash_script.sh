@@ -58,21 +58,16 @@ python $scriptDir/create_ko_ground_truth.py --present_genes $presentGenesFile --
 echo "python $scriptDir/run_sourmash_gather.py --ksize $kSize --threshold $thresholdBP --metagenome $dataDir/simulatedMetagenome.fastq --kosig $koSigFileName --gatherfile $dataDir/sm_gather_output.csv --outfile $dataDir/sourmash_kos.csv --scaled $queryScale"
 python $scriptDir/run_sourmash_gather.py --ksize $kSize --threshold $thresholdBP --metagenome $dataDir/simulatedMetagenome.fastq --kosig $koSigFileName --gatherfile $dataDir/sm_gather_output.csv --outfile $dataDir/sourmash_kos.csv --scaled $queryScale
 
-# find sourmash performance metrics
+# find sourmash performance metrics for sourmash
 echo "python $scriptDir/calculate_tool_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv"
 python $scriptDir/calculate_tool_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/sourmash_kos.csv $dataDir/sourmash_performance_metrics.csv
 
-# Run Diamond
-echo "$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir"
-$scriptDir/classify_diamond.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir
+# Run Diamond and find KOs
+echo "$scriptDir/run_diamond_for_ko.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir -d diamond_output_file.csv -k diamond_kos.csv -p $presentGenesFile"
+$scriptDir/run_diamond_for_ko.py -r $proteinDatabaseTruncated -m $simulatedMetagenome -o $dataDir -d diamond_output_file.csv -k diamond_kos.csv -p $presentGenesFile
 
-# summarize Diamond results to KO level
-
-
-# find performance metrics
+# find performance metrics for Diamond
+echo "python $scriptDir/calculate_tool_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/diamond_kos.csv $dataDir/diamond_performance_metrics.csv"
+python $scriptDir/calculate_tool_KO_performance.py $dataDir/ground_truth_ko.csv $dataDir/diamond_kos.csv $dataDir/diamond_performance_metrics.csv
 
 # run kofam scan
-
-# summarize to KO level
-
-# find performance metrics
