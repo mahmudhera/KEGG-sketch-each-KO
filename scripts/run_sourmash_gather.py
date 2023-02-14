@@ -29,9 +29,9 @@ if __name__=='__main__':
     ko_abundance_filename = args.outfile
     scaled = str(args.scaled)
     metagenome_signature_name = metagenome_file + '.sig.zip'
-    metagenome_signature_file = metagenome_path + metagenome_signature_name
+    metagenome_signature_file = 'metagenome_sketches' + metagenome_signature_name
 
-    cmd = 'sourmash sketch translate -f -p scaled=' + scaled + ',k=' + ksize + ' ' + metagenome_file + ' -o ' + metagenome_signature_file + ' --merge ' + metagenome_signature_file
+    cmd = 'sourmash sketch translate -f -p scaled=' + scaled + ',k=' + ksize + ' ' + metagenome_file + ' -o ' + metagenome_signature_file
     print(cmd)
     subprocess.call( cmd.split(' ') )
 
