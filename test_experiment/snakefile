@@ -1,4 +1,4 @@
-script_dir = '../../scripts'
+script_dir = '../scripts'
 data_dir = 'data'
 
 read_length = 150
@@ -12,6 +12,7 @@ genome_path = '../reference_genomes'
 num_reads_list = ['50000', '100000', '150000']
 seeds_list = ['0', '1', '2']
 kmer_sizes = ['5', '7']
+k = 5
 
 present_genes_filename = "../resources/present_genes_and_koids.csv"
 
@@ -29,7 +30,7 @@ rule get_diamond_perf_metrics:
     output:
         data_dir+'/diamond_performance_metrics_num_reads_{num_reads}_seed_{seed}'
     shell:
-        'python {input[0]} ' + data_dir+'/ground_truth_num_reads_{wildcard.num_reads}_seed_{wildcard.seed}.csv' + ' ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' ' + + data_dir+'/diamond_performance_metrics_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}'
+        'python {input[0]} ' + data_dir+'/ground_truth_num_reads_{wildcard.num_reads}_seed_{wildcard.seed}.csv' + ' ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' ' + data_dir+'/diamond_performance_metrics_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}'
 
 rule run_diamond:
     input:
@@ -43,6 +44,16 @@ rule run_diamond:
         data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
     shell:
         '{input[0]} -r {input[1]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename
+
+rule create_ground_truth:
+    input:
+        script_dir + '/find_genes_in_sim.py',
+        data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq'
+    output:
+        data_dir+'/ground_truth_num_reads_{num_reads}_seed_{seed}.csv'
+    shell:
+        'python {input[0]} --database_dir ' + genome_path + ' --simulation ' + data_dir + '/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq --output_file ' + data_dir + '/ground_truth_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.csv' + ' --num_genomes ' + str(num_genomes_full_db)
+
 
 rule create_metagenomes:
     input:
