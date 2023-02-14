@@ -23,13 +23,14 @@ if __name__=='__main__':
     threshold_bp = str(args.threshold)
     metagenome_file = args.metagenome
     metagenome_name = metagenome_file.split('/')[-1]
+    print(metagenome_name)
     metagenome_path = ''.join(metagenome_file.split('/')[:-1])
     ko_signature_filename = args.kosig
     gather_output_filename = args.gatherfile
     ko_abundance_filename = args.outfile
     scaled = str(args.scaled)
     metagenome_signature_name = metagenome_file + '.sig.zip'
-    metagenome_signature_file = 'metagenome_sketches' + metagenome_signature_name
+    metagenome_signature_file = 'metagenome_sketches/' + metagenome_signature_name
 
     cmd = 'sourmash sketch translate -f -p scaled=' + scaled + ',k=' + ksize + ' ' + metagenome_file + ' -o ' + metagenome_signature_file
     print(cmd)
