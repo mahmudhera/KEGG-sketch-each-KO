@@ -25,7 +25,7 @@ numGenes=100
 kSize=7
 refScale=10
 queryScale=10
-thresholdBP=5000
+thresholdBP=50
 
 # create the full genome reference database
 echo "$scriptDir/create_genome_ref_db.py $genomePath $genomeDatabaseFull $numGenomesFullDB"
