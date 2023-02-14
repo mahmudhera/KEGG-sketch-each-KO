@@ -205,6 +205,8 @@ def parse_diamond_results(matches_file):
     c) the number of incorrect alignments  (diamond aligned the read to the wrong reference sequence)
     """
     df = pd.read_csv(matches_file, sep='\t')
+    df2 = df.groupby(['qseqid']).max()
+    df = df2
     ref_ids = [x.split('|')[0] for x in df['sseqid']]
     ref_ids_tally = Counter(ref_ids)
     # also get the gene lengths
