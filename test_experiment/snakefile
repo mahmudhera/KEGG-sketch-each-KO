@@ -45,14 +45,21 @@ rule run_diamond:
     shell:
         '{input[0]} -r {input[1]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename
 
-
+rule create_ground_truth_ko:
+    input:
+        script_dir + '/create_ko_ground_truth.py',
+        data_dir+'/ground_truth_gene_num_reads_{num_reads}_seed_{seed}.csv'
+    output:
+        data_dir+'/ground_truth_num_reads_{num_reads}_seed_{seed}.csv'
+    shell:
+        'python {input[0]} --present_genes ' + present_genes_filename + ' --gene_abundance ' + data_dir+'/ground_truth_gene_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.csv' + ' --out_file ' + data_dir+'/ground_truth_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.csv'
 
 rule create_ground_truth:
     input:
         script_dir + '/find_genes_in_sim.py',
         data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq'
     output:
-        data_dir+'/ground_truth_num_reads_{num_reads}_seed_{seed}.csv'
+        data_dir+'/ground_truth_gene_num_reads_{num_reads}_seed_{seed}.csv'
     shell:
         'python {input[0]} --database_dir ' + genome_path + ' --simulation ' + data_dir + '/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq --output_file ' + data_dir + '/ground_truth_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.csv' + ' --num_genomes ' + str(num_genomes_full_db)
 
