@@ -30,7 +30,7 @@ rule get_diamond_perf_metrics:
     output:
         data_dir+'/diamond_performance_metrics_num_reads_{num_reads}_seed_{seed}'
     shell:
-        'python {input[0]} ' + data_dir+'/ground_truth_num_reads_{wildcard.num_reads}_seed_{wildcard.seed}.csv' + ' ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' ' + data_dir+'/diamond_performance_metrics_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}'
+        'python {input[0]} ' + data_dir+'/ground_truth_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.csv' + ' ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' ' + data_dir+'/diamond_performance_metrics_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}'
 
 rule run_diamond:
     input:
