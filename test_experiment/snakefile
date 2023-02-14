@@ -19,7 +19,7 @@ present_genes_filename = "../resources/present_genes_and_koids.csv"
 rule all:
     input:
         expand(data_dir+'/diamond_performance_metrics_num_reads_{num_reads}_seed_{seed}', num_reads=num_reads_list, seed=seeds_list),
-        expand(data_dir+'/sourmash_performance_metrics_num_reads_{num_reads}_seed_{seed}_k_{k}', num_reads=num_reads_list, seed=seeds_list, k=kmer_sizes)
+        #expand(data_dir+'/sourmash_performance_metrics_num_reads_{num_reads}_seed_{seed}_k_{k}', num_reads=num_reads_list, seed=seeds_list, k=kmer_sizes)
 
 rule get_diamond_perf_metrics:
     input:
@@ -44,6 +44,8 @@ rule run_diamond:
         data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
     shell:
         '{input[0]} -r {input[1]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename
+
+
 
 rule create_ground_truth:
     input:
