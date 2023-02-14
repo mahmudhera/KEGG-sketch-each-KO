@@ -2,8 +2,8 @@ script_dir = '../scripts'
 data_dir = 'data'
 
 read_length = 150
-ref_scale = 100
-query_scale = 100
+ref_scale = 1000
+query_scale = 1000
 threshold_bp = 50
 num_organisms = 30
 num_genomes_full_db = 30
