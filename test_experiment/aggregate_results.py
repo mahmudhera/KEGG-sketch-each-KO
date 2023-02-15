@@ -53,42 +53,42 @@ def get_all_sourmash_running_times(num_reads, ksize):
 def get_diamond_precision(num_reads, seed):
     filename = data_dir+f'/diamond_performance_metrics_num_reads_{num_reads}_seed_{seed}'
     f = open(filename, 'r')
-    prec_str = f.readlines()[6].split(',')[3]
+    prec_str = f.readlines()[6].split(',')[2]
     f.close()
     return float(prec_str)
 
 def get_diamond_recall(num_reads, seed):
     filename = data_dir+f'/diamond_performance_metrics_num_reads_{num_reads}_seed_{seed}'
     f = open(filename, 'r')
-    prec_str = f.readlines()[6].split(',')[4]
+    prec_str = f.readlines()[6].split(',')[3]
     f.close()
     return float(prec_str)
 
 def get_diamond_F1(num_reads, seed):
     filename = data_dir+f'/diamond_performance_metrics_num_reads_{num_reads}_seed_{seed}'
     f = open(filename, 'r')
-    prec_str = f.readlines()[6].split(',')[5]
+    prec_str = f.readlines()[6].split(',')[4]
     f.close()
     return float(prec_str)
 
 def get_sourmash_precision(num_reads, seed, k):
     filename = data_dir+f'/sourmash_performance_metrics_num_reads_{num_reads}_seed_{seed}_k_{k}'
     f = open(filename, 'r')
-    prec_str = f.readlines()[6].split(',')[3]
+    prec_str = f.readlines()[6].split(',')[2]
     f.close()
     return float(prec_str)
 
 def get_sourmash_recall(num_reads, seed, k):
     filename = data_dir+f'/sourmash_performance_metrics_num_reads_{num_reads}_seed_{seed}_k_{k}'
     f = open(filename, 'r')
-    prec_str = f.readlines()[6].split(',')[4]
+    prec_str = f.readlines()[6].split(',')[3]
     f.close()
     return float(prec_str)
 
 def get_sourmash_F1(num_reads, seed, k):
     filename = data_dir+f'/sourmash_performance_metrics_num_reads_{num_reads}_seed_{seed}_k_{k}'
     f = open(filename, 'r')
-    prec_str = f.readlines()[6].split(',')[5]
+    prec_str = f.readlines()[6].split(',')[4]
     f.close()
     return float(prec_str)
 
