@@ -49,7 +49,7 @@ if __name__ == '__main__':
             cumulative_abundance = 0.0
             for abudnance in tool_ko_abundnaces:
                 cumulative_abundance += abundance
-                if cumulative_abundance >= filter_threshold:
+                if cumulative_abundance >= filter_abundance:
                     threshold = abundance
                     break
             tool_filtered_df = df_tool[ df_tool['abundance'] > threshold ]
