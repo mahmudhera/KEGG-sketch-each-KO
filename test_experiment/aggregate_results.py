@@ -30,7 +30,9 @@ def get_diamond_running_time(num_reads, seed):
     time_2 = float(all_lines[2].split('\t')[0])
     time_3 = float(all_lines[3].split('\t')[0])
 
-    return float( (time_1+time_2+time_3)/3.0 )
+    all_times = [time_1 time_2 time_3]
+
+    return float( sum(all_times) - max(all_times) - min(all_times) )
 
 def get_all_diamond_running_times(num_reads):
     return [ get_diamond_running_time(num_reads, seed) for seed in seeds_list ]
@@ -45,7 +47,9 @@ def get_sourmash_running_time(num_reads, ksize, seed):
     time_2 = float(all_lines[2].split('\t')[0])
     time_3 = float(all_lines[3].split('\t')[0])
 
-    return float( (time_1+time_2+time_3)/3.0 )
+    all_times = [time_1 time_2 time_3]
+
+    return float( sum(all_times) - max(all_times) - min(all_times) )
 
 def get_all_sourmash_running_times(num_reads, ksize):
     return [get_sourmash_running_time(num_reads, ksize, seed) for seed in seeds_list]
