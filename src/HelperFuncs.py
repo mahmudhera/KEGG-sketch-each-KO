@@ -206,11 +206,11 @@ def parse_diamond_results(matches_file, pident_threshold=0.1):
     c) the number of incorrect alignments  (diamond aligned the read to the wrong reference sequence)
     """
     # get best matches for each seq read
-    df = pd.read_csv(matches_file, sep='\t')
-    df2 = df.groupby(['qseqid']).max()
+    #df = pd.read_csv(matches_file, sep='\t')
+    #df2 = df.groupby(['qseqid']).max()
 
     # exclude all mapping below threshold of percentage identity
-    df = df2[ df2['pident'] >= pident_threshold ]
+    #df = df2[ df2['pident'] >= pident_threshold ]
 
     ref_ids = [x.split('|')[0] for x in df['sseqid']]
     ref_ids_tally = Counter(ref_ids)

@@ -65,7 +65,7 @@ def main():
         out_file = os.path.join(out_dir, f"{os.path.basename(metagenome_file)}_{os.path.basename(ref_db)}_matches.csv")
     run_diamond_blastx(metagenome_file, ref_db, out_file)
 
-    diamond_results = parse_diamond_results(diamond_file, pident_threshold)
+    diamond_results = parse_diamond_results(diamond_file, pident_threshold+1)
     gene_names = diamond_results['name'].tolist()
     num_reads_for_genes = diamond_results['num_reads'].tolist()
     gene_lengths = diamond_results['gene_length'].tolist()
