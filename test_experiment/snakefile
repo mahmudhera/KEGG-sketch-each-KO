@@ -4,7 +4,7 @@ data_dir = 'data'
 read_length = 150
 ref_scale = 1000
 query_scale = 1000
-threshold_bp = 50
+threshold_bp = 5
 num_organisms = 30
 num_genomes_full_db = 30
 num_genomes_truncated_db = 20
@@ -42,7 +42,7 @@ rule run_diamond:
         data_dir+'/diamond_output_file_num_reads_{num_reads}_seed_{seed}',
         data_dir+'/diamond_ko_file_num_reads_{num_reads}_seed_{seed}'
     benchmark:
-        data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
+        repeat(data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}', 3)
     shell:
         '{input[0]} -r {input[1]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename
 
@@ -67,7 +67,7 @@ rule run_sourmash:
         data_dir+'/sourmash_gather_num_reads_{num_reads}_seed_{seed}_k_{k}',
         data_dir+'/sourmash_kos_{num_reads}_seed_{seed}_k_{k}'
     benchmark:
-        data_dir + "/sourmash_gather_benchmark_{num_reads}_seed_{seed}_k_{k}"
+        repeat(data_dir + "/sourmash_gather_benchmark_{num_reads}_seed_{seed}_k_{k}", 3)
     shell:
         'python {input[0]} --ksize {wildcards.k} --threshold ' + str(threshold_bp) + ' --metagenome ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq' + ' --kosig ' + ko_sig_file + ' --gatherfile ' + data_dir+'/sourmash_gather_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}_k_{wildcards.k}' + ' --outfile ' + data_dir+'/sourmash_kos_{wildcards.num_reads}_seed_{wildcards.seed}_k_{wildcards.k}' + ' --scaled ' + str(query_scale)
 
