@@ -23,14 +23,12 @@ if __name__ == '__main__':
 
     # read KO ids from the tool output
     df_tool = pd.read_csv(tool_ko_abundance_filename)
-    kos_tool_list = df_tool[ 'ko_id' ].tolist()
-    kos_tool_set = set(kos_tool_list)
 
     all_vals_to_write = []
     for filter_abundance in filter_abundances:
         lst = [filter_abundance]
         for ground_truth_abundance_column in ground_truth_abundance_columns:
-            # filter KO ids based on the provided filter
+            # filter KO ids based on the provided filter in ground truth DataFrame
             ground_truth_rel_abundances = df_ground_truth[ground_truth_abundance_column].tolist()
             ground_truth_rel_abundances.sort()
             cumulative_abundance = 0.0
@@ -43,6 +41,20 @@ if __name__ == '__main__':
             filtered_df = df_ground_truth[ df_ground_truth[ground_truth_abundance_column] > threshold ]
             filtered_kos_list = filtered_df['ko_id'].tolist()
             filtered_kos_gt_set = set(filtered_kos_list)
+
+            # filter KO ids based on the provided filter in tool's DataFrame
+            tool_ko_abundnaces = df_tool['abundance'].tolist()
+            tool_ko_abundnaces.sort()
+            threshold = -1
+            cumulative_abundance = 0.0
+            for abudnance in tool_ko_abundnaces:
+                cumulative_abundance += abundance
+                if cumulative_abundance >= filter_threshold:
+                    threshold = abundance
+                    break
+            tool_filtered_df = df_tool[ df_tool['abundance'] > threshold ]
+            kos_tool_list = tool_filtered_df[ 'ko_id' ].tolist()
+            kos_tool_set = set(kos_tool_list)
 
             # TP = intersection of these two sets
             # FP = tool_set minus ground_truth_set
