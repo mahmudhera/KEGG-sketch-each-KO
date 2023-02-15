@@ -196,29 +196,37 @@ def run_diamond_blastx(query_file, database_file, out_file, num_threads=multipro
     return
 
 
-def parse_diamond_results(matches_file):
+def parse_diamond_results(matches_file, pident_threshold=0.1):
     """
     This parses the DIAMOND output csv file and returns some values about the results.
     :param matches_file: the output csv file from DIAMOND
+    :param pident_threshold: the threshold above which pident scores are kept
     :return: 3-tuple: a) the set of gene identifiers that DIAMOND predicted to be in the sample
     b) the number of correct alignments (diamond aligned the read to the correct reference sequence)
     c) the number of incorrect alignments  (diamond aligned the read to the wrong reference sequence)
     """
+    # get best matches for each seq read
     df = pd.read_csv(matches_file, sep='\t')
     df2 = df.groupby(['qseqid']).max()
-    df = df2
+
+    # exclude all mapping below threshold of percentage identity
+    df = df2[ df2['pident'] >= pident_threshold ]
+
     ref_ids = [x.split('|')[0] for x in df['sseqid']]
     ref_ids_tally = Counter(ref_ids)
+
     # also get the gene lengths
     gene_lengths = [int(x.split('|')[-1]) - int(x.split('|')[-2]) + 1 for x in df['sseqid']]
     bit_scores = df['bitscore']
     ref_id_to_bit_score = dict()
+
     # add all the bit scores up for each reference id
     for i in range(len(ref_ids)):
         if ref_ids[i] not in ref_id_to_bit_score:
             ref_id_to_bit_score[ref_ids[i]] = bit_scores[i]
         else:
             ref_id_to_bit_score[ref_ids[i]] += bit_scores[i]
+
     # divide by the total number of reads to get the average bit score for each reference id
     for ref_id in ref_id_to_bit_score:
         ref_id_to_bit_score[ref_id] /= ref_ids_tally[ref_id]
