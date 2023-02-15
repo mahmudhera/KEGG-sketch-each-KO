@@ -13,7 +13,7 @@ num_genomes_truncated_db = 20
 genome_path = '../extracted_genomes_from_kegg'
 num_reads_list = ['50000', '100000', '150000']
 seeds_list = [str(i) for i in range(20)]
-kmer_sizes = ['5', '7', '9', '11', '15']
+kmer_sizes = ['5', '7', '11', '15']
 
 data_dir+'/diamond_performance_metrics_num_reads_{nr}_seed_{seed}'
 data_dir+'/sourmash_performance_metrics_num_reads_{nr}_seed_{seed}_k_{k}'
