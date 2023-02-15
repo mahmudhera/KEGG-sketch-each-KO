@@ -11,7 +11,7 @@ num_genomes_truncated_db = 20
 genome_path = '../reference_genomes'
 num_reads_list = ['50000', '100000', '150000']
 seeds_list = [str(i) for i in range(20)]
-kmer_sizes = [str(ksize) for ksize in [5, 9, 11, 15] ]
+kmer_sizes = [str(ksize) for ksize in [5, 7, 11, 15] ]
 k = 5
 
 present_genes_filename = "../resources/present_genes_and_koids.csv"
