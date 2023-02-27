@@ -44,7 +44,7 @@ rule run_diamond:
         data_dir+'/diamond_output_file_num_reads_{num_reads}_seed_{seed}',
         data_dir+'/diamond_ko_file_num_reads_{num_reads}_seed_{seed}'
     benchmark:
-        repeat(data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}', 3)
+        data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
     shell:
         '{input[0]} -r {input[1]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename + ' -t ' + str(pident_threshold)
 
@@ -69,7 +69,7 @@ rule run_sourmash:
         data_dir+'/sourmash_gather_num_reads_{num_reads}_seed_{seed}_k_{k}',
         data_dir+'/sourmash_kos_{num_reads}_seed_{seed}_k_{k}'
     benchmark:
-        repeat(data_dir + "/sourmash_gather_benchmark_{num_reads}_seed_{seed}_k_{k}", 3)
+        data_dir + "/sourmash_gather_benchmark_{num_reads}_seed_{seed}_k_{k}"
     shell:
         'python {input[0]} --ksize {wildcards.k} --threshold ' + str(threshold_bp) + ' --metagenome ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq' + ' --kosig ' + ko_sig_file + ' --gatherfile ' + data_dir+'/sourmash_gather_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}_k_{wildcards.k}' + ' --outfile ' + data_dir+'/sourmash_kos_{wildcards.num_reads}_seed_{wildcards.seed}_k_{wildcards.k}' + ' --scaled ' + str(query_scale)
 
