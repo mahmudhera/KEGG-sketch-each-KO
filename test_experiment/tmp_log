@@ -1,0 +1,1571 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job                          count    min threads    max threads
+-------------------------  -------  -------------  -------------
+all                              1              1              1
+create_ground_truth             80              1              1
+create_ground_truth_ko          80              1              1
+create_metagenomes              80              1              1
+get_diamond_perf_metrics        80              1              1
+get_sourmash_perf_metrics      320              1              1
+run_diamond                     80              1              1
+run_sourmash                   320              1              1
+total                         1041              1              1
+
+Select jobs to execute...
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_0.fastq
+    jobid: 304
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_0.fastq
+    wildcards: num_reads=1000000, seed=0
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_14.fastq
+    jobid: 374
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_14.fastq
+    wildcards: num_reads=1000000, seed=14
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_6.fastq
+    jobid: 234
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_6.fastq
+    wildcards: num_reads=750000, seed=6
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_18.fastq
+    jobid: 94
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_18.fastq
+    wildcards: num_reads=250000, seed=18
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    jobid: 39
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    wildcards: num_reads=250000, seed=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_15.fastq
+    jobid: 179
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_15.fastq
+    wildcards: num_reads=500000, seed=15
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_12.fastq
+    jobid: 264
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_12.fastq
+    wildcards: num_reads=750000, seed=12
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_1.fastq
+    jobid: 209
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_1.fastq
+    wildcards: num_reads=750000, seed=1
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_7.fastq
+    jobid: 139
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_7.fastq
+    wildcards: num_reads=500000, seed=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_4.fastq
+    jobid: 224
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_4.fastq
+    wildcards: num_reads=750000, seed=4
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_12.fastq
+    jobid: 364
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_12.fastq
+    wildcards: num_reads=1000000, seed=12
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_2.fastq
+    jobid: 14
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_2.fastq
+    wildcards: num_reads=250000, seed=2
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_16.fastq
+    jobid: 84
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_16.fastq
+    wildcards: num_reads=250000, seed=16
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_10.fastq
+    jobid: 154
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_10.fastq
+    wildcards: num_reads=500000, seed=10
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_15.fastq
+    jobid: 379
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_15.fastq
+    wildcards: num_reads=1000000, seed=15
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_7.fastq
+    jobid: 239
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_7.fastq
+    wildcards: num_reads=750000, seed=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_19.fastq
+    jobid: 99
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_19.fastq
+    wildcards: num_reads=250000, seed=19
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_1.fastq
+    jobid: 309
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_1.fastq
+    wildcards: num_reads=1000000, seed=1
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    jobid: 44
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    wildcards: num_reads=250000, seed=8
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_16.fastq
+    jobid: 184
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_16.fastq
+    wildcards: num_reads=500000, seed=16
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_13.fastq
+    jobid: 269
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_13.fastq
+    wildcards: num_reads=750000, seed=13
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_2.fastq
+    jobid: 214
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_2.fastq
+    wildcards: num_reads=750000, seed=2
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_8.fastq
+    jobid: 144
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_8.fastq
+    wildcards: num_reads=500000, seed=8
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    jobid: 4
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    wildcards: num_reads=250000, seed=0
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_5.fastq
+    jobid: 229
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_5.fastq
+    wildcards: num_reads=750000, seed=5
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_13.fastq
+    jobid: 369
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_13.fastq
+    wildcards: num_reads=1000000, seed=13
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_3.fastq
+    jobid: 19
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_3.fastq
+    wildcards: num_reads=250000, seed=3
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    jobid: 89
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    wildcards: num_reads=250000, seed=17
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_11.fastq
+    jobid: 159
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_11.fastq
+    wildcards: num_reads=500000, seed=11
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_8.fastq
+    jobid: 244
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_8.fastq
+    wildcards: num_reads=750000, seed=8
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_2.fastq
+    jobid: 314
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_2.fastq
+    wildcards: num_reads=1000000, seed=2
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_16.fastq
+    jobid: 384
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_16.fastq
+    wildcards: num_reads=1000000, seed=16
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_0.fastq
+    jobid: 104
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_0.fastq
+    wildcards: num_reads=500000, seed=0
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_9.fastq
+    jobid: 49
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_9.fastq
+    wildcards: num_reads=250000, seed=9
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_17.fastq
+    jobid: 189
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_17.fastq
+    wildcards: num_reads=500000, seed=17
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_14.fastq
+    jobid: 274
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_14.fastq
+    wildcards: num_reads=750000, seed=14
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_3.fastq
+    jobid: 219
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_3.fastq
+    wildcards: num_reads=750000, seed=3
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_9.fastq
+    jobid: 149
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_9.fastq
+    wildcards: num_reads=500000, seed=9
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_1.fastq
+    jobid: 9
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_1.fastq
+    wildcards: num_reads=250000, seed=1
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    jobid: 24
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    wildcards: num_reads=250000, seed=4
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_12.fastq
+    jobid: 164
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_12.fastq
+    wildcards: num_reads=500000, seed=12
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_1.fastq
+    jobid: 109
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_1.fastq
+    wildcards: num_reads=500000, seed=1
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_3.fastq
+    jobid: 319
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_3.fastq
+    wildcards: num_reads=1000000, seed=3
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_17.fastq
+    jobid: 389
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_17.fastq
+    wildcards: num_reads=1000000, seed=17
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_9.fastq
+    jobid: 249
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_9.fastq
+    wildcards: num_reads=750000, seed=9
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_4.fastq
+    jobid: 124
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_4.fastq
+    wildcards: num_reads=500000, seed=4
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_10.fastq
+    jobid: 54
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_10.fastq
+    wildcards: num_reads=250000, seed=10
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_18.fastq
+    jobid: 194
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_18.fastq
+    wildcards: num_reads=500000, seed=18
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_6.fastq
+    jobid: 334
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_6.fastq
+    wildcards: num_reads=1000000, seed=6
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_15.fastq
+    jobid: 279
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_15.fastq
+    wildcards: num_reads=750000, seed=15
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_13.fastq
+    jobid: 69
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_13.fastq
+    wildcards: num_reads=250000, seed=13
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_9.fastq
+    jobid: 349
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_9.fastq
+    wildcards: num_reads=1000000, seed=9
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_18.fastq
+    jobid: 294
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_18.fastq
+    wildcards: num_reads=750000, seed=18
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_13.fastq
+    jobid: 169
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_13.fastq
+    wildcards: num_reads=500000, seed=13
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_5.fastq
+    jobid: 29
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_5.fastq
+    wildcards: num_reads=250000, seed=5
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_18.fastq
+    jobid: 394
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_18.fastq
+    wildcards: num_reads=1000000, seed=18
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_2.fastq
+    jobid: 114
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_2.fastq
+    wildcards: num_reads=500000, seed=2
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_4.fastq
+    jobid: 324
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_4.fastq
+    wildcards: num_reads=1000000, seed=4
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_10.fastq
+    jobid: 254
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_10.fastq
+    wildcards: num_reads=750000, seed=10
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_19.fastq
+    jobid: 199
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_19.fastq
+    wildcards: num_reads=500000, seed=19
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_7.fastq
+    jobid: 339
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_7.fastq
+    wildcards: num_reads=1000000, seed=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_5.fastq
+    jobid: 129
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_5.fastq
+    wildcards: num_reads=500000, seed=5
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_11.fastq
+    jobid: 59
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_11.fastq
+    wildcards: num_reads=250000, seed=11
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_10.fastq
+    jobid: 354
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_10.fastq
+    wildcards: num_reads=1000000, seed=10
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_16.fastq
+    jobid: 284
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_16.fastq
+    wildcards: num_reads=750000, seed=16
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_14.fastq
+    jobid: 74
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_14.fastq
+    wildcards: num_reads=250000, seed=14
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_19.fastq
+    jobid: 299
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_19.fastq
+    wildcards: num_reads=750000, seed=19
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_14.fastq
+    jobid: 174
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_14.fastq
+    wildcards: num_reads=500000, seed=14
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_6.fastq
+    jobid: 34
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_6.fastq
+    wildcards: num_reads=250000, seed=6
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_19.fastq
+    jobid: 399
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_19.fastq
+    wildcards: num_reads=1000000, seed=19
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_3.fastq
+    jobid: 119
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_3.fastq
+    wildcards: num_reads=500000, seed=3
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_5.fastq
+    jobid: 329
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_5.fastq
+    wildcards: num_reads=1000000, seed=5
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_11.fastq
+    jobid: 259
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_11.fastq
+    wildcards: num_reads=750000, seed=11
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_8.fastq
+    jobid: 344
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_8.fastq
+    wildcards: num_reads=1000000, seed=8
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_0.fastq
+    jobid: 204
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_0.fastq
+    wildcards: num_reads=750000, seed=0
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_500000_seed_6.fastq
+    jobid: 134
+    reason: Missing output files: data/simulated_metagenome_num_reads_500000_seed_6.fastq
+    wildcards: num_reads=500000, seed=6
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_12.fastq
+    jobid: 64
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_12.fastq
+    wildcards: num_reads=250000, seed=12
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_750000_seed_17.fastq
+    jobid: 289
+    reason: Missing output files: data/simulated_metagenome_num_reads_750000_seed_17.fastq
+    wildcards: num_reads=750000, seed=17
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_1000000_seed_11.fastq
+    jobid: 359
+    reason: Missing output files: data/simulated_metagenome_num_reads_1000000_seed_11.fastq
+    wildcards: num_reads=1000000, seed=11
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:16 2023]
+rule create_metagenomes:
+    input: ../scripts/simulate_metagenome.py, data/genome_ref_full.fa
+    output: data/simulated_metagenome_num_reads_250000_seed_15.fastq
+    jobid: 79
+    reason: Missing output files: data/simulated_metagenome_num_reads_250000_seed_15.fastq
+    wildcards: num_reads=250000, seed=15
+    resources: tmpdir=/tmp
+
+[Mon Feb 27 12:50:27 2023]
+Finished job 24.
+1 of 1041 steps (0.1%) done
+Select jobs to execute...
+
+[Mon Feb 27 12:50:27 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/protein_ref_truncated.faa, data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    output: data/diamond_output_file_num_reads_250000_seed_4, data/diamond_ko_file_num_reads_250000_seed_4
+    jobid: 23
+    benchmark: data/diamond_benchmark_num_reads_250000_seed_4
+    reason: Missing output files: data/diamond_output_file_num_reads_250000_seed_4, data/diamond_ko_file_num_reads_250000_seed_4; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    wildcards: num_reads=250000, seed=4
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule create_ground_truth:
+    input: ../scripts/find_genes_in_sim.py, data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    output: data/ground_truth_gene_num_reads_250000_seed_4.csv
+    jobid: 26
+    reason: Missing output files: data/ground_truth_gene_num_reads_250000_seed_4.csv; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    wildcards: num_reads=250000, seed=4
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_4_k_5, data/sourmash_kos_250000_seed_4_k_5
+    jobid: 435
+    benchmark: data/sourmash_gather_benchmark_250000_seed_4_k_5
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_4_k_5, data/sourmash_kos_250000_seed_4_k_5; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    wildcards: num_reads=250000, seed=4, k=5
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_4_k_7, data/sourmash_kos_250000_seed_4_k_7
+    jobid: 437
+    benchmark: data/sourmash_gather_benchmark_250000_seed_4_k_7
+    reason: Missing output files: data/sourmash_kos_250000_seed_4_k_7, data/sourmash_gather_num_reads_250000_seed_4_k_7; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    wildcards: num_reads=250000, seed=4, k=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_4_k_11, data/sourmash_kos_250000_seed_4_k_11
+    jobid: 439
+    benchmark: data/sourmash_gather_benchmark_250000_seed_4_k_11
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_4_k_11, data/sourmash_kos_250000_seed_4_k_11; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    wildcards: num_reads=250000, seed=4, k=11
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_4_k_15, data/sourmash_kos_250000_seed_4_k_15
+    jobid: 441
+    benchmark: data/sourmash_gather_benchmark_250000_seed_4_k_15
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_4_k_15, data/sourmash_kos_250000_seed_4_k_15; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    wildcards: num_reads=250000, seed=4, k=15
+    resources: tmpdir=/tmp
+
+[Mon Feb 27 12:50:27 2023]
+Finished job 4.
+2 of 1041 steps (0.2%) done
+Select jobs to execute...
+
+[Mon Feb 27 12:50:27 2023]
+rule create_ground_truth:
+    input: ../scripts/find_genes_in_sim.py, data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    output: data/ground_truth_gene_num_reads_250000_seed_0.csv
+    jobid: 6
+    reason: Missing output files: data/ground_truth_gene_num_reads_250000_seed_0.csv; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    wildcards: num_reads=250000, seed=0
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/protein_ref_truncated.faa, data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    output: data/diamond_output_file_num_reads_250000_seed_0, data/diamond_ko_file_num_reads_250000_seed_0
+    jobid: 2
+    benchmark: data/diamond_benchmark_num_reads_250000_seed_0
+    reason: Missing output files: data/diamond_ko_file_num_reads_250000_seed_0, data/diamond_output_file_num_reads_250000_seed_0; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    wildcards: num_reads=250000, seed=0
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_0_k_5, data/sourmash_kos_250000_seed_0_k_5
+    jobid: 403
+    benchmark: data/sourmash_gather_benchmark_250000_seed_0_k_5
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_0_k_5, data/sourmash_kos_250000_seed_0_k_5; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    wildcards: num_reads=250000, seed=0, k=5
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_0_k_7, data/sourmash_kos_250000_seed_0_k_7
+    jobid: 405
+    benchmark: data/sourmash_gather_benchmark_250000_seed_0_k_7
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_0_k_7, data/sourmash_kos_250000_seed_0_k_7; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    wildcards: num_reads=250000, seed=0, k=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_0_k_11, data/sourmash_kos_250000_seed_0_k_11
+    jobid: 407
+    benchmark: data/sourmash_gather_benchmark_250000_seed_0_k_11
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_0_k_11, data/sourmash_kos_250000_seed_0_k_11; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    wildcards: num_reads=250000, seed=0, k=11
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_0_k_15, data/sourmash_kos_250000_seed_0_k_15
+    jobid: 409
+    benchmark: data/sourmash_gather_benchmark_250000_seed_0_k_15
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_0_k_15, data/sourmash_kos_250000_seed_0_k_15; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    wildcards: num_reads=250000, seed=0, k=15
+    resources: tmpdir=/tmp
+
+[Mon Feb 27 12:50:27 2023]
+Finished job 39.
+3 of 1041 steps (0.3%) done
+Select jobs to execute...
+
+[Mon Feb 27 12:50:27 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/protein_ref_truncated.faa, data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    output: data/diamond_output_file_num_reads_250000_seed_7, data/diamond_ko_file_num_reads_250000_seed_7
+    jobid: 38
+    benchmark: data/diamond_benchmark_num_reads_250000_seed_7
+    reason: Missing output files: data/diamond_output_file_num_reads_250000_seed_7, data/diamond_ko_file_num_reads_250000_seed_7; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    wildcards: num_reads=250000, seed=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_7_k_7, data/sourmash_kos_250000_seed_7_k_7
+    jobid: 461
+    benchmark: data/sourmash_gather_benchmark_250000_seed_7_k_7
+    reason: Missing output files: data/sourmash_kos_250000_seed_7_k_7, data/sourmash_gather_num_reads_250000_seed_7_k_7; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    wildcards: num_reads=250000, seed=7, k=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_7_k_5, data/sourmash_kos_250000_seed_7_k_5
+    jobid: 459
+    benchmark: data/sourmash_gather_benchmark_250000_seed_7_k_5
+    reason: Missing output files: data/sourmash_kos_250000_seed_7_k_5, data/sourmash_gather_num_reads_250000_seed_7_k_5; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    wildcards: num_reads=250000, seed=7, k=5
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule create_ground_truth:
+    input: ../scripts/find_genes_in_sim.py, data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    output: data/ground_truth_gene_num_reads_250000_seed_7.csv
+    jobid: 41
+    reason: Missing output files: data/ground_truth_gene_num_reads_250000_seed_7.csv; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    wildcards: num_reads=250000, seed=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_7_k_11, data/sourmash_kos_250000_seed_7_k_11
+    jobid: 463
+    benchmark: data/sourmash_gather_benchmark_250000_seed_7_k_11
+    reason: Missing output files: data/sourmash_kos_250000_seed_7_k_11, data/sourmash_gather_num_reads_250000_seed_7_k_11; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    wildcards: num_reads=250000, seed=7, k=11
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:27 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_7_k_15, data/sourmash_kos_250000_seed_7_k_15
+    jobid: 465
+    benchmark: data/sourmash_gather_benchmark_250000_seed_7_k_15
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_7_k_15, data/sourmash_kos_250000_seed_7_k_15; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    wildcards: num_reads=250000, seed=7, k=15
+    resources: tmpdir=/tmp
+
+[Mon Feb 27 12:50:28 2023]
+Finished job 44.
+4 of 1041 steps (0.4%) done
+Select jobs to execute...
+
+[Mon Feb 27 12:50:28 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_8_k_11, data/sourmash_kos_250000_seed_8_k_11
+    jobid: 471
+    benchmark: data/sourmash_gather_benchmark_250000_seed_8_k_11
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_8_k_11, data/sourmash_kos_250000_seed_8_k_11; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    wildcards: num_reads=250000, seed=8, k=11
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:28 2023]
+rule create_ground_truth:
+    input: ../scripts/find_genes_in_sim.py, data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    output: data/ground_truth_gene_num_reads_250000_seed_8.csv
+    jobid: 46
+    reason: Missing output files: data/ground_truth_gene_num_reads_250000_seed_8.csv; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    wildcards: num_reads=250000, seed=8
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:28 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_8_k_15, data/sourmash_kos_250000_seed_8_k_15
+    jobid: 473
+    benchmark: data/sourmash_gather_benchmark_250000_seed_8_k_15
+    reason: Missing output files: data/sourmash_kos_250000_seed_8_k_15, data/sourmash_gather_num_reads_250000_seed_8_k_15; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    wildcards: num_reads=250000, seed=8, k=15
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:28 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/protein_ref_truncated.faa, data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    output: data/diamond_output_file_num_reads_250000_seed_8, data/diamond_ko_file_num_reads_250000_seed_8
+    jobid: 43
+    benchmark: data/diamond_benchmark_num_reads_250000_seed_8
+    reason: Missing output files: data/diamond_output_file_num_reads_250000_seed_8, data/diamond_ko_file_num_reads_250000_seed_8; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    wildcards: num_reads=250000, seed=8
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:28 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_8_k_5, data/sourmash_kos_250000_seed_8_k_5
+    jobid: 467
+    benchmark: data/sourmash_gather_benchmark_250000_seed_8_k_5
+    reason: Missing output files: data/sourmash_kos_250000_seed_8_k_5, data/sourmash_gather_num_reads_250000_seed_8_k_5; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    wildcards: num_reads=250000, seed=8, k=5
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:29 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_8_k_7, data/sourmash_kos_250000_seed_8_k_7
+    jobid: 469
+    benchmark: data/sourmash_gather_benchmark_250000_seed_8_k_7
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_8_k_7, data/sourmash_kos_250000_seed_8_k_7; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    wildcards: num_reads=250000, seed=8, k=7
+    resources: tmpdir=/tmp
+
+[Mon Feb 27 12:50:29 2023]
+Finished job 89.
+5 of 1041 steps (0.5%) done
+Select jobs to execute...
+[Mon Feb 27 12:50:29 2023]
+Error in rule run_sourmash:
+    jobid: 435
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_4_k_5, data/sourmash_kos_250000_seed_4_k_5
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 5 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_4.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_4_k_5 --outfile data/sourmash_kos_250000_seed_4_k_5 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:30 2023]
+Error in rule run_sourmash:
+    jobid: 441
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_4_k_15, data/sourmash_kos_250000_seed_4_k_15
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 15 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_4.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_4_k_15 --outfile data/sourmash_kos_250000_seed_4_k_15 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon Feb 27 12:50:30 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_17_k_5, data/sourmash_kos_250000_seed_17_k_5
+    jobid: 539
+    benchmark: data/sourmash_gather_benchmark_250000_seed_17_k_5
+    reason: Missing output files: data/sourmash_kos_250000_seed_17_k_5, data/sourmash_gather_num_reads_250000_seed_17_k_5; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    wildcards: num_reads=250000, seed=17, k=5
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:30 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/protein_ref_truncated.faa, data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    output: data/diamond_output_file_num_reads_250000_seed_17, data/diamond_ko_file_num_reads_250000_seed_17
+    jobid: 88
+    benchmark: data/diamond_benchmark_num_reads_250000_seed_17
+    reason: Missing output files: data/diamond_ko_file_num_reads_250000_seed_17, data/diamond_output_file_num_reads_250000_seed_17; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    wildcards: num_reads=250000, seed=17
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:30 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_17_k_7, data/sourmash_kos_250000_seed_17_k_7
+    jobid: 541
+    benchmark: data/sourmash_gather_benchmark_250000_seed_17_k_7
+    reason: Missing output files: data/sourmash_kos_250000_seed_17_k_7, data/sourmash_gather_num_reads_250000_seed_17_k_7; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    wildcards: num_reads=250000, seed=17, k=7
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:30 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_17_k_11, data/sourmash_kos_250000_seed_17_k_11
+    jobid: 543
+    benchmark: data/sourmash_gather_benchmark_250000_seed_17_k_11
+    reason: Missing output files: data/sourmash_gather_num_reads_250000_seed_17_k_11, data/sourmash_kos_250000_seed_17_k_11; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    wildcards: num_reads=250000, seed=17, k=11
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:30 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_17_k_15, data/sourmash_kos_250000_seed_17_k_15
+    jobid: 545
+    benchmark: data/sourmash_gather_benchmark_250000_seed_17_k_15
+    reason: Missing output files: data/sourmash_kos_250000_seed_17_k_15, data/sourmash_gather_num_reads_250000_seed_17_k_15; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    wildcards: num_reads=250000, seed=17, k=15
+    resources: tmpdir=/tmp
+
+
+[Mon Feb 27 12:50:30 2023]
+rule create_ground_truth:
+    input: ../scripts/find_genes_in_sim.py, data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    output: data/ground_truth_gene_num_reads_250000_seed_17.csv
+    jobid: 91
+    reason: Missing output files: data/ground_truth_gene_num_reads_250000_seed_17.csv; Input files updated by another job: data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    wildcards: num_reads=250000, seed=17
+    resources: tmpdir=/tmp
+
+[Mon Feb 27 12:50:30 2023]
+Error in rule run_sourmash:
+    jobid: 437
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_4.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_4_k_7, data/sourmash_kos_250000_seed_4_k_7
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 7 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_4.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_4_k_7 --outfile data/sourmash_kos_250000_seed_4_k_7 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:30 2023]
+Error in rule run_sourmash:
+    jobid: 409
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_0_k_15, data/sourmash_kos_250000_seed_0_k_15
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 15 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_0.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_0_k_15 --outfile data/sourmash_kos_250000_seed_0_k_15 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:30 2023]
+Finished job 84.
+6 of 1041 steps (1%) done
+[Mon Feb 27 12:50:31 2023]
+Error in rule run_sourmash:
+    jobid: 463
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_7_k_11, data/sourmash_kos_250000_seed_7_k_11
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 11 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_7.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_7_k_11 --outfile data/sourmash_kos_250000_seed_7_k_11 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:32 2023]
+Error in rule run_sourmash:
+    jobid: 405
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_0_k_7, data/sourmash_kos_250000_seed_0_k_7
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 7 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_0.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_0_k_7 --outfile data/sourmash_kos_250000_seed_0_k_7 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:32 2023]
+Error in rule run_sourmash:
+    jobid: 461
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_7_k_7, data/sourmash_kos_250000_seed_7_k_7
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 7 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_7.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_7_k_7 --outfile data/sourmash_kos_250000_seed_7_k_7 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:32 2023]
+Error in rule run_sourmash:
+    jobid: 459
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_7.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_7_k_5, data/sourmash_kos_250000_seed_7_k_5
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 5 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_7.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_7_k_5 --outfile data/sourmash_kos_250000_seed_7_k_5 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:32 2023]
+Error in rule run_sourmash:
+    jobid: 403
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_0_k_5, data/sourmash_kos_250000_seed_0_k_5
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 5 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_0.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_0_k_5 --outfile data/sourmash_kos_250000_seed_0_k_5 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:32 2023]
+Finished job 99.
+7 of 1041 steps (1%) done
+[Mon Feb 27 12:50:32 2023]
+Finished job 49.
+8 of 1041 steps (1%) done
+[Mon Feb 27 12:50:32 2023]
+Finished job 14.
+9 of 1041 steps (1%) done
+[Mon Feb 27 12:50:33 2023]
+Error in rule run_sourmash:
+    jobid: 471
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_8_k_11, data/sourmash_kos_250000_seed_8_k_11
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 11 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_8.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_8_k_11 --outfile data/sourmash_kos_250000_seed_8_k_11 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:33 2023]
+Error in rule run_sourmash:
+    jobid: 473
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_8_k_15, data/sourmash_kos_250000_seed_8_k_15
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 15 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_8.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_8_k_15 --outfile data/sourmash_kos_250000_seed_8_k_15 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:33 2023]
+Finished job 104.
+10 of 1041 steps (1%) done
+[Mon Feb 27 12:50:34 2023]
+Error in rule run_sourmash:
+    jobid: 469
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_8.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_8_k_7, data/sourmash_kos_250000_seed_8_k_7
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 7 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_8.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_8_k_7 --outfile data/sourmash_kos_250000_seed_8_k_7 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:34 2023]
+Error in rule run_sourmash:
+    jobid: 545
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_17_k_15, data/sourmash_kos_250000_seed_17_k_15
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 15 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_17.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_17_k_15 --outfile data/sourmash_kos_250000_seed_17_k_15 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:34 2023]
+Finished job 144.
+11 of 1041 steps (1%) done
+[Mon Feb 27 12:50:34 2023]
+Error in rule run_sourmash:
+    jobid: 539
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_17_k_5, data/sourmash_kos_250000_seed_17_k_5
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 5 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_17.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_17_k_5 --outfile data/sourmash_kos_250000_seed_17_k_5 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:34 2023]
+Error in rule run_sourmash:
+    jobid: 541
+    input: ../scripts/run_sourmash_gather.py, ../sketched_references/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_250000_seed_17.fastq
+    output: data/sourmash_gather_num_reads_250000_seed_17_k_7, data/sourmash_kos_250000_seed_17_k_7
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 7 --threshold 5 --metagenome data/simulated_metagenome_num_reads_250000_seed_17.fastq --kosig ../sketched_references/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_250000_seed_17_k_7 --outfile data/sourmash_kos_250000_seed_17_k_7 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Feb 27 12:50:34 2023]
+Finished job 179.
+12 of 1041 steps (1%) done
+[Mon Feb 27 12:50:35 2023]
+Finished job 69.
+13 of 1041 steps (1%) done
+[Mon Feb 27 12:50:35 2023]
+Finished job 29.
+14 of 1041 steps (1%) done
+[Mon Feb 27 12:50:35 2023]
+Finished job 74.
+15 of 1041 steps (1%) done
+[Mon Feb 27 12:50:35 2023]
+Finished job 54.
+16 of 1041 steps (2%) done
+[Mon Feb 27 12:50:35 2023]
+Finished job 34.
+17 of 1041 steps (2%) done
+[Mon Feb 27 12:50:35 2023]
+Finished job 64.
+18 of 1041 steps (2%) done
+[Mon Feb 27 12:50:35 2023]
+Finished job 9.
+19 of 1041 steps (2%) done
+[Mon Feb 27 12:50:35 2023]
+Finished job 59.
+20 of 1041 steps (2%) done
+[Mon Feb 27 12:50:36 2023]
+Finished job 19.
+21 of 1041 steps (2%) done
+[Mon Feb 27 12:50:36 2023]
+Finished job 94.
+22 of 1041 steps (2%) done
+[Mon Feb 27 12:50:37 2023]
+Finished job 244.
+23 of 1041 steps (2%) done
+[Mon Feb 27 12:50:37 2023]
+Finished job 189.
+24 of 1041 steps (2%) done
+[Mon Feb 27 12:50:37 2023]
+Finished job 274.
+25 of 1041 steps (2%) done
+[Mon Feb 27 12:50:37 2023]
+Finished job 79.
+26 of 1041 steps (2%) done
+[Mon Feb 27 12:50:38 2023]
+Finished job 154.
+27 of 1041 steps (3%) done
+[Mon Feb 27 12:50:38 2023]
+Finished job 219.
+28 of 1041 steps (3%) done
+[Mon Feb 27 12:50:38 2023]
+Finished job 114.
+29 of 1041 steps (3%) done
+[Mon Feb 27 12:50:38 2023]
+Finished job 194.
+30 of 1041 steps (3%) done
+[Mon Feb 27 12:50:38 2023]
+Finished job 119.
+31 of 1041 steps (3%) done
+[Mon Feb 27 12:50:38 2023]
+Finished job 229.
+32 of 1041 steps (3%) done
+[Mon Feb 27 12:50:38 2023]
+Finished job 139.
+33 of 1041 steps (3%) done
+[Mon Feb 27 12:50:38 2023]
+Finished job 174.
+34 of 1041 steps (3%) done
+[Mon Feb 27 12:50:38 2023]
+Finished job 124.
+35 of 1041 steps (3%) done
+[Mon Feb 27 12:50:39 2023]
+Finished job 109.
+36 of 1041 steps (3%) done
+[Mon Feb 27 12:50:39 2023]
+Finished job 134.
+37 of 1041 steps (4%) done
+[Mon Feb 27 12:50:39 2023]
+Finished job 159.
+38 of 1041 steps (4%) done
+[Mon Feb 27 12:50:39 2023]
+Finished job 149.
+39 of 1041 steps (4%) done
+[Mon Feb 27 12:50:39 2023]
+Finished job 264.
+40 of 1041 steps (4%) done
+[Mon Feb 27 12:50:39 2023]
+Finished job 164.
+41 of 1041 steps (4%) done
+[Mon Feb 27 12:50:39 2023]
+Finished job 199.
+42 of 1041 steps (4%) done
+[Mon Feb 27 12:50:39 2023]
+Finished job 129.
+43 of 1041 steps (4%) done
+[Mon Feb 27 12:50:39 2023]
+Finished job 209.
+44 of 1041 steps (4%) done
+[Mon Feb 27 12:50:40 2023]
+Finished job 184.
+45 of 1041 steps (4%) done
+[Mon Feb 27 12:50:40 2023]
+Finished job 304.
+46 of 1041 steps (4%) done
+[Mon Feb 27 12:50:40 2023]
+Finished job 169.
+47 of 1041 steps (5%) done
+[Mon Feb 27 12:50:40 2023]
+Finished job 289.
+48 of 1041 steps (5%) done
+[Mon Feb 27 12:50:41 2023]
+Finished job 239.
+49 of 1041 steps (5%) done
+[Mon Feb 27 12:50:41 2023]
+Finished job 374.
+50 of 1041 steps (5%) done
+[Mon Feb 27 12:50:41 2023]
+Finished job 269.
+51 of 1041 steps (5%) done
+[Mon Feb 27 12:50:41 2023]
+Finished job 234.
+52 of 1041 steps (5%) done
+[Mon Feb 27 12:50:41 2023]
+Finished job 254.
+53 of 1041 steps (5%) done
+[Mon Feb 27 12:50:41 2023]
+Finished job 214.
+54 of 1041 steps (5%) done
+[Mon Feb 27 12:50:42 2023]
+Finished job 204.
+55 of 1041 steps (5%) done
+[Mon Feb 27 12:50:42 2023]
+Finished job 259.
+56 of 1041 steps (5%) done
+[Mon Feb 27 12:50:42 2023]
+Finished job 249.
+57 of 1041 steps (5%) done
+[Mon Feb 27 12:50:42 2023]
+Finished job 224.
+58 of 1041 steps (6%) done
+[Mon Feb 27 12:50:42 2023]
+Finished job 284.
+59 of 1041 steps (6%) done
+[Mon Feb 27 12:50:42 2023]
+Finished job 299.
+60 of 1041 steps (6%) done
+[Mon Feb 27 12:50:43 2023]
+Finished job 279.
+61 of 1041 steps (6%) done
+[Mon Feb 27 12:50:43 2023]
+Finished job 369.
+62 of 1041 steps (6%) done
+[Mon Feb 27 12:50:43 2023]
+Finished job 344.
+63 of 1041 steps (6%) done
+[Mon Feb 27 12:50:43 2023]
+Finished job 384.
+64 of 1041 steps (6%) done
+[Mon Feb 27 12:50:44 2023]
+Finished job 294.
+65 of 1041 steps (6%) done
+[Mon Feb 27 12:50:44 2023]
+Finished job 379.
+66 of 1041 steps (6%) done
+[Mon Feb 27 12:50:44 2023]
+Finished job 324.
+67 of 1041 steps (6%) done
+[Mon Feb 27 12:50:44 2023]
+Finished job 364.
+68 of 1041 steps (7%) done
+[Mon Feb 27 12:50:44 2023]
+Finished job 309.
+69 of 1041 steps (7%) done
+[Mon Feb 27 12:50:45 2023]
+Finished job 334.
+70 of 1041 steps (7%) done
+[Mon Feb 27 12:50:45 2023]
+Finished job 394.
+71 of 1041 steps (7%) done
+[Mon Feb 27 12:50:45 2023]
+Finished job 399.
+72 of 1041 steps (7%) done
+[Mon Feb 27 12:50:45 2023]
+Finished job 354.
+73 of 1041 steps (7%) done
+[Mon Feb 27 12:50:45 2023]
+Finished job 314.
+74 of 1041 steps (7%) done
+[Mon Feb 27 12:50:45 2023]
+Finished job 319.
+75 of 1041 steps (7%) done
+[Mon Feb 27 12:50:46 2023]
+Finished job 389.
+76 of 1041 steps (7%) done
+[Mon Feb 27 12:50:46 2023]
+Finished job 349.
+77 of 1041 steps (7%) done
+[Mon Feb 27 12:50:46 2023]
+Finished job 329.
+78 of 1041 steps (7%) done
+[Mon Feb 27 12:50:46 2023]
+Finished job 339.
+79 of 1041 steps (8%) done
+[Mon Feb 27 12:50:46 2023]
+Finished job 359.
+80 of 1041 steps (8%) done
+[Mon Feb 27 12:51:12 2023]
+Finished job 467.
+81 of 1041 steps (8%) done
+[Mon Feb 27 12:51:31 2023]
+Finished job 38.
+82 of 1041 steps (8%) done
+[Mon Feb 27 12:51:35 2023]
+Finished job 2.
+83 of 1041 steps (8%) done
+[Mon Feb 27 12:51:35 2023]
+Finished job 23.
+84 of 1041 steps (8%) done
+[Mon Feb 27 12:51:39 2023]
+Finished job 88.
+85 of 1041 steps (8%) done
+[Mon Feb 27 12:51:39 2023]
+Finished job 43.
+86 of 1041 steps (8%) done
+[Mon Feb 27 12:51:50 2023]
+Finished job 543.
+87 of 1041 steps (8%) done
+[Mon Feb 27 12:51:51 2023]
+Finished job 407.
+88 of 1041 steps (8%) done
+[Mon Feb 27 12:51:53 2023]
+Finished job 465.
+89 of 1041 steps (9%) done
+[Mon Feb 27 12:51:55 2023]
+Finished job 439.
+90 of 1041 steps (9%) done
+[Mon Feb 27 13:04:57 2023]
+Finished job 41.
+91 of 1041 steps (9%) done
+[Mon Feb 27 13:07:17 2023]
+Finished job 91.
+92 of 1041 steps (9%) done
+[Mon Feb 27 13:07:20 2023]
+Finished job 6.
+93 of 1041 steps (9%) done
+[Mon Feb 27 13:07:23 2023]
+Finished job 46.
+94 of 1041 steps (9%) done
+[Mon Feb 27 13:07:41 2023]
+Finished job 26.
+95 of 1041 steps (9%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-02-27T125015.422773.snakemake.log
