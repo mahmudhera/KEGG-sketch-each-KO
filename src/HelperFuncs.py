@@ -224,7 +224,7 @@ def parse_diamond_results(matches_file, pident_threshold=0.1):
 
     # also get the gene lengths
     gene_lengths = [int(x.split('|')[-1]) - int(x.split('|')[-2]) + 1 for x in df['sseqid']]
-    bit_scores = df['bitscore']
+    bit_scores = df['bitscore'].tolist()
     ref_id_to_bit_score = dict()
 
     # add all the bit scores up for each reference id
