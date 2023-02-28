@@ -207,10 +207,12 @@ def parse_diamond_results(matches_file, pident_threshold=0.1):
     """
     # get best matches for each seq read
     df = pd.read_csv(matches_file, sep='\t')
+    print(df.sample(10))
     #df2 = df.groupby(['qseqid']).max()
 
     idx = df.groupby(['qseqid'])['bitscore'].transform(max) == df['bitscore']
     df2 = df[idx]
+    print(df2.sample(10))
 
     # exclude all mapping below threshold of percentage identity
     df = df2[ df2['pident'] >= pident_threshold ]
