@@ -209,8 +209,11 @@ def parse_diamond_results(matches_file, pident_threshold=0.1):
     df = pd.read_csv(matches_file, sep='\t')
     #df2 = df.groupby(['qseqid']).max()
 
+    idx = df.groupby(['qseqid'])['bitscore'].transform(max) == df['bitscore']
+    df2 = df[idx]
+
     # exclude all mapping below threshold of percentage identity
-    #df = df2[ df2['pident'] >= pident_threshold ]
+    df = df2[ df2['pident'] >= pident_threshold ]
 
     ref_ids = [x.split('|')[0] for x in df['sseqid']]
     ref_ids_tally = Counter(ref_ids)
