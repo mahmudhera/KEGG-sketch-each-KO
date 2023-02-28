@@ -214,8 +214,10 @@ def parse_diamond_results(matches_file, pident_threshold=0.1):
     df2 = df[idx]
     print(df2.sample(10))
 
+    df = df2
+
     # exclude all mapping below threshold of percentage identity
-    df = df2[ df2['pident'] >= pident_threshold ]
+    #df = df2[ df2['pident'] >= pident_threshold ]
 
     ref_ids = [x.split('|')[0] for x in df['sseqid']]
     ref_ids_tally = Counter(ref_ids)
@@ -227,7 +229,7 @@ def parse_diamond_results(matches_file, pident_threshold=0.1):
 
     # add all the bit scores up for each reference id
     for i in range(len(ref_ids)):
-        if ref_ids[i] not in ref_id_to_bit_score:
+        if ref_ids[i] not in ref_id_to_bit_score.keys():
             ref_id_to_bit_score[ref_ids[i]] = bit_scores[i]
         else:
             ref_id_to_bit_score[ref_ids[i]] += bit_scores[i]
