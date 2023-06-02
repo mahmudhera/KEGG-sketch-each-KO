@@ -4,3 +4,5 @@ matplotlib
 biopython
 screed
 scipy
+snakemake
+pytest
