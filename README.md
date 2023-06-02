@@ -9,3 +9,10 @@ David, and this repository is simply using those. Long term plans:
 1. Add snakefile.
 
 Running kofam-scan: exec_annotation -o kofamscan_result simulatedMetagenome.fastq
+
+## Installation
+```
+conda create -y --name annotate_ko
+conda install -y --name annotate_ko -c conda-forge -c bioconda --file requirements.txt
+conda activate annotate_ko
+```
