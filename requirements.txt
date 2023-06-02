@@ -6,3 +6,4 @@ screed
 scipy
 snakemake
 pytest
+sourmash 

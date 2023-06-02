@@ -93,6 +93,9 @@ rule create_ground_truth:
     shell:
         'python {input[0]} --database_dir ' + genome_path + ' --simulation ' + data_dir + '/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq --output_file ' + data_dir + '/ground_truth_gene_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.csv' + ' --num_genomes ' + str(num_genomes_full_db)
 
+rule create_all_metagenomes:
+    input:
+        expand(data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq', num_reads=num_reads_list, seed=seeds_list)
 
 rule create_metagenomes:
     input:
