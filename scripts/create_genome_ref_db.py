@@ -45,7 +45,7 @@ def main():
         genome_dir_files = [f for f in listdir(genome_dir) if isfile(join(genome_dir, f))]
         reference_genome = None
         for file in genome_dir_files:
-            if file.endswith("genomic.fna") and "rna_from_genomic" not in file and "cds_from_genomic" not in file:
+            if file.endswith("fasta"):
                 reference_genome = file
                 reference_genome_path = os.path.join(genome_dir, reference_genome)
                 break
