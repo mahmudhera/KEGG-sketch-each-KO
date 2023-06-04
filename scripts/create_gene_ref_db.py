@@ -3,6 +3,7 @@ import argparse
 import os
 import pandas as pd
 from Bio.Seq import Seq
+from tqdm import tqdm
 
 def parse_args():
     parser = argparse.ArgumentParser(description="This script will take a directory as input where a list of genomes are "
@@ -40,7 +41,7 @@ def main():
         exit(-1)
 
     num_genes_missing_aa_seq = 0
-    for genome_dir in genome_dir_names[:num_genomes]:
+    for genome_dir in tqdm(genome_dir_names[:num_genomes]):
         genome_name = genome_dir.split('/')[-1]
         mapping_filename = genome_name + "_mapping.csv"
 
@@ -49,7 +50,7 @@ def main():
             print('Mapping file for genome ' + genome_name + ' was not found!')
             exit(-1)
 
-        print('Handling genome: ' + genome_name)
+        #print('Handling genome: ' + genome_name)
 
         # identify repeating gene name (locus tag)
         df = pd.read_csv(genome_dir + '/' + mapping_filename)
