@@ -1,7 +1,7 @@
 import numpy as np
 
 script_dir = '../../scripts'
-data_dir = 'data'
+data_dir = '/scratch/mbr5797/large_test_experiment_data'
 read_length = 150
 k = 7
 ref_scale = 10
