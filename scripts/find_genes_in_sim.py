@@ -278,10 +278,10 @@ def main():
         gene_names = contig_intervals[contig_id].keys()
 
         # find gene start positions
-        if contig_id in sorted_start_positions.keys():
+        if contig_id not in sorted_start_positions.keys():
             gene_start_positions = [ contig_intervals[contig_id][gene_name][0] for gene_name in gene_names ]
             gene_start_positions.sort()
-            sorted_start_positions[contig_id] = gene_start_positions
+            sorted_start_positions[contig_id] = list(gene_start_positions)
         else:
             gene_start_positions = sorted_start_positions[contig_id]
         i = bin_search(gene_start_positions, start)
