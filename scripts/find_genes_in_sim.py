@@ -255,7 +255,7 @@ def main():
         else:
             raise Exception("Duplicate gene name in mapping file!")
 
-    sorted_start_positions = {}
+    #sorted_start_positions = {}
 
     print("Finding overlaps...")
     output_df_data = {"contig_id": [], "gene_name": [], "num_bases_overlap": [], "overlap_start": [], "overlap_end": [], "gene_start": [], "gene_end": []}
@@ -278,13 +278,13 @@ def main():
         gene_names = contig_intervals[contig_id].keys()
 
         # find gene start positions
-        if contig_id not in sorted_start_positions.keys():
-            gene_start_positions = [ contig_intervals[contig_id][gene_name][0] for gene_name in gene_names ]
-            gene_start_positions.sort()
-            sorted_start_positions[contig_id] = list(gene_start_positions)
-        else:
-            gene_start_positions = sorted_start_positions[contig_id]
-        i = bin_search(gene_start_positions, start)
+        #if contig_id not in sorted_start_positions.keys():
+        #    gene_start_positions = [ contig_intervals[contig_id][gene_name][0] for gene_name in gene_names ]
+        #    gene_start_positions.sort()
+        #    sorted_start_positions[contig_id] = list(gene_start_positions)
+        #else:
+        #    gene_start_positions,  = sorted_start_positions[contig_id]
+        #i = bin_search(gene_start_positions, start)
         # find i
 
         # iterate through the gene names
@@ -297,8 +297,8 @@ def main():
 
                 # if gene start does not belong in any of these:
                     # continue
-                if gene_start not in gene_start_positions[i:i+2]:
-                    continue
+                #if gene_start not in gene_start_positions[i:i+2]:
+                #    continue
 
                 max_start = max(start, gene_start)
                 min_end = min(end, gene_end)
