@@ -261,22 +261,26 @@ def main():
                 # get the start and end positions of the gene
                 gene_start = contig_intervals[contig_id][gene_name][0]
                 gene_end = contig_intervals[contig_id][gene_name][1]
-                overlap_interval = interval_overlap((start, end), (gene_start, gene_end))
-                if overlap_interval:
-                    # get the protein id
-                    # get the number of bases that overlap
-                    num_bases_overlap = overlap_interval[1] - overlap_interval[0] + 1
-                    # get the overlap start and end positions
-                    overlap_start = overlap_interval[0]
-                    overlap_end = overlap_interval[1]
-                    # add the information to the output dataframe
-                    output_df_data["contig_id"].append(contig_id)
-                    output_df_data["gene_name"].append(gene_name)
-                    output_df_data["num_bases_overlap"].append(num_bases_overlap)
-                    output_df_data["overlap_start"].append(overlap_start)
-                    output_df_data["overlap_end"].append(overlap_end)
-                    output_df_data["gene_start"].append(gene_start)
-                    output_df_data["gene_end"].append(gene_end)
+                #overlap_interval = interval_overlap((start, end), (gene_start, gene_end))
+
+                max_start = max(start, gene_start)
+                min_end = min(end, gene_end)
+                if max_start > min_end:
+                    # no overlap
+                    continue
+                # get the number of bases that overlap
+                num_bases_overlap = min_end - max_start + 1
+                # get the overlap start and end positions
+                overlap_start = max_start
+                overlap_end = min_end
+                # add the information to the output dataframe
+                output_df_data["contig_id"].append(contig_id)
+                output_df_data["gene_name"].append(gene_name)
+                output_df_data["num_bases_overlap"].append(num_bases_overlap)
+                output_df_data["overlap_start"].append(overlap_start)
+                output_df_data["overlap_end"].append(overlap_end)
+                output_df_data["gene_start"].append(gene_start)
+                output_df_data["gene_end"].append(gene_end)
     print("Putting data in dataframe...")
     output_df = pd.DataFrame(output_df_data)
     #output_df.to_csv('/home/dkoslicki/Documents/KEGG_sketching_annotation/scripts/temp.csv', index=False)
