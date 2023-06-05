@@ -259,12 +259,16 @@ def main():
         if gene_names:
             for gene_name in gene_names:
                 # get the start and end positions of the gene
-                gene_start = contig_intervals[contig_id][gene_name][0]
-                gene_end = contig_intervals[contig_id][gene_name][1]
-                #overlap_interval = interval_overlap((start, end), (gene_start, gene_end))
+                tuple = contig_intervals[contig_id][gene_name]
+                gene_start = tuple[0]
+                gene_end = tuple[1]
 
-                max_start = max(start, gene_start)
-                min_end = min(end, gene_end)
+                max_start = gene_start
+                if start > max_start:
+                    max_start = start
+                min_end = gene_end
+                if end < min_end:
+                    min_end = end
                 if max_start > min_end:
                     # no overlap
                     continue
