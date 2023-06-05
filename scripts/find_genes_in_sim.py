@@ -263,12 +263,8 @@ def main():
                 gene_start = tuple[0]
                 gene_end = tuple[1]
 
-                max_start = gene_start
-                if start > max_start:
-                    max_start = start
-                min_end = gene_end
-                if end < min_end:
-                    min_end = end
+                max_start = max(start, gene_start)
+                min_end = min(end, gene_end)
                 if max_start > min_end:
                     # no overlap
                     continue
@@ -285,6 +281,7 @@ def main():
                 output_df_data["overlap_end"].append(overlap_end)
                 output_df_data["gene_start"].append(gene_start)
                 output_df_data["gene_end"].append(gene_end)
+                break
     print("Putting data in dataframe...")
     output_df = pd.DataFrame(output_df_data)
     #output_df.to_csv('/home/dkoslicki/Documents/KEGG_sketching_annotation/scripts/temp.csv', index=False)
