@@ -223,16 +223,16 @@ def main():
     # Create a couple of data structures that will make it faster to determine if a read overlaps a gene
     print("Creating data structures for overlaps...")
     contig_intervals = {}
-    contig_intervals_union = {}
+    #contig_intervals_union = {}
     for index, row in mapping_df.iterrows():
         contig_id = row["contig_id"]
         if contig_id not in contig_intervals:
             contig_intervals[contig_id] = {}
-            contig_intervals_union[contig_id] = interval[0, 0]
+            #contig_intervals_union[contig_id] = interval[0, 0]
         gene_name = row["gene_name"]
         if gene_name not in contig_intervals[contig_id]:
             contig_intervals[contig_id][gene_name] = (row["start_position"], row["end_position"])
-            contig_intervals_union[contig_id] = contig_intervals_union[contig_id] | interval[row["start_position"], row["end_position"]]
+            #contig_intervals_union[contig_id] = contig_intervals_union[contig_id] | interval[row["start_position"], row["end_position"]]
         else:
             raise Exception("Duplicate gene name in mapping file!")
 
@@ -240,20 +240,20 @@ def main():
     output_df_data = {"contig_id": [], "gene_name": [], "num_bases_overlap": [], "overlap_start": [], "overlap_end": [], "gene_start": [], "gene_end": []}
     # iterate through the all the reads in the simulation file looking for overlaps to genes
     for i in range(len(simulation_df)):
-        #if i % 1000 == 0:
-        #    print(f"On step: {i}/{len(simulation_df)}")
-        # get the contig id
         contig_id = simulation_df.iloc[i]["contig_id"]
+
         # get the start and end positions of the read
         start = simulation_df.iloc[i]["start"]
         end = simulation_df.iloc[i]["end"]
+
         # check if the start or then end of the read is within a gene region. Skip it if not.
-        if contig_id in contig_intervals:  # if there are no genes on this contig, skip it
+        #if contig_id in contig_intervals:  # if there are no genes on this contig, skip it
             # This assumes that the reads will always be shorter than the genes
-            if start not in contig_intervals_union[contig_id] and end not in contig_intervals_union[contig_id]:
-                continue
-        else:
-            continue
+            #if start not in contig_intervals_union[contig_id] and end not in contig_intervals_union[contig_id]:
+            #    continue
+        #else:
+        #    continue
+
         gene_names = contig_intervals[contig_id].keys()
         # iterate through the gene names
         if gene_names:
