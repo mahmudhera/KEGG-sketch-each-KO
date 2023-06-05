@@ -124,6 +124,25 @@ def parse_args():
     return parser.parse_args()
 
 
+def bin_search(arr, target):
+    if target <= arr[0]:
+        return -1
+    if target >= arr[-1]:
+        return len(arr)-1
+    n = len(arr)
+
+    left = 0
+    right = len(arr)-1
+    soln = int((left+right)/2)
+    while True:
+        if arr[soln] <= target < arr[soln+1]:
+            return soln
+        if arr[soln] > target:
+            soln = int((left+soln)/2)
+        else:
+            soln = int((right+soln)/2)
+    return soln
+
 def main():
     # parse the arguments
     args = parse_args()
@@ -236,6 +255,8 @@ def main():
         else:
             raise Exception("Duplicate gene name in mapping file!")
 
+    sorted_start_positions = {}
+
     print("Finding overlaps...")
     output_df_data = {"contig_id": [], "gene_name": [], "num_bases_overlap": [], "overlap_start": [], "overlap_end": [], "gene_start": [], "gene_end": []}
     # iterate through the all the reads in the simulation file looking for overlaps to genes
@@ -255,6 +276,17 @@ def main():
         #    continue
 
         gene_names = contig_intervals[contig_id].keys()
+
+        # find gene start positions
+        if sorted_start_positions[contig_id] is None:
+            gene_start_positions = [ contig_intervals[contig_id][gene_name][0] for gene_name in gene_names ]
+            gene_start_positions.sort()
+            sorted_start_positions[contig_id] = gene_start_positions
+        else:
+            gene_start_positions = sorted_start_positions[contig_id]
+        i = bin_search(gene_start_positions, start)
+        # find i
+
         # iterate through the gene names
         if gene_names:
             for gene_name in gene_names:
@@ -262,6 +294,11 @@ def main():
                 tuple = contig_intervals[contig_id][gene_name]
                 gene_start = tuple[0]
                 gene_end = tuple[1]
+
+                # if gene start does not belong in any of these:
+                    # continue
+                if gene_start not in gene_start_positions[i:i+2]:
+                    continue
 
                 max_start = max(start, gene_start)
                 min_end = min(end, gene_end)
@@ -281,7 +318,6 @@ def main():
                 output_df_data["overlap_end"].append(overlap_end)
                 output_df_data["gene_start"].append(gene_start)
                 output_df_data["gene_end"].append(gene_end)
-                break
     print("Putting data in dataframe...")
     output_df = pd.DataFrame(output_df_data)
     #output_df.to_csv('/home/dkoslicki/Documents/KEGG_sketching_annotation/scripts/temp.csv', index=False)
