@@ -278,7 +278,7 @@ def main():
         gene_names = contig_intervals[contig_id].keys()
 
         # find gene start positions
-        if sorted_start_positions[contig_id] is None:
+        if contig_id in sorted_start_positions.keys():
             gene_start_positions = [ contig_intervals[contig_id][gene_name][0] for gene_name in gene_names ]
             gene_start_positions.sort()
             sorted_start_positions[contig_id] = gene_start_positions
