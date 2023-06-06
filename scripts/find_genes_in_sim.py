@@ -153,7 +153,7 @@ def find_overlaps(simulation_df, contig_intervals):
     Returns a dict, keyed by gene_name, maps to a dataframe that has the following info as rows:
     <contig_id, gene_name, num_bases_overlap, overlap_start, overlap_end, gene_start, gene_end>
     """
-    gene_to_df = {}
+    gene_to_df_records = {}
     for i in range(len(simulation_df)):
         contig_id = simulation_df.iloc[i]["contig_id"]
 
@@ -200,7 +200,7 @@ def find_overlaps(simulation_df, contig_intervals):
             output_df_data["overlap_end"].append(overlap_end)
             output_df_data["gene_start"].append(gene_start)
             output_df_data["gene_end"].append(gene_end)
-    return gene_to_df
+    return gene_to_df_records
 
 
 def main():
