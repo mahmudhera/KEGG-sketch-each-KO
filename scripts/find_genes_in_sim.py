@@ -162,7 +162,7 @@ def find_overlaps(simulation_df, contig_intervals):
         print( f'\t Contig id: {contig_id}, Num of genes: {len(contig_intervals[contig_id].keys())}' )
 
     print('--------')
-    print('Showing a first few gene start and end positions for the first contig id').
+    print('Showing a first few gene start and end positions for the first contig id')
     contig_id = list(contig_intervals.keys())[0]
     for gene_id in list(contig_intervals[contig_id].keys())[:5]+list(contig_intervals[contig_id].keys())[-5:]:
         print( contig_intervals[contig_id][gene_id][0], contig_intervals[contig_id][gene_id][1] )
