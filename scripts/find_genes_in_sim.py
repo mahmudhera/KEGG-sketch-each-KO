@@ -27,7 +27,7 @@ def create_ground_truth(gene_to_found_genes_df):
     :param found_genes_df:
     :return: dataframe with columns: gene_name, nucleotide_overlap, median_coverage, mean_coverage, reads_mapped
     """
-    unique_genes = found_genes_df.gene_name.unique()
+    unique_genes = gene_to_found_genes_df.keys()
     ground_truth_df = pd.DataFrame(columns=["gene_name", "gene_length", "nucleotide_overlap", "median_coverage", "mean_coverage", "reads_mapped"])
     ground_truth_df_data = {"gene_name": [], "gene_length": [], "nucleotide_overlap": [], "median_coverage": [], "mean_coverage": [], "reads_mapped": [], "num_nts_in_reads": []}
     # TODO: the iterations of this are slow. The iterations that have a large len(intervals) are particularly slow.
