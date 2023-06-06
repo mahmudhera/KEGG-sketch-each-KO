@@ -20,7 +20,7 @@ def interval_length(intvals):
     return int(length)
 
 
-def create_ground_truth(found_genes_df):
+def create_ground_truth(gene_to_found_genes_df):
     """
     This function will take the dataframe that contains all the genes found in the simulation and output
     a ground truth functional profile
@@ -37,7 +37,7 @@ def create_ground_truth(found_genes_df):
     for gene in unique_genes:
         itr += 1
         #print(f"Analyzing gene: {itr}/{len(unique_genes)}")
-        gene_df = found_genes_df[found_genes_df.gene_name == gene]
+        gene_df = gene_to_found_genes_df[gene]
         # get overlap intervals
         interval_tuples = list(zip(gene_df.overlap_start, gene_df.overlap_end))
         # Convert these to intervals
@@ -258,8 +258,10 @@ def main():
     #sorted_start_positions = {}
 
     print("Finding overlaps...")
-    output_df_data = {"contig_id": [], "gene_name": [], "num_bases_overlap": [], "overlap_start": [], "overlap_end": [], "gene_start": [], "gene_end": []}
+    gene_to_df_records = {}
+    #output_df_data = {"contig_id": [], "gene_name": [], "num_bases_overlap": [], "overlap_start": [], "overlap_end": [], "gene_start": [], "gene_end": []}
     # iterate through the all the reads in the simulation file looking for overlaps to genes
+
     for i in range(len(simulation_df)):
         contig_id = simulation_df.iloc[i]["contig_id"]
 
@@ -267,50 +269,37 @@ def main():
         start = simulation_df.iloc[i]["start"]
         end = simulation_df.iloc[i]["end"]
 
-        # check if the start or then end of the read is within a gene region. Skip it if not.
-        #if contig_id in contig_intervals:  # if there are no genes on this contig, skip it
-            # This assumes that the reads will always be shorter than the genes
-            #if start not in contig_intervals_union[contig_id] and end not in contig_intervals_union[contig_id]:
-            #    continue
-        #else:
-        #    continue
-
         gene_names = contig_intervals[contig_id].keys()
-
-        # find gene start positions
-        #if contig_id not in sorted_start_positions.keys():
-        #    gene_start_positions = [ contig_intervals[contig_id][gene_name][0] for gene_name in gene_names ]
-        #    gene_start_positions.sort()
-        #    sorted_start_positions[contig_id] = list(gene_start_positions)
-        #else:
-        #    gene_start_positions,  = sorted_start_positions[contig_id]
-        #i = bin_search(gene_start_positions, start)
-        # find i
 
         # iterate through the gene names
         if gene_names:
             for gene_name in gene_names:
+
                 # get the start and end positions of the gene
                 tuple = contig_intervals[contig_id][gene_name]
                 gene_start = tuple[0]
                 gene_end = tuple[1]
-
-                # if gene start does not belong in any of these:
-                    # continue
-                #if gene_start not in gene_start_positions[i:i+2]:
-                #    continue
 
                 max_start = max(start, gene_start)
                 min_end = min(end, gene_end)
                 if max_start > min_end:
                     # no overlap
                     continue
+
                 # get the number of bases that overlap
                 num_bases_overlap = min_end - max_start + 1
                 # get the overlap start and end positions
                 overlap_start = max_start
                 overlap_end = min_end
                 # add the information to the output dataframe
+
+                if gene_name in gene_to_df_records.keys():
+                    output_df_data = gene_to_df_records[gene_name]
+                else:
+                    output_df_data = {"contig_id": [], "gene_name": [], "num_bases_overlap": [], "overlap_start": [], "overlap_end": [], "gene_start": [], "gene_end": []}
+                    gene_to_df_records[gene_name] = output_df_data
+                    output_df_data = gene_to_df_records[gene_name]
+
                 output_df_data["contig_id"].append(contig_id)
                 output_df_data["gene_name"].append(gene_name)
                 output_df_data["num_bases_overlap"].append(num_bases_overlap)
@@ -318,14 +307,20 @@ def main():
                 output_df_data["overlap_end"].append(overlap_end)
                 output_df_data["gene_start"].append(gene_start)
                 output_df_data["gene_end"].append(gene_end)
+
     print("Putting data in dataframe...")
-    output_df = pd.DataFrame(output_df_data)
+    gene_to_df = {}
+    for gene_name in gene_to_df_records.keys():
+        output_df_data = gene_to_df_records[gene_name]
+        output_df = pd.DataFrame(output_df_data)
+        gene_to_df[gene_name] = output_df
+    gene_to_df_records = None
     #output_df.to_csv('/home/dkoslicki/Documents/KEGG_sketching_annotation/scripts/temp.csv', index=False)
 
     # write the output file
     # output_df.to_csv(output_file, index=False)
     print("Summarizing gene coverage information...")
-    ground_truth_df = create_ground_truth(output_df)
+    ground_truth_df = create_ground_truth(gene_to_df)
     print("Writing output file...")
     ground_truth_df.to_csv(output_file, index=False)
 
