@@ -143,6 +143,66 @@ def bin_search(arr, target):
             soln = int((right+soln)/2)
     return soln
 
+
+def find_overlaps(simulation_df, contig_intervals):
+    """
+    Takes the following:
+    simulation_df: a pandas df that has <contig_id, start, end> as rows
+    contig_intervals: a dictionary keyed by contig_ids, maps to a dict
+    The dict is keyed by gene_name, and maps to gene_start and gene_end coordinates.
+    Returns a dict, keyed by gene_name, maps to a dataframe that has the following info as rows:
+    <contig_id, gene_name, num_bases_overlap, overlap_start, overlap_end, gene_start, gene_end>
+    """
+    gene_to_df = {}
+    for i in range(len(simulation_df)):
+        contig_id = simulation_df.iloc[i]["contig_id"]
+
+        # get the start and end positions of the read
+        start = simulation_df.iloc[i]["start"]
+        end = simulation_df.iloc[i]["end"]
+
+        gene_names = contig_intervals[contig_id].keys()
+
+        # iterate through the gene names
+        if not gene_names:
+            continue
+        for gene_name in gene_names:
+
+            # get the start and end positions of the gene
+            tuple = contig_intervals[contig_id][gene_name]
+            gene_start = tuple[0]
+            gene_end = tuple[1]
+
+            max_start = max(start, gene_start)
+            min_end = min(end, gene_end)
+            if max_start > min_end:
+                # no overlap
+                continue
+
+            # get the number of bases that overlap
+            num_bases_overlap = min_end - max_start + 1
+            # get the overlap start and end positions
+            overlap_start = max_start
+            overlap_end = min_end
+            # add the information to the output dataframe
+
+            if gene_name in gene_to_df_records.keys():
+                output_df_data = gene_to_df_records[gene_name]
+            else:
+                output_df_data = {"contig_id": [], "gene_name": [], "num_bases_overlap": [], "overlap_start": [], "overlap_end": [], "gene_start": [], "gene_end": []}
+                gene_to_df_records[gene_name] = output_df_data
+                output_df_data = gene_to_df_records[gene_name]
+
+            output_df_data["contig_id"].append(contig_id)
+            output_df_data["gene_name"].append(gene_name)
+            output_df_data["num_bases_overlap"].append(num_bases_overlap)
+            output_df_data["overlap_start"].append(overlap_start)
+            output_df_data["overlap_end"].append(overlap_end)
+            output_df_data["gene_start"].append(gene_start)
+            output_df_data["gene_end"].append(gene_end)
+    return gene_to_df
+
+
 def main():
     # parse the arguments
     args = parse_args()
@@ -258,55 +318,8 @@ def main():
     #sorted_start_positions = {}
 
     print("Finding overlaps...")
-    gene_to_df_records = {}
+    gene_to_df_records = find_overlaps(simulation_df, contig_intervals)
     #output_df_data = {"contig_id": [], "gene_name": [], "num_bases_overlap": [], "overlap_start": [], "overlap_end": [], "gene_start": [], "gene_end": []}
-    # iterate through the all the reads in the simulation file looking for overlaps to genes
-
-    for i in range(len(simulation_df)):
-        contig_id = simulation_df.iloc[i]["contig_id"]
-
-        # get the start and end positions of the read
-        start = simulation_df.iloc[i]["start"]
-        end = simulation_df.iloc[i]["end"]
-
-        gene_names = contig_intervals[contig_id].keys()
-
-        # iterate through the gene names
-        if gene_names:
-            for gene_name in gene_names:
-
-                # get the start and end positions of the gene
-                tuple = contig_intervals[contig_id][gene_name]
-                gene_start = tuple[0]
-                gene_end = tuple[1]
-
-                max_start = max(start, gene_start)
-                min_end = min(end, gene_end)
-                if max_start > min_end:
-                    # no overlap
-                    continue
-
-                # get the number of bases that overlap
-                num_bases_overlap = min_end - max_start + 1
-                # get the overlap start and end positions
-                overlap_start = max_start
-                overlap_end = min_end
-                # add the information to the output dataframe
-
-                if gene_name in gene_to_df_records.keys():
-                    output_df_data = gene_to_df_records[gene_name]
-                else:
-                    output_df_data = {"contig_id": [], "gene_name": [], "num_bases_overlap": [], "overlap_start": [], "overlap_end": [], "gene_start": [], "gene_end": []}
-                    gene_to_df_records[gene_name] = output_df_data
-                    output_df_data = gene_to_df_records[gene_name]
-
-                output_df_data["contig_id"].append(contig_id)
-                output_df_data["gene_name"].append(gene_name)
-                output_df_data["num_bases_overlap"].append(num_bases_overlap)
-                output_df_data["overlap_start"].append(overlap_start)
-                output_df_data["overlap_end"].append(overlap_end)
-                output_df_data["gene_start"].append(gene_start)
-                output_df_data["gene_end"].append(gene_end)
 
     print("Putting data in dataframe...")
     gene_to_df = {}
