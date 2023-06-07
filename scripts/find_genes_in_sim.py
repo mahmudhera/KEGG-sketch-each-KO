@@ -192,7 +192,7 @@ def find_overlaps(simulation_df, contig_intervals):
         # iterate through the gene names
         if not gene_names:
             continue
-        for gene_name in gene_names[candidate_gene_index_start:]:
+        for gene_name in gene_names[candidate_gene_index_start:5]:
             # get the start and end positions of the gene
             tuple = contig_intervals[contig_id][gene_name]
             gene_start = tuple[0]
@@ -202,7 +202,7 @@ def find_overlaps(simulation_df, contig_intervals):
             min_end = min(end, gene_end)
             if max_start > min_end:
                 # no overlap
-                break
+                continue
 
             # get the number of bases that overlap
             num_bases_overlap = min_end - max_start + 1
