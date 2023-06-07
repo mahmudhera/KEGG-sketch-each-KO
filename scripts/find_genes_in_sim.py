@@ -330,9 +330,9 @@ def main():
         else:
             contig_id = contig_id.split("$")[0]
         if contig_id in contig_id_to_read_start_end.keys():
-            contig_id_to_read_start_end[contig_d].append( (start, end) )
+            contig_id_to_read_start_end[contig_id].append( (start, end) )
         else:
-            contig_id_to_read_start_end[contig_d] =  [(start, end)]
+            contig_id_to_read_start_end[contig_id] =  [(start, end)]
 
 
     # create dataframe for output
