@@ -124,24 +124,23 @@ def parse_args():
     return parser.parse_args()
 
 
-def bin_search(arr, target):
-    if target <= arr[0]:
-        return -1
-    if target >= arr[-1]:
-        return len(arr)-1
-    n = len(arr)
-
-    left = 0
-    right = len(arr)-1
-    soln = int((left+right)/2)
-    while True:
-        if arr[soln] <= target < arr[soln+1]:
-            return soln
-        if arr[soln] > target:
-            soln = int((left+soln)/2)
+# this code was taken from here: https://www.geeksforgeeks.org/search-insert-position-of-k-in-a-sorted-array/
+def bin_search(arr, K):
+    # Lower and upper bounds
+    start = 0
+    end = len(arr) - 1
+    # Traverse the search space
+    while start<= end:
+        mid = (start + end)//2
+        if arr[mid] == K:
+            return mid
+        elif arr[mid] < K:
+            start = mid + 1
         else:
-            soln = int((right+soln)/2)
-    return soln
+            end = mid-1
+    # Return the insert position
+    return max(end, 0)
+
 
 
 def find_overlaps(simulation_df, contig_intervals):
@@ -167,6 +166,18 @@ def find_overlaps(simulation_df, contig_intervals):
     for gene_id in list(contig_intervals[contig_id].keys())[:5]+list(contig_intervals[contig_id].keys())[-5:]:
         print( contig_intervals[contig_id][gene_id][0], contig_intervals[contig_id][gene_id][1] )
 
+    # dict indexed by contig_ids
+    # maps to some data structure
+    contig_id_to_start_positions = {}
+    for contig_id in contig_intervals.keys():
+        contig_id_to_start_positions[contig_id] = [ contig_intervals[contig_id][gene_id][0] for gene_id in contig_intervals[contig_id].keys() ]
+
+    contig_id_to_gene_names = {}
+    for contig_id in contig_intervals.keys():
+        contig_id_to_gene_names[contig_id] = [ gene_id for gene_id in contig_intervals[contig_id].keys() ]
+
+    # query by a number: get back list such that arr[i] = gene with overlap, i in the list
+
     gene_to_df_records = {}
     for i in range(len(simulation_df)):
         contig_id = simulation_df.iloc[i]["contig_id"]
@@ -175,13 +186,13 @@ def find_overlaps(simulation_df, contig_intervals):
         start = simulation_df.iloc[i]["start"]
         end = simulation_df.iloc[i]["end"]
 
-        gene_names = contig_intervals[contig_id].keys()
+        candidate_gene_index_start = bin_search(contig_id_to_start_positions[contig_d], start)
+        gene_names = contig_id_to_gene_names[contig_id]
 
         # iterate through the gene names
         if not gene_names:
             continue
-        for gene_name in gene_names:
-
+        for gene_name in gene_names[candidate_gene_index_start:]:
             # get the start and end positions of the gene
             tuple = contig_intervals[contig_id][gene_name]
             gene_start = tuple[0]
@@ -191,7 +202,7 @@ def find_overlaps(simulation_df, contig_intervals):
             min_end = min(end, gene_end)
             if max_start > min_end:
                 # no overlap
-                continue
+                break
 
             # get the number of bases that overlap
             num_bases_overlap = min_end - max_start + 1
