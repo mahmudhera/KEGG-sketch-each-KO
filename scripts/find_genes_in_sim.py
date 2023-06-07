@@ -192,7 +192,7 @@ def find_overlaps(simulation_df, contig_intervals):
         # iterate through the gene names
         if not gene_names:
             continue
-        for gene_name in gene_names[candidate_gene_index_start:5]:
+        for gene_name in gene_names[candidate_gene_index_start:candidate_gene_index_start+5]:
             # get the start and end positions of the gene
             tuple = contig_intervals[contig_id][gene_name]
             gene_start = tuple[0]
