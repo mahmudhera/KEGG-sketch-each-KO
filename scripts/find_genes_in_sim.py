@@ -179,8 +179,14 @@ def find_overlaps(contig_id_to_read_start_end, contig_intervals):
 
     gene_to_df_records = {}
     for contig_id in contig_id_to_read_start_end.keys():
+        if contig_id not in contig_id_to_start_positions.keys():
+            print(contig_id)
+            print('ERROR: this was not found!!!')
+            print(contig_id_to_start_positions.keys())
+            continue
+        list_start_positions = contig_id_to_start_positions[contig_id]
         for (start, end) in contig_id_to_read_start_end[contig_id]:
-            candidate_gene_index_start = max(bin_search(contig_id_to_start_positions[contig_id], start)-2, 0)
+            candidate_gene_index_start = max(bin_search(, start)-2, 0)
             gene_names = contig_id_to_gene_names[contig_id]
 
             # iterate through the gene names
