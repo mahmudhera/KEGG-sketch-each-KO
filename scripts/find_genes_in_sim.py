@@ -186,7 +186,7 @@ def find_overlaps(simulation_df, contig_intervals):
         start = simulation_df.iloc[i]["start"]
         end = simulation_df.iloc[i]["end"]
 
-        candidate_gene_index_start = bin_search(contig_id_to_start_positions[contig_d], start)
+        candidate_gene_index_start = bin_search(contig_id_to_start_positions[contig_id], start)
         gene_names = contig_id_to_gene_names[contig_id]
 
         # iterate through the gene names
