@@ -169,13 +169,12 @@ def find_overlaps(simulation_df, contig_intervals):
     # dict indexed by contig_ids
     # maps to some data structure
     contig_id_to_start_positions = {}
-    for contig_id in contig_intervals.keys():
-        contig_id_to_start_positions[contig_id] = [ contig_intervals[contig_id][gene_id][0] for gene_id in contig_intervals[contig_id].keys() ]
-
     contig_id_to_gene_names = {}
     for contig_id in contig_intervals.keys():
-        contig_id_to_gene_names[contig_id] = [ gene_id for gene_id in contig_intervals[contig_id].keys() ]
-        contig_id_to_gene_names[contig_id].sort()
+        tmp_arr = [ (contig_intervals[contig_id][gene_id][0], gene_id) for gene_id in contig_intervals[contig_id].keys() ]
+        tmp_arr.sort()
+        contig_id_to_start_positions[contig_id] = [ start_pos for (gene_id, start_pos) in tmp_arr ]
+        contig_id_to_gene_names[contig_id] = [ gene_id for (gene_id, start_pos) in tmp_arr ]
 
     # query by a number: get back list such that arr[i] = gene with overlap, i in the list
 
@@ -187,7 +186,7 @@ def find_overlaps(simulation_df, contig_intervals):
         start = simulation_df.iloc[i]["start"]
         end = simulation_df.iloc[i]["end"]
 
-        candidate_gene_index_start = bin_search(contig_id_to_start_positions[contig_id], start)
+        candidate_gene_index_start = max(bin_search(contig_id_to_start_positions[contig_id], start)-2, 0)
         gene_names = contig_id_to_gene_names[contig_id]
 
         # iterate through the gene names
