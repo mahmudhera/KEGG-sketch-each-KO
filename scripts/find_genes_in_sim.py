@@ -173,8 +173,8 @@ def find_overlaps(simulation_df, contig_intervals):
     for contig_id in contig_intervals.keys():
         tmp_arr = [ (contig_intervals[contig_id][gene_id][0], gene_id) for gene_id in contig_intervals[contig_id].keys() ]
         tmp_arr.sort()
-        contig_id_to_start_positions[contig_id] = [ start_pos for (gene_id, start_pos) in tmp_arr ]
-        contig_id_to_gene_names[contig_id] = [ gene_id for (gene_id, start_pos) in tmp_arr ]
+        contig_id_to_start_positions[contig_id] = [ start_pos for (start_pos, gene_id) in tmp_arr ]
+        contig_id_to_gene_names[contig_id] = [ gene_id for (start_pos, gene_id) in tmp_arr ]
 
     # query by a number: get back list such that arr[i] = gene with overlap, i in the list
 
