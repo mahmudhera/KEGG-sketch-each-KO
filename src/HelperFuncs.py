@@ -196,7 +196,7 @@ def run_diamond_blastx(query_file, database_file, out_file, num_threads=multipro
     return
 
 
-def parse_diamond_results(matches_file, pident_threshold=0.8):
+def parse_diamond_results(matches_file, pident_threshold=0.85):
     """
     This parses the DIAMOND output csv file and returns some values about the results.
     :param matches_file: the output csv file from DIAMOND
@@ -208,6 +208,10 @@ def parse_diamond_results(matches_file, pident_threshold=0.8):
     # get best matches for each seq read
     df = pd.read_csv(matches_file, sep='\t')
     print(df.sample(10))
+
+    # exclude all mapping below threshold of percentage identity
+    df = df[ df['pident'] >= pident_threshold ]
+
     #df2 = df.groupby(['qseqid']).max()
 
     idx = df.groupby(['qseqid'])['bitscore'].transform(max) == df['bitscore']
