@@ -196,7 +196,7 @@ def run_diamond_blastx(query_file, database_file, out_file, num_threads=multipro
     return
 
 
-def parse_diamond_results(matches_file, pident_threshold=0.1):
+def parse_diamond_results(matches_file, pident_threshold=0.8):
     """
     This parses the DIAMOND output csv file and returns some values about the results.
     :param matches_file: the output csv file from DIAMOND
@@ -217,7 +217,7 @@ def parse_diamond_results(matches_file, pident_threshold=0.1):
     df = df2
 
     # exclude all mapping below threshold of percentage identity
-    #df = df2[ df2['pident'] >= pident_threshold ]
+    df = df2[ df2['pident'] >= pident_threshold ]
 
     ref_ids = [x.split('|')[0] for x in df['sseqid']]
     ref_ids_tally = Counter(ref_ids)
