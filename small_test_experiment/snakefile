@@ -1,5 +1,7 @@
 script_dir = '../scripts'
 data_dir = 'data'
+kofam_location = '/home/grads/mbr5797/kofamscan/bin/kofamscan/exec_annotation'
+kofam_config_location = '/home/grads/mbr5797/kofamscan/bin/kofamscan/config.yml'
 
 read_length = 150
 ref_scale = 1000
@@ -24,6 +26,17 @@ rule all:
     input:
         expand(data_dir+'/diamond_performance_metrics_num_reads_{num_reads}_seed_{seed}', num_reads=num_reads_list, seed=seeds_list),
         expand(data_dir+'/sourmash_performance_metrics_num_reads_{num_reads}_seed_{seed}_k_{k}', num_reads=num_reads_list, seed=seeds_list, k=kmer_sizes)
+        expand(data_dir+'/kofam_output_num_reads_{num_reads}_seed_{seed}', num_reads=num_reads_list, seed=seeds_list)
+
+rule run_kofam:
+    input:
+        data_dir+'/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fasta'
+    output:
+        data_dir+'/kofam_output_num_reads_{num_reads}_seed_{seed}'
+    benchmark:
+        data_dir+'/kofam_benchmark_num_reads_{num_reads}_seed_{seed}'
+    shell:
+        kofam_location + ' -o {output[0]} -c {kofam_config_location} {input[0]}'
 
 rule get_diamond_perf_metrics:
     input:
@@ -98,7 +111,15 @@ rule create_ground_truth:
 
 rule create_all_metagenomes:
     input:
-        expand(data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq', num_reads=num_reads_list, seed=seeds_list)
+        expand(data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fasta', num_reads=num_reads_list, seed=seeds_list)
+
+rule create_fasta:
+    input:
+        data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq'
+    output:
+        data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fasta'
+    shell:
+        'sed -n \'1~4s/^@/>/p;2~4p\' {input[0]} > {output[0]}'
 
 rule create_metagenomes:
     input:
