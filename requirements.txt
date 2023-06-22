@@ -6,4 +6,5 @@ screed
 scipy
 snakemake
 pytest
-sourmash 
+sourmash
+line_profiler
