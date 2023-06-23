@@ -47,9 +47,9 @@ rule run_kofam:
         data_dir+'/kofam_ko_output_num_reads_{num_reads}_seed_{seed}'
     benchmark:
         data_dir+'/kofam_benchmark_num_reads_{num_reads}_seed_{seed}'
-    shell:
-        kofam_location + ' -o ' + data_dir+'/kofam_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' -c ' + kofam_config_location + ' ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fasta'
-        'python {script_dir}/parse_kofam_output_file.py ' + data_dir+'/kofam_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' ' + data_dir+'/kofam_ko_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}'
+    run:
+        shell(kofam_location + ' -o ' + data_dir+'/kofam_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' -c ' + kofam_config_location + ' ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fasta')
+        shell('python {script_dir}/parse_kofam_output_file.py ' + data_dir+'/kofam_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' ' + data_dir+'/kofam_ko_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}')
 
 rule get_diamond_perf_metrics:
     input:
