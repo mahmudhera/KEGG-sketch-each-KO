@@ -25,7 +25,10 @@ pident_threshold = 0.1
 rule all:
     input:
         expand(data_dir+'/diamond_performance_metrics_num_reads_{num_reads}_seed_{seed}', num_reads=num_reads_list, seed=seeds_list),
-        expand(data_dir+'/sourmash_performance_metrics_num_reads_{num_reads}_seed_{seed}_k_{k}', num_reads=num_reads_list, seed=seeds_list, k=kmer_sizes),
+        expand(data_dir+'/sourmash_performance_metrics_num_reads_{num_reads}_seed_{seed}_k_{k}', num_reads=num_reads_list, seed=seeds_list, k=kmer_sizes)
+
+rule all_kofam:
+    input:
         expand(data_dir+'/kofam_performance_metrics_num_reads_{num_reads}_seed_{seed}', num_reads=num_reads_list, seed=seeds_list)
 
 rule get_kofam_perf_metrics:
