@@ -14,7 +14,7 @@ genome_path = '/scratch/mbr5797/genomes_extracted_from_kegg'
 #num_reads_list = ['250000', '500000', '750000', '1000000']
 num_reads_list = ['1000000', '5000000', '10000000']
 seeds_list = [str(i) for i in range(3)]
-kmer_sizes = [str(ksize) for ksize in [5, 7, 11, 13] ]
+kmer_sizes = [str(ksize) for ksize in [7, 11] ]
 k = 7
 
 present_genes_filename = "/scratch/mbr5797/genomes_extracted_from_kegg/present_genes_and_koids.csv"
