@@ -132,7 +132,15 @@ rule create_ground_truth:
 
 rule create_all_metagenomes:
     input:
-        expand(data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq', num_reads=num_reads_list, seed=seeds_list)
+        expand(data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fasta', num_reads=num_reads_list, seed=seeds_list)
+
+rule create_fasta:
+    input:
+        data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq'
+    output:
+        data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fasta'
+    shell:
+        'sed -n \'1~4s/^@/>/p;2~4p\' {input[0]} > {output[0]}'
 
 rule create_metagenomes:
     input:
