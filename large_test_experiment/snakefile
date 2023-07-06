@@ -2,6 +2,7 @@ script_dir = '../scripts'
 data_dir = 'data'
 kofam_location = '/home/grads/mbr5797/kofamscan/bin/kofamscan/exec_annotation'
 kofam_config_location = '/home/grads/mbr5797/kofamscan/bin/kofamscan/config.yml'
+protein_ref_db = 'data/protein_ref_db_giant.faa'
 
 read_length = 150
 ref_scale = 1000
@@ -74,14 +75,15 @@ rule run_diamond:
     input:
         script_dir+'/run_diamond_for_ko.py',
         data_dir+'/protein_ref_truncated.faa',
-        data_dir+'/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq'
+        data_dir+'/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq',
+        protein_ref_db
     output:
         data_dir+'/diamond_output_file_num_reads_{num_reads}_seed_{seed}',
         data_dir+'/diamond_ko_file_num_reads_{num_reads}_seed_{seed}'
     benchmark:
         data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
     shell:
-        '{input[0]} -r {input[1]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename + ' -t ' + str(pident_threshold)
+        '{input[0]} -r {input[3]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename + ' -t ' + str(pident_threshold)
 
 rule get_sourmash_perf_metrics:
     input:
