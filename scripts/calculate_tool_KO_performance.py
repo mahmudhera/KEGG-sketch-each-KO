@@ -63,8 +63,14 @@ if __name__ == '__main__':
             FP = len(kos_tool_set.difference(filtered_kos_gt_set))
             FN = len(filtered_kos_gt_set.difference(kos_tool_set))
 
-            recall = 1.0*TP/(TP+FN)
-            precision = 1.0*(TP)/(TP+FP)
+            try:
+                recall = 1.0*TP/(TP+FN)
+            except:
+                recall = 0.0
+            try:
+                precision = 1.0*(TP)/(TP+FP)
+            except:
+                precision = 0.0
             try:
                 F1 = 2.0/( 1.0/recall + 1.0/precision )
             except:
