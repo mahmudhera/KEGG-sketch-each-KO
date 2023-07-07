@@ -72,7 +72,6 @@ rule get_diamond_perf_metrics:
 rule run_diamond:
     input:
         script_dir+'/run_diamond_for_ko.py',
-        data_dir+'/protein_ref_truncated.faa',
         data_dir+'/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq',
         protein_ref_db
     output:
@@ -81,7 +80,7 @@ rule run_diamond:
     benchmark:
         data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
     shell:
-        '{input[0]} -r {input[3]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename + ' -t ' + str(pident_threshold)
+        '{input[0]} -r {input[2]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename + ' -t ' + str(pident_threshold)
 
 rule get_sourmash_perf_metrics:
     input:
@@ -156,7 +155,6 @@ rule setup_initials:
         "setup.sh",
         script_dir + '/create_genome_ref_db.py'
     output:
-        data_dir + '/genome_ref_full.fa',
-        data_dir + '/protein_ref_full.faa'
+        data_dir + '/genome_ref_full.fa'
     shell:
         'bash {input[0]} ' + script_dir + ' ' + data_dir + ' ' + str(num_genomes_full_db) + ' ' + str(num_genomes_truncated_db) + ' ' + str(read_length) + ' ' + str(k) + ' ' + str(ref_scale) + ' ' + str(query_scale) + ' ' + str(threshold_bp) + ' ' + genome_path
