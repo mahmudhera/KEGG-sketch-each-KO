@@ -157,8 +157,6 @@ rule setup_initials:
         script_dir + '/create_genome_ref_db.py'
     output:
         data_dir + '/genome_ref_full.fa',
-        data_dir + '/genome_ref_truncated.fa',
-        data_dir + '/protein_ref_full.faa',
-        data_dir + '/protein_ref_truncated.faa'
+        data_dir + '/protein_ref_full.faa'
     shell:
         'bash {input[0]} ' + script_dir + ' ' + data_dir + ' ' + str(num_genomes_full_db) + ' ' + str(num_genomes_truncated_db) + ' ' + str(read_length) + ' ' + str(k) + ' ' + str(ref_scale) + ' ' + str(query_scale) + ' ' + str(threshold_bp) + ' ' + genome_path
