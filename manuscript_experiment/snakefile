@@ -2,24 +2,22 @@ script_dir = '../scripts'
 data_dir = 'data'
 kofam_location = '/home/grads/mbr5797/kofamscan/bin/kofamscan/exec_annotation'
 kofam_config_location = '/home/grads/mbr5797/kofamscan/bin/kofamscan/config.yml'
-protein_ref_db = '/scratch/mbr5797/protein_ref_db_4000.faa'
+protein_ref_db = '/scratch/mbr5797/protein_ref_db_giant.faa'
+present_genes_filename = "/scratch/mbr5797/genomes_extracted_from_kegg/present_genes_and_koids.csv"
+ko_sig_file = "/scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip"
 
 read_length = 150
 ref_scale = 1000
 query_scale = 1000
 threshold_bp = 5
-num_organisms = 30
-num_genomes_full_db = 30
-num_genomes_truncated_db = 20
+num_organisms = 1000
+num_genomes_full_db = 1000
+num_genomes_truncated_db = 1000
 genome_path = '/scratch/mbr5797/genomes_extracted_from_kegg'
-#num_reads_list = ['250000', '500000', '750000', '1000000']
-num_reads_list = ['10000', '100000', '1000000']
-seeds_list = [str(i) for i in range(3)]
-kmer_sizes = [str(ksize) for ksize in [7, 11] ]
+num_reads_list = [str((i+1)*1000000) for i in range(10)]
+seeds_list = [str(i) for i in range(10)]
+kmer_sizes = [str(ksize) for ksize in [7, 11, 15] ]
 k = 7
-
-present_genes_filename = "/scratch/mbr5797/genomes_extracted_from_kegg/present_genes_and_koids.csv"
-ko_sig_file = "../sketched_references/KOs_sketched_scaled_1000.sig.zip"
 
 pident_threshold = 0.1
 
@@ -60,7 +58,6 @@ rule run_kofam:
     shell:
         kofam_location + ' -o ' + data_dir+'/kofam_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' -c ' + kofam_config_location + ' ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fasta'
 
-
 rule get_diamond_perf_metrics:
     input:
         script_dir+'/calculate_tool_KO_performance.py',
@@ -75,7 +72,6 @@ rule get_diamond_perf_metrics:
 rule run_diamond:
     input:
         script_dir+'/run_diamond_for_ko.py',
-        data_dir+'/protein_ref_truncated.faa',
         data_dir+'/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq',
         protein_ref_db
     output:
@@ -84,7 +80,7 @@ rule run_diamond:
     benchmark:
         data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
     shell:
-        '{input[0]} -r {input[3]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename + ' -t ' + str(pident_threshold)
+        '{input[0]} -r {input[2]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename + ' -t ' + str(pident_threshold)
 
 rule get_sourmash_perf_metrics:
     input:
@@ -159,9 +155,6 @@ rule setup_initials:
         "setup.sh",
         script_dir + '/create_genome_ref_db.py'
     output:
-        data_dir + '/genome_ref_full.fa',
-        data_dir + '/genome_ref_truncated.fa',
-        data_dir + '/protein_ref_full.faa',
-        data_dir + '/protein_ref_truncated.faa'
+        data_dir + '/genome_ref_full.fa'
     shell:
         'bash {input[0]} ' + script_dir + ' ' + data_dir + ' ' + str(num_genomes_full_db) + ' ' + str(num_genomes_truncated_db) + ' ' + str(read_length) + ' ' + str(k) + ' ' + str(ref_scale) + ' ' + str(query_scale) + ' ' + str(threshold_bp) + ' ' + genome_path

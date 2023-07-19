@@ -1,5 +1,8 @@
 script_dir = '../scripts'
 data_dir = 'data'
+kofam_location = '/home/grads/mbr5797/kofamscan/bin/kofamscan/exec_annotation'
+kofam_config_location = '/home/grads/mbr5797/kofamscan/bin/kofamscan/config.yml'
+protein_ref_db = 'data/protein_ref_db_giant.faa'
 
 read_length = 150
 ref_scale = 1000
@@ -25,6 +28,38 @@ rule all:
         expand(data_dir+'/diamond_performance_metrics_num_reads_{num_reads}_seed_{seed}', num_reads=num_reads_list, seed=seeds_list),
         expand(data_dir+'/sourmash_performance_metrics_num_reads_{num_reads}_seed_{seed}_k_{k}', num_reads=num_reads_list, seed=seeds_list, k=kmer_sizes)
 
+rule all_kofam:
+    input:
+        expand(data_dir+'/kofam_performance_metrics_num_reads_{num_reads}_seed_{seed}', num_reads=num_reads_list, seed=seeds_list)
+
+rule get_kofam_perf_metrics:
+    input:
+        script_dir+'/calculate_tool_KO_performance.py',
+        data_dir+'/kofam_ko_output_num_reads_{num_reads}_seed_{seed}',
+        data_dir+'/ground_truth_num_reads_{num_reads}_seed_{seed}.csv'
+    output:
+        data_dir+'/kofam_performance_metrics_num_reads_{num_reads}_seed_{seed}'
+    shell:
+        'python {input[0]} ' + data_dir+'/ground_truth_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.csv' + ' ' + data_dir+'/kofam_ko_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' ' + data_dir+'/kofam_performance_metrics_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}'
+
+rule parse_kofam_output:
+    input:
+        data_dir+'/kofam_output_num_reads_{num_reads}_seed_{seed}'
+    output:
+        data_dir+'/kofam_ko_output_num_reads_{num_reads}_seed_{seed}'
+    shell:
+        'python {script_dir}/parse_kofam_output_file.py ' + data_dir+'/kofam_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' ' + data_dir+'/kofam_ko_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}'
+
+rule run_kofam:
+    input:
+        data_dir+'/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fasta'
+    output:
+        data_dir+'/kofam_output_num_reads_{num_reads}_seed_{seed}'
+    benchmark:
+        data_dir+'/kofam_benchmark_num_reads_{num_reads}_seed_{seed}'
+    shell:
+        kofam_location + ' -o ' + data_dir+'/kofam_output_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}' + ' -c ' + kofam_config_location + ' ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fasta'
+
 rule get_diamond_perf_metrics:
     input:
         script_dir+'/calculate_tool_KO_performance.py',
@@ -40,14 +75,15 @@ rule run_diamond:
     input:
         script_dir+'/run_diamond_for_ko.py',
         data_dir+'/protein_ref_truncated.faa',
-        data_dir+'/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq'
+        data_dir+'/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq',
+        protein_ref_db
     output:
         data_dir+'/diamond_output_file_num_reads_{num_reads}_seed_{seed}',
         data_dir+'/diamond_ko_file_num_reads_{num_reads}_seed_{seed}'
     benchmark:
         data_dir+'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
     shell:
-        '{input[0]} -r {input[1]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename + ' -t ' + str(pident_threshold)
+        '{input[0]} -r {input[3]} -m ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq -o ' + data_dir + ' -d ' + data_dir+'/diamond_output_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -k ' + data_dir+'/diamond_ko_file_num_reads_{wildcards.num_reads}_seed_{wildcards.seed} -p ' + present_genes_filename + ' -t ' + str(pident_threshold)
 
 rule get_sourmash_perf_metrics:
     input:
@@ -98,7 +134,15 @@ rule create_ground_truth:
 
 rule create_all_metagenomes:
     input:
-        expand(data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq', num_reads=num_reads_list, seed=seeds_list)
+        expand(data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fasta', num_reads=num_reads_list, seed=seeds_list)
+
+rule create_fasta:
+    input:
+        data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fastq'
+    output:
+        data_dir + '/simulated_metagenome_num_reads_{num_reads}_seed_{seed}.fasta'
+    shell:
+        'sed -n \'1~4s/^@/>/p;2~4p\' {input[0]} > {output[0]}'
 
 rule create_metagenomes:
     input:

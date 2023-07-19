@@ -25,7 +25,7 @@ if __name__ == '__main__':
     dict = Counter(kos)
     out_list = []
     for ko_id in dict.keys():
-        out_list.append( (ko_id, 1.0*dict[ko_id]/count_all) )
+        out_list.append( (f'ko:{ko_id}', 1.0*dict[ko_id]/count_all) )
 
     out_df = pd.DataFrame(out_list, columns=['ko_id', 'abundance'])
     out_df.to_csv( output_filename )
