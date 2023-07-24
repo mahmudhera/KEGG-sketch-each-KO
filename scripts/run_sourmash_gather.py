@@ -30,6 +30,8 @@ if __name__=='__main__':
     metagenome_signature_name = metagenome_name + '_k_' + str(ksize) + '.sig.zip'
     metagenome_signature_file = 'metagenome_sketches/' + metagenome_signature_name
 
+    subprocess.call( ['rm', metagenome_signature_file] )
+
     cmd = 'sourmash sketch translate -p scaled=' + scaled + ',k=' + ksize + ' ' + metagenome_file + ' -o ' + metagenome_signature_file
     print(cmd)
     subprocess.call( cmd.split(' ') )
