@@ -1,0 +1,2714 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                          count    min threads    max threads
+-------------------------  -------  -------------  -------------
+all                              1              1              1
+create_ground_truth              3              1              1
+create_ground_truth_ko          14              1              1
+get_diamond_perf_metrics       100              1              1
+get_sourmash_perf_metrics      127              1              1
+run_diamond                     82              1              1
+run_sourmash                    52              1              1
+total                          379              1              1
+
+Select jobs to execute...
+
+[Sun Jul 23 12:21:29 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_8000000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_8000000_seed_0_k_11, data/sourmash_kos_8000000_seed_0_k_11
+    jobid: 925
+    benchmark: data/sourmash_gather_benchmark_8000000_seed_0_k_11
+    reason: Missing output files: data/sourmash_gather_num_reads_8000000_seed_0_k_11, data/sourmash_kos_8000000_seed_0_k_11
+    wildcards: num_reads=8000000, seed=0, k=11
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:29 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_6000000_seed_6.fastq
+    output: data/sourmash_gather_num_reads_6000000_seed_6_k_11, data/sourmash_kos_6000000_seed_6_k_11
+    jobid: 841
+    benchmark: data/sourmash_gather_benchmark_6000000_seed_6_k_11
+    reason: Missing output files: data/sourmash_kos_6000000_seed_6_k_11, data/sourmash_gather_num_reads_6000000_seed_6_k_11
+    wildcards: num_reads=6000000, seed=6, k=11
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:29 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_4000000_seed_3.fastq
+    output: data/sourmash_gather_num_reads_4000000_seed_3_k_7, data/sourmash_kos_4000000_seed_3_k_7
+    jobid: 701
+    benchmark: data/sourmash_gather_benchmark_4000000_seed_3_k_7
+    reason: Missing output files: data/sourmash_gather_num_reads_4000000_seed_3_k_7, data/sourmash_kos_4000000_seed_3_k_7
+    wildcards: num_reads=4000000, seed=3, k=7
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:29 2023]
+rule get_diamond_perf_metrics:
+    input: ../scripts/calculate_tool_KO_performance.py, data/diamond_output_file_num_reads_8000000_seed_8, data/ground_truth_num_reads_8000000_seed_8.csv, data/diamond_ko_file_num_reads_8000000_seed_8
+    output: data/diamond_performance_metrics_num_reads_8000000_seed_8
+    jobid: 392
+    reason: Missing output files: data/diamond_performance_metrics_num_reads_8000000_seed_8
+    wildcards: num_reads=8000000, seed=8
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:29 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/simulated_metagenome_num_reads_5000000_seed_3.fastq, /scratch/mbr5797/protein_ref_db_giant.faa
+    output: data/diamond_output_file_num_reads_5000000_seed_3, data/diamond_ko_file_num_reads_5000000_seed_3
+    jobid: 218
+    benchmark: data/diamond_benchmark_num_reads_5000000_seed_3
+    reason: Missing output files: data/diamond_output_file_num_reads_5000000_seed_3, data/diamond_ko_file_num_reads_5000000_seed_3
+    wildcards: num_reads=5000000, seed=3
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:29 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_8000000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_8000000_seed_0_k_7, data/sourmash_kos_8000000_seed_0_k_7
+    jobid: 923
+    benchmark: data/sourmash_gather_benchmark_8000000_seed_0_k_7
+    reason: Missing output files: data/sourmash_gather_num_reads_8000000_seed_0_k_7, data/sourmash_kos_8000000_seed_0_k_7
+    wildcards: num_reads=8000000, seed=0, k=7
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:29 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_4000000_seed_2.fastq
+    output: data/sourmash_gather_num_reads_4000000_seed_2_k_15, data/sourmash_kos_4000000_seed_2_k_15
+    jobid: 699
+    benchmark: data/sourmash_gather_benchmark_4000000_seed_2_k_15
+    reason: Missing output files: data/sourmash_kos_4000000_seed_2_k_15, data/sourmash_gather_num_reads_4000000_seed_2_k_15
+    wildcards: num_reads=4000000, seed=2, k=15
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:29 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_8000000_seed_9.fastq
+    output: data/sourmash_gather_num_reads_8000000_seed_9_k_11, data/sourmash_kos_8000000_seed_9_k_11
+    jobid: 979
+    benchmark: data/sourmash_gather_benchmark_8000000_seed_9_k_11
+    reason: Missing output files: data/sourmash_kos_8000000_seed_9_k_11, data/sourmash_gather_num_reads_8000000_seed_9_k_11
+    wildcards: num_reads=8000000, seed=9, k=11
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:30 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_10000000_seed_3.fastq
+    output: data/sourmash_gather_num_reads_10000000_seed_3_k_15, data/sourmash_kos_10000000_seed_3_k_15
+    jobid: 1065
+    benchmark: data/sourmash_gather_benchmark_10000000_seed_3_k_15
+    reason: Missing output files: data/sourmash_kos_10000000_seed_3_k_15, data/sourmash_gather_num_reads_10000000_seed_3_k_15
+    wildcards: num_reads=10000000, seed=3, k=15
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:30 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/simulated_metagenome_num_reads_6000000_seed_5.fastq, /scratch/mbr5797/protein_ref_db_giant.faa
+    output: data/diamond_output_file_num_reads_6000000_seed_5, data/diamond_ko_file_num_reads_6000000_seed_5
+    jobid: 278
+    benchmark: data/diamond_benchmark_num_reads_6000000_seed_5
+    reason: Missing output files: data/diamond_ko_file_num_reads_6000000_seed_5, data/diamond_output_file_num_reads_6000000_seed_5
+    wildcards: num_reads=6000000, seed=5
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:30 2023]
+rule get_sourmash_perf_metrics:
+    input: ../scripts/calculate_tool_KO_performance.py, data/ground_truth_num_reads_4000000_seed_8.csv, data/sourmash_gather_num_reads_4000000_seed_8_k_11, data/sourmash_kos_4000000_seed_8_k_11
+    output: data/sourmash_performance_metrics_num_reads_4000000_seed_8_k_11
+    jobid: 732
+    reason: Missing output files: data/sourmash_performance_metrics_num_reads_4000000_seed_8_k_11
+    wildcards: num_reads=4000000, seed=8, k=11
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:30 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_9000000_seed_9.fastq
+    output: data/sourmash_gather_num_reads_9000000_seed_9_k_7, data/sourmash_kos_9000000_seed_9_k_7
+    jobid: 1037
+    benchmark: data/sourmash_gather_benchmark_9000000_seed_9_k_7
+    reason: Missing output files: data/sourmash_kos_9000000_seed_9_k_7, data/sourmash_gather_num_reads_9000000_seed_9_k_7
+    wildcards: num_reads=9000000, seed=9, k=7
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:30 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_9000000_seed_8.fastq
+    output: data/sourmash_gather_num_reads_9000000_seed_8_k_15, data/sourmash_kos_9000000_seed_8_k_15
+    jobid: 1035
+    benchmark: data/sourmash_gather_benchmark_9000000_seed_8_k_15
+    reason: Missing output files: data/sourmash_kos_9000000_seed_8_k_15, data/sourmash_gather_num_reads_9000000_seed_8_k_15
+    wildcards: num_reads=9000000, seed=8, k=15
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:30 2023]
+rule get_sourmash_perf_metrics:
+    input: ../scripts/calculate_tool_KO_performance.py, data/ground_truth_num_reads_7000000_seed_6.csv, data/sourmash_gather_num_reads_7000000_seed_6_k_11, data/sourmash_kos_7000000_seed_6_k_11
+    output: data/sourmash_performance_metrics_num_reads_7000000_seed_6_k_11
+    jobid: 900
+    reason: Missing output files: data/sourmash_performance_metrics_num_reads_7000000_seed_6_k_11
+    wildcards: num_reads=7000000, seed=6, k=11
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:30 2023]
+rule run_sourmash:
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_8000000_seed_9.fastq
+    output: data/sourmash_gather_num_reads_8000000_seed_9_k_15, data/sourmash_kos_8000000_seed_9_k_15
+    jobid: 981
+    benchmark: data/sourmash_gather_benchmark_8000000_seed_9_k_15
+    reason: Missing output files: data/sourmash_gather_num_reads_8000000_seed_9_k_15, data/sourmash_kos_8000000_seed_9_k_15
+    wildcards: num_reads=8000000, seed=9, k=15
+    resources: tmpdir=/tmp
+
+
+[Sun Jul 23 12:21:30 2023]
+rule get_diamond_perf_metrics:
+    input: ../scripts/calculate_tool_KO_performance.py, data/diamond_output_file_num_reads_1000000_seed_0, data/ground_truth_num_reads_1000000_seed_0.csv, data/diamond_ko_file_num_reads_1000000_seed_0
+    output: data/diamond_performance_metrics_num_reads_1000000_seed_0
+    jobid: 1
+    reason: Missing output files: data/diamond_performance_metrics_num_reads_1000000_seed_0
+    wildcards: num_reads=1000000, seed=0
+    resources: tmpdir=/tmp
+
+[Sun Jul 23 12:21:30 2023]
+Finished job 732.
+1 of 379 steps (0.3%) done
+Select jobs to execute...
+
+[Sun Jul 23 12:21:30 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/simulated_metagenome_num_reads_8000000_seed_0.fastq, /scratch/mbr5797/protein_ref_db_giant.faa
+    output: data/diamond_output_file_num_reads_8000000_seed_0, data/diamond_ko_file_num_reads_8000000_seed_0
+    jobid: 353
+    benchmark: data/diamond_benchmark_num_reads_8000000_seed_0
+    reason: Missing output files: data/diamond_output_file_num_reads_8000000_seed_0, data/diamond_ko_file_num_reads_8000000_seed_0
+    wildcards: num_reads=8000000, seed=0
+    resources: tmpdir=/tmp
+
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_6000000_seed_6.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 316, in load
+    return self._load_from_zf(self.zipfile, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 483, in open
+    manifest_data = storage.load('SOURMASH-MANIFEST.csv')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 154, in load
+    return self.__inner.load(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 319, in load
+    return self._load_from_zf(self.bufferzip, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 487, in open
+    raise ValueError(f"Cannot add to existing zipfile '{self.location}' without a manifest")
+ValueError: Cannot add to existing zipfile 'metagenome_sketches/simulated_metagenome_num_reads_6000000_seed_6.fastq_k_11.sig.zip' without a manifest
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_4000000_seed_3.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 476, in open
+    raise ValueError(f"File '{self.location}' cannot be opened as a zip file.")
+ValueError: File 'metagenome_sketches/simulated_metagenome_num_reads_4000000_seed_3.fastq_k_7.sig.zip' cannot be opened as a zip file.
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_8000000_seed_0.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 316, in load
+    return self._load_from_zf(self.zipfile, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 483, in open
+    manifest_data = storage.load('SOURMASH-MANIFEST.csv')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 154, in load
+    return self.__inner.load(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 319, in load
+    return self._load_from_zf(self.bufferzip, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+[Sun Jul 23 12:21:31 2023]
+Finished job 392.
+2 of 379 steps (1%) done
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+Select jobs to execute...
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 487, in open
+    raise ValueError(f"Cannot add to existing zipfile '{self.location}' without a manifest")
+ValueError: Cannot add to existing zipfile 'metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_0.fastq_k_7.sig.zip' without a manifest
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_9000000_seed_8.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 476, in open
+    raise ValueError(f"File '{self.location}' cannot be opened as a zip file.")
+ValueError: File 'metagenome_sketches/simulated_metagenome_num_reads_9000000_seed_8.fastq_k_15.sig.zip' cannot be opened as a zip file.
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_8000000_seed_0.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 476, in open
+    raise ValueError(f"File '{self.location}' cannot be opened as a zip file.")
+ValueError: File 'metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_0.fastq_k_11.sig.zip' cannot be opened as a zip file.
+
+[Sun Jul 23 12:21:32 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/simulated_metagenome_num_reads_9000000_seed_7.fastq, /scratch/mbr5797/protein_ref_db_giant.faa
+    output: data/diamond_output_file_num_reads_9000000_seed_7, data/diamond_ko_file_num_reads_9000000_seed_7
+    jobid: 438
+    benchmark: data/diamond_benchmark_num_reads_9000000_seed_7
+    reason: Missing output files: data/diamond_ko_file_num_reads_9000000_seed_7, data/diamond_output_file_num_reads_9000000_seed_7
+    wildcards: num_reads=9000000, seed=7
+    resources: tmpdir=/tmp
+
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_8000000_seed_9.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 316, in load
+    return self._load_from_zf(self.zipfile, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 483, in open
+    manifest_data = storage.load('SOURMASH-MANIFEST.csv')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 154, in load
+    return self.__inner.load(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 319, in load
+    return self._load_from_zf(self.bufferzip, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 487, in open
+    raise ValueError(f"Cannot add to existing zipfile '{self.location}' without a manifest")
+ValueError: Cannot add to existing zipfile 'metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_9.fastq_k_11.sig.zip' without a manifest
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_4000000_seed_2.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 316, in load
+    return self._load_from_zf(self.zipfile, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 483, in open
+    manifest_data = storage.load('SOURMASH-MANIFEST.csv')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 154, in load
+    return self.__inner.load(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 319, in load
+    return self._load_from_zf(self.bufferzip, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 487, in open
+    raise ValueError(f"Cannot add to existing zipfile '{self.location}' without a manifest")
+ValueError: Cannot add to existing zipfile 'metagenome_sketches/simulated_metagenome_num_reads_4000000_seed_2.fastq_k_15.sig.zip' without a manifest
+[Sun Jul 23 12:21:32 2023]
+Finished job 1.
+3 of 379 steps (1%) done
+Select jobs to execute...
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 190, in _load_sbt
+    db = load_sbt_index(filename, cache_size=cache_size)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbtmh.py", line 10, in load_sbt_index
+    return SBT.load(filename, leaf_loader=SigLeaf.load,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt.py", line 808, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Too small for anything but End Of Central Directory Record")' at src/core/src/storage.rs:255
+sourmash sketch translate -p scaled=1000,k=7 data/simulated_metagenome_num_reads_8000000_seed_0.fastq -o metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_0.fastq_k_7.sig.zip
+sourmash gather --protein -k 7 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_0.fastq_k_7.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_8000000_seed_0_k_7
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_8000000_seed_0_k_7'
+[Sun Jul 23 12:21:32 2023]
+Error in rule run_sourmash:
+    jobid: 923
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_8000000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_8000000_seed_0_k_7, data/sourmash_kos_8000000_seed_0_k_7
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 7 --threshold 5 --metagenome data/simulated_metagenome_num_reads_8000000_seed_0.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_8000000_seed_0_k_7 --outfile data/sourmash_kos_8000000_seed_0_k_7 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Sun Jul 23 12:21:32 2023]
+rule run_diamond:
+    input: ../scripts/run_diamond_for_ko.py, data/simulated_metagenome_num_reads_4000000_seed_1.fastq, /scratch/mbr5797/protein_ref_db_giant.faa
+    output: data/diamond_output_file_num_reads_4000000_seed_1, data/diamond_ko_file_num_reads_4000000_seed_1
+    jobid: 158
+    benchmark: data/diamond_benchmark_num_reads_4000000_seed_1
+    reason: Missing output files: data/diamond_output_file_num_reads_4000000_seed_1, data/diamond_ko_file_num_reads_4000000_seed_1
+    wildcards: num_reads=4000000, seed=1
+    resources: tmpdir=/tmp
+
+[Sun Jul 23 12:21:32 2023]
+Finished job 900.
+4 of 379 steps (1%) done
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 190, in _load_sbt
+    db = load_sbt_index(filename, cache_size=cache_size)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbtmh.py", line 10, in load_sbt_index
+    return SBT.load(filename, leaf_loader=SigLeaf.load,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt.py", line 808, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Too small for anything but End Of Central Directory Record")' at src/core/src/storage.rs:255
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_8000000_seed_9.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 476, in open
+    raise ValueError(f"File '{self.location}' cannot be opened as a zip file.")
+ValueError: File 'metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_9.fastq_k_15.sig.zip' cannot be opened as a zip file.
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_9000000_seed_9.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 476, in open
+    raise ValueError(f"File '{self.location}' cannot be opened as a zip file.")
+ValueError: File 'metagenome_sketches/simulated_metagenome_num_reads_9000000_seed_9.fastq_k_7.sig.zip' cannot be opened as a zip file.
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+[Kcomputing signatures for files: data/simulated_metagenome_num_reads_10000000_seed_3.fastq
+[KComputing a total of 1 signature(s) for each input.
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 316, in load
+    return self._load_from_zf(self.zipfile, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 309, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 483, in open
+    manifest_data = storage.load('SOURMASH-MANIFEST.csv')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 154, in load
+    return self.__inner.load(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 319, in load
+    return self._load_from_zf(self.bufferzip, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 312, in _load_from_zf
+    return zf.read(path)
+           ^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1509, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1546, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/zipfile.py", line 1475, in getinfo
+    raise KeyError(
+KeyError: "There is no item named 'signatures/SOURMASH-MANIFEST.csv' in the archive"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/sketch/translate.py", line 98, in main
+    return sourmash.command_sketch.translate(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 298, in translate
+    _execute_sketch(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_sketch.py", line 220, in _execute_sketch
+    _compute_individual(args, signatures_factory)
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/command_compute.py", line 199, in _compute_individual
+    save_sigs.open()
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 487, in open
+    raise ValueError(f"Cannot add to existing zipfile '{self.location}' without a manifest")
+ValueError: Cannot add to existing zipfile 'metagenome_sketches/simulated_metagenome_num_reads_10000000_seed_3.fastq_k_15.sig.zip' without a manifest
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 216, in _load_zipfile
+    db = ZipFileLinearIndex.load(filename,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/index/__init__.py", line 586, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Couldn't find End Of Central Directory Record")' at src/core/src/storage.rs:255
+sourmash sketch translate -p scaled=1000,k=11 data/simulated_metagenome_num_reads_6000000_seed_6.fastq -o metagenome_sketches/simulated_metagenome_num_reads_6000000_seed_6.fastq_k_11.sig.zip
+sourmash gather --protein -k 11 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_6000000_seed_6.fastq_k_11.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_6000000_seed_6_k_11
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_6000000_seed_6_k_11'
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 190, in _load_sbt
+    db = load_sbt_index(filename, cache_size=cache_size)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbtmh.py", line 10, in load_sbt_index
+    return SBT.load(filename, leaf_loader=SigLeaf.load,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt.py", line 808, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Too small for anything but End Of Central Directory Record")' at src/core/src/storage.rs:255
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 216, in _load_zipfile
+    db = ZipFileLinearIndex.load(filename,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/index/__init__.py", line 586, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Couldn't find End Of Central Directory Record")' at src/core/src/storage.rs:255
+sourmash sketch translate -p scaled=1000,k=15 data/simulated_metagenome_num_reads_4000000_seed_2.fastq -o metagenome_sketches/simulated_metagenome_num_reads_4000000_seed_2.fastq_k_15.sig.zip
+sourmash gather --protein -k 15 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_4000000_seed_2.fastq_k_15.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_4000000_seed_2_k_15
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_4000000_seed_2_k_15'
+[Sun Jul 23 12:21:33 2023]
+Error in rule run_sourmash:
+    jobid: 699
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_4000000_seed_2.fastq
+    output: data/sourmash_gather_num_reads_4000000_seed_2_k_15, data/sourmash_kos_4000000_seed_2_k_15
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 15 --threshold 5 --metagenome data/simulated_metagenome_num_reads_4000000_seed_2.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_4000000_seed_2_k_15 --outfile data/sourmash_kos_4000000_seed_2_k_15 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+sourmash sketch translate -p scaled=1000,k=7 data/simulated_metagenome_num_reads_4000000_seed_3.fastq -o metagenome_sketches/simulated_metagenome_num_reads_4000000_seed_3.fastq_k_7.sig.zip
+sourmash gather --protein -k 7 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_4000000_seed_3.fastq_k_7.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_4000000_seed_3_k_7
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_4000000_seed_3_k_7'
+[Sun Jul 23 12:21:33 2023]
+Error in rule run_sourmash:
+    jobid: 841
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_6000000_seed_6.fastq
+    output: data/sourmash_gather_num_reads_6000000_seed_6_k_11, data/sourmash_kos_6000000_seed_6_k_11
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 11 --threshold 5 --metagenome data/simulated_metagenome_num_reads_6000000_seed_6.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_6000000_seed_6_k_11 --outfile data/sourmash_kos_6000000_seed_6_k_11 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 216, in _load_zipfile
+    db = ZipFileLinearIndex.load(filename,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/index/__init__.py", line 586, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Couldn't find End Of Central Directory Record")' at src/core/src/storage.rs:255
+[Sun Jul 23 12:21:33 2023]
+sourmash sketch translate -p scaled=1000,k=11 data/simulated_metagenome_num_reads_8000000_seed_0.fastq -o metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_0.fastq_k_11.sig.zip
+sourmash gather --protein -k 11 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_0.fastq_k_11.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_8000000_seed_0_k_11
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_8000000_seed_0_k_11'
+Error in rule run_sourmash:
+    jobid: 701
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_4000000_seed_3.fastq
+    output: data/sourmash_gather_num_reads_4000000_seed_3_k_7, data/sourmash_kos_4000000_seed_3_k_7
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 7 --threshold 5 --metagenome data/simulated_metagenome_num_reads_4000000_seed_3.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_4000000_seed_3_k_7 --outfile data/sourmash_kos_4000000_seed_3_k_7 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+sourmash sketch translate -p scaled=1000,k=15 data/simulated_metagenome_num_reads_9000000_seed_8.fastq -o metagenome_sketches/simulated_metagenome_num_reads_9000000_seed_8.fastq_k_15.sig.zip
+sourmash gather --protein -k 15 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_9000000_seed_8.fastq_k_15.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_9000000_seed_8_k_15
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_9000000_seed_8_k_15'
+[Sun Jul 23 12:21:33 2023]
+Error in rule run_sourmash:
+    jobid: 925
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_8000000_seed_0.fastq
+    output: data/sourmash_gather_num_reads_8000000_seed_0_k_11, data/sourmash_kos_8000000_seed_0_k_11
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 11 --threshold 5 --metagenome data/simulated_metagenome_num_reads_8000000_seed_0.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_8000000_seed_0_k_11 --outfile data/sourmash_kos_8000000_seed_0_k_11 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 190, in _load_sbt
+    db = load_sbt_index(filename, cache_size=cache_size)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbtmh.py", line 10, in load_sbt_index
+    return SBT.load(filename, leaf_loader=SigLeaf.load,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt.py", line 808, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Too small for anything but End Of Central Directory Record")' at src/core/src/storage.rs:255
+[Sun Jul 23 12:21:33 2023]
+Error in rule run_sourmash:
+    jobid: 1035
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_9000000_seed_8.fastq
+    output: data/sourmash_gather_num_reads_9000000_seed_8_k_15, data/sourmash_kos_9000000_seed_8_k_15
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 15 --threshold 5 --metagenome data/simulated_metagenome_num_reads_9000000_seed_8.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_9000000_seed_8_k_15 --outfile data/sourmash_kos_9000000_seed_8_k_15 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+sourmash sketch translate -p scaled=1000,k=11 data/simulated_metagenome_num_reads_8000000_seed_9.fastq -o metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_9.fastq_k_11.sig.zip
+sourmash gather --protein -k 11 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_9.fastq_k_11.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_8000000_seed_9_k_11
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_8000000_seed_9_k_11'
+[Sun Jul 23 12:21:34 2023]
+Error in rule run_sourmash:
+    jobid: 979
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_8000000_seed_9.fastq
+    output: data/sourmash_gather_num_reads_8000000_seed_9_k_11, data/sourmash_kos_8000000_seed_9_k_11
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 11 --threshold 5 --metagenome data/simulated_metagenome_num_reads_8000000_seed_9.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_8000000_seed_9_k_11 --outfile data/sourmash_kos_8000000_seed_9_k_11 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 216, in _load_zipfile
+    db = ZipFileLinearIndex.load(filename,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/index/__init__.py", line 586, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Couldn't find End Of Central Directory Record")' at src/core/src/storage.rs:255
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 216, in _load_zipfile
+    db = ZipFileLinearIndex.load(filename,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/index/__init__.py", line 586, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Couldn't find End Of Central Directory Record")' at src/core/src/storage.rs:255
+sourmash sketch translate -p scaled=1000,k=7 data/simulated_metagenome_num_reads_9000000_seed_9.fastq -o metagenome_sketches/simulated_metagenome_num_reads_9000000_seed_9.fastq_k_7.sig.zip
+sourmash gather --protein -k 7 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_9000000_seed_9.fastq_k_7.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_9000000_seed_9_k_7
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_9000000_seed_9_k_7'
+sourmash sketch translate -p scaled=1000,k=15 data/simulated_metagenome_num_reads_8000000_seed_9.fastq -o metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_9.fastq_k_15.sig.zip
+sourmash gather --protein -k 15 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_8000000_seed_9.fastq_k_15.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_8000000_seed_9_k_15
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_8000000_seed_9_k_15'
+[K
+== This is sourmash version 4.8.2. ==
+[K== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+Traceback (most recent call last):
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/bin/sourmash", line 11, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/__main__.py", line 19, in main
+    retval = mainmethod(args)
+             ^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/cli/gather.py", line 162, in main
+    return sourmash.commands.gather(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/commands.py", line 711, in gather
+    query = sourmash_args.load_query_signature(args.query,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 205, in load_query_signature
+    sl = load_file_as_signatures(filename, ksize=ksize,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sourmash_args.py", line 737, in load_file_as_signatures
+    db = _load_database(filename, yield_all_files)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 113, in _load_database
+    db = load_fn(filename,
+         ^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/save_load.py", line 190, in _load_sbt
+    db = load_sbt_index(filename, cache_size=cache_size)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbtmh.py", line 10, in load_sbt_index
+    return SBT.load(filename, leaf_loader=SigLeaf.load,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt.py", line 808, in load
+    storage = ZipStorage(location)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/sbt_storage.py", line 107, in __init__
+    self._objptr = rustcall(lib.zipstorage_new, to_bytes(path), len(path))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/sourmash/utils.py", line 78, in rustcall
+    raise exc
+sourmash.exceptions.Panic: sourmash panicked: thread 'unnamed' panicked with 'called `Result::unwrap()` on an `Err` value: InvalidArchive("Too small for anything but End Of Central Directory Record")' at src/core/src/storage.rs:255
+[Sun Jul 23 12:21:34 2023]
+Error in rule run_sourmash:
+    jobid: 1037
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_9000000_seed_9.fastq
+    output: data/sourmash_gather_num_reads_9000000_seed_9_k_7, data/sourmash_kos_9000000_seed_9_k_7
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 7 --threshold 5 --metagenome data/simulated_metagenome_num_reads_9000000_seed_9.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_9000000_seed_9_k_7 --outfile data/sourmash_kos_9000000_seed_9_k_7 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Sun Jul 23 12:21:34 2023]
+Error in rule run_sourmash:
+    jobid: 981
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_8000000_seed_9.fastq
+    output: data/sourmash_gather_num_reads_8000000_seed_9_k_15, data/sourmash_kos_8000000_seed_9_k_15
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 15 --threshold 5 --metagenome data/simulated_metagenome_num_reads_8000000_seed_9.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_8000000_seed_9_k_15 --outfile data/sourmash_kos_8000000_seed_9_k_15 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+sourmash sketch translate -p scaled=1000,k=15 data/simulated_metagenome_num_reads_10000000_seed_3.fastq -o metagenome_sketches/simulated_metagenome_num_reads_10000000_seed_3.fastq_k_15.sig.zip
+sourmash gather --protein -k 15 --estimate-ani-ci --threshold-bp 5 metagenome_sketches/simulated_metagenome_num_reads_10000000_seed_3.fastq_k_15.sig.zip /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip -o data/sourmash_gather_num_reads_10000000_seed_3_k_15
+Traceback (most recent call last):
+  File "/scratch/mbr5797/KEGG-sketch-each-KO/manuscript_experiment/../scripts/run_sourmash_gather.py", line 41, in <module>
+    df = pd.read_csv(gather_output_filename, delimiter=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/grads/mbr5797/anaconda3/envs/annotate_ko/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/sourmash_gather_num_reads_10000000_seed_3_k_15'
+[Sun Jul 23 12:21:35 2023]
+Error in rule run_sourmash:
+    jobid: 1065
+    input: ../scripts/run_sourmash_gather.py, /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip, data/simulated_metagenome_num_reads_10000000_seed_3.fastq
+    output: data/sourmash_gather_num_reads_10000000_seed_3_k_15, data/sourmash_kos_10000000_seed_3_k_15
+    shell:
+        python ../scripts/run_sourmash_gather.py --ksize 15 --threshold 5 --metagenome data/simulated_metagenome_num_reads_10000000_seed_3.fastq --kosig /scratch/mbr5797/KOs_sketched/KOs_sketched_scaled_1000.sig.zip --gatherfile data/sourmash_gather_num_reads_10000000_seed_3_k_15 --outfile data/sourmash_kos_10000000_seed_3_k_15 --scaled 1000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+diamond v2.0.15.153 (C) Max Planck Society for the Advancement of Science
+Documentation, support and updates available at http://www.diamondsearch.org
+Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+
+#CPU threads: 255
+Scoring parameters: (Matrix=BLOSUM62 Lambda=0.267 K=0.041 Penalties=11/1)
+Temporary directory: data
+#Target sequences to report alignments for: 25
+Opening the database...  [0.106s]
+Database: data/protein_ref_db_giant.faa.dmnd (type: Diamond database, sequences: 7956912, letters: 2805032189)
+Block size = 2000000000
+Opening the input file...  [0.039s]
+Opening the output file...  [0s]
+Loading query sequences... diamond v2.0.15.153 (C) Max Planck Society for the Advancement of Science
+Documentation, support and updates available at http://www.diamondsearch.org
+Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+
+#CPU threads: 255
+Scoring parameters: (Matrix=BLOSUM62 Lambda=0.267 K=0.041 Penalties=11/1)
+Temporary directory: data
+#Target sequences to report alignments for: 25
+Opening the database...  [0.177s]
+Database: data/protein_ref_db_giant.faa.dmnd (type: Diamond database, sequences: 7956912, letters: 2805032189)
+Block size = 2000000000
+Opening the input file...  [0.09s]
+Opening the output file...  [0s]
+Loading query sequences... diamond v2.0.15.153 (C) Max Planck Society for the Advancement of Science
+Documentation, support and updates available at http://www.diamondsearch.org
+Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+
+#CPU threads: 255
+Scoring parameters: (Matrix=BLOSUM62 Lambda=0.267 K=0.041 Penalties=11/1)
+Temporary directory: data
+#Target sequences to report alignments for: 25
+Opening the database...  [0.192s]
+Database: data/protein_ref_db_giant.faa.dmnd (type: Diamond database, sequences: 7956912, letters: 2805032189)
+Block size = 2000000000
+Opening the input file...  [0.105s]
+Opening the output file...  [0s]
+Loading query sequences... diamond v2.0.15.153 (C) Max Planck Society for the Advancement of Science
+Documentation, support and updates available at http://www.diamondsearch.org
+Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+
+#CPU threads: 255
+Scoring parameters: (Matrix=BLOSUM62 Lambda=0.267 K=0.041 Penalties=11/1)
+Temporary directory: data
+#Target sequences to report alignments for: 25
+Opening the database...  [0.183s]
+Database: data/protein_ref_db_giant.faa.dmnd (type: Diamond database, sequences: 7956912, letters: 2805032189)
+Block size = 2000000000
+Opening the input file...  [0.058s]
+Opening the output file...  [0s]
+Loading query sequences... diamond v2.0.15.153 (C) Max Planck Society for the Advancement of Science
+Documentation, support and updates available at http://www.diamondsearch.org
+Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+
+#CPU threads: 255
+Scoring parameters: (Matrix=BLOSUM62 Lambda=0.267 K=0.041 Penalties=11/1)
+Temporary directory: data
+#Target sequences to report alignments for: 25
+Opening the database...  [0.162s]
+Database: data/protein_ref_db_giant.faa.dmnd (type: Diamond database, sequences: 7956912, letters: 2805032189)
+Block size = 2000000000
+Opening the input file...  [0.101s]
+Opening the output file...  [0s]
+Loading query sequences...  [21.499s]
+Masking queries...  [28.077s]
+Masking queries...  [3.687s]
+Algorithm: Double-indexed
+Building query histograms...  [3.217s]
+Algorithm: Double-indexed
+Building query histograms...  [2.786s]
+Allocating buffers...  [0.001s]
+Loading reference sequences...  [1.866s]
+Allocating buffers...  [0.001s]
+Loading reference sequences...  [8.876s]
+Masking reference...  [40.024s]
+Masking queries...  [4.738s]
+Initializing dictionary...  [0.001s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [42.79s]
+Masking queries...  [5.206s]
+ [16.32s]
+Masking reference...  [3.504s]
+Allocating buffers...  [0.009s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 1/4.
+Building reference seed array... Algorithm: Double-indexed
+Building query histograms...  [2.917s]
+Allocating buffers...  [0.001s]
+Loading reference sequences...  [4.467s]
+Initializing dictionary...  [0.001s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [6.054s]
+Building query seed array...  [3.191s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [4.657s]
+Computing hash join...  [4.901s]
+Building query seed array...  [16.136s]
+Algorithm: Double-indexed
+Building query histograms...  [5.366s]
+Masking low complexity seeds...  [0.368s]
+Searching alignments...  [13.391s]
+Masking reference...  [5.497s]
+Computing hash join...  [2.967s]
+Allocating buffers...  [0.001s]
+Loading reference sequences...  [4.418s]
+Initializing dictionary...  [0.001s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [3.676s]
+Masking low complexity seeds...  [0.292s]
+Searching alignments...  [3.07s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [64.776s]
+Masking queries...  [5.589s]
+Building query seed array...  [3.566s]
+Computing hash join...  [7.916s]
+Algorithm: Double-indexed
+Building query histograms...  [14.64s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [3.435s]
+Masking low complexity seeds...  [0.29s]
+Searching alignments...  [3.006s]
+Allocating buffers...  [0.001s]
+Loading reference sequences...  [1.683s]
+Building query seed array...  [20.225s]
+Masking reference...  [0.692s]
+Computing hash join...  [2.769s]
+Masking low complexity seeds...  [0.263s]
+Searching alignments...  [5.061s]
+Initializing dictionary...  [0.006s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [29.463s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [3.536s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [12.619s]
+Masking reference...  [9.697s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [4.255s]
+Building query seed array...  [7.232s]
+Building query seed array...  [3.378s]
+Initializing dictionary...  [0.003s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [17.891s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [1.544s]
+Building query seed array...  [2.951s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [6.37s]
+Computing hash join...  [5.084s]
+Computing hash join...  [9.821s]
+Building query seed array...  [5.032s]
+Computing hash join...  [3.369s]
+Masking low complexity seeds...  [3.822s]
+Masking low complexity seeds...  [ [0.288s]
+0.563s]
+Computing hash join... Searching alignments...  [5.599s]
+Building query seed array...  [0.7s]
+Searching alignments...  [2.697s]
+Masking low complexity seeds...  [2.225s]
+Masking low complexity seeds...  [0.264s]
+Searching alignments...  [0.361s]
+Searching alignments...  [5.493s]
+Computing hash join...  [4.128s]
+Masking low complexity seeds...  [0.39s]
+Searching alignments...  [11.593s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [17.892s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [21.353s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [8.281s]
+Building query seed array...  [1.481s]
+Building query seed array...  [0.506s]
+Computing hash join...  [1.662s]
+Masking low complexity seeds...  [0.223s]
+Searching alignments...  [7.457s]
+Building query seed array...  [5.624s]
+Computing hash join...  [28.271s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [2.272s]
+Masking low complexity seeds...  [0.249s]
+Searching alignments...  [6.826s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [4.986s]
+Computing hash join...  [5.637s]
+Building query seed array...  [1.924s]
+Masking low complexity seeds...  [0.244s]
+Searching alignments...  [26.122s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [6.531s]
+Building query seed array...  [0.491s]
+Computing hash join...  [5.498s]
+Computing hash join...  [1.363s]
+Masking low complexity seeds...  [0.191s]
+Searching alignments...  [5.263s]
+Building query seed array...  [11.198s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [2.256s]
+Masking low complexity seeds...  [0.443s]
+Searching alignments...  [2.015s]
+Building query seed array...  [1.059s]
+Computing hash join...  [4.969s]
+Computing hash join...  [1.892s]
+Masking low complexity seeds...  [0.452s]
+Searching alignments...  [14.05s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [2.699s]
+Masking low complexity seeds...  [0.446s]
+Searching alignments...  [1.462s]
+Building query seed array...  [1.015s]
+Computing hash join...  [12.676s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [2.342s]
+Masking low complexity seeds...  [0.446s]
+Searching alignments...  [1.932s]
+Building query seed array...  [4.628s]
+Computing hash join...  [12.688s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [1.623s]
+Masking low complexity seeds...  [0.34s]
+Searching alignments...  [1.343s]
+Building query seed array...  [1.143s]
+Computing hash join...  [2.344s]
+Masking low complexity seeds...  [ [22.789s]
+Processing query block 0.3131s], reference block 
+1/2, shape 1/2, index chunk 3/4.
+Building reference seed array... Searching alignments...  [12.453s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [2.473s]
+Building query seed array...  [1.461s]
+Building query seed array...  [0.69s]
+Computing hash join...  [2.339s]
+Computing hash join...  [1.778s]
+Masking low complexity seeds...  [0.238s]
+Searching alignments...  [10.327s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [2.096s]
+Masking low complexity seeds...  [0.457s]
+Searching alignments...  [1.944s]
+Building query seed array...  [0.858s]
+Computing hash join...  [25.266s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [1.761s]
+Masking low complexity seeds...  [0.226s]
+Searching alignments...  [15.466s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [5.918s]
+Building query seed array...  [11.544s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [2.286s]
+Building query seed array...  [7.669s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [1.812s]
+Computing hash join...  [1.348s]
+Building query seed array...  [0.475s]
+Computing hash join...  [1.901s]
+Masking low complexity seeds...  [5.702s]
+Computing hash join...  [1.715s]
+Masking low complexity seeds...  [0.295s]
+Searching alignments...  [1.431s]
+Searching alignments...  [6.2s]
+Building query seed array...  [15.881s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [0.735s]
+Computing hash join...  [3.193s]
+Masking low complexity seeds...  [1.557s]
+Building query seed array...  [0.447s]
+Searching alignments...  [1.168s]
+Computing hash join...  [2.374s]
+Masking low complexity seeds...  [0.376s]
+Searching alignments...  [2.536s]
+Masking low complexity seeds...  [0.392s]
+Searching alignments...  [10.898s]
+Deallocating buffers...  [1.441s]
+Clearing query masking...  [0.169s]
+Opening temporary output file...  [0s]
+Computing alignments...  [11.179s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [17.677s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [13.926s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [2.523s]
+Building query seed array...  [18.639s]
+Processing query block 1, reference block 1/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [4.893s]
+Building query seed array...  [5.215s]
+Building query seed array...  [0.869s]
+Computing hash join...  [1.851s]
+Masking low complexity seeds...  [4.766s]
+Computing hash join...  [0.293s]
+Searching alignments...  [1.919s]
+Masking low complexity seeds...  [0.255s]
+Searching alignments...  [6.61s]
+Building query seed array...  [8.674s]
+Computing hash join...  [4.272s]
+Computing hash join...  [2.311s]
+Masking low complexity seeds...  [2.216s]
+Masking low complexity seeds...  [0.246s]
+Searching alignments...  [0.368s]
+Searching alignments...  [10.814s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [13.794s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [1.901s]
+Building query seed array...  [0.984s]
+Computing hash join...  [8.546s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [2.252s]
+Masking low complexity seeds...  [0.424s]
+Searching alignments...  [1.325s]
+Building query seed array...  [0.977s]
+Computing hash join...  [8.685s]
+Building query seed array...  [2.953s]
+Masking low complexity seeds...  [0.442s]
+Searching alignments...  [1.083s]
+Computing hash join...  [16.464s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [2.114s]
+Masking low complexity seeds...  [0.535s]
+Searching alignments...  [1.566s]
+Building query seed array...  [14.535s]
+Deallocating buffers...  [6.435s]
+Computing hash join...  [1.883s]
+Clearing query masking...  [0.314s]
+Opening temporary output file...  [0s]
+Computing alignments...  [12.499s]
+Deallocating buffers...  [2.283s]
+Masking low complexity seeds...  [0.376s]
+Searching alignments...  [1.409s]
+Clearing query masking...  [0.227s]
+Opening temporary output file...  [0.016s]
+Computing alignments...  [12.471s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [3.478s]
+Building query seed array...  [4.682s]
+Computing hash join...  [13.18s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [3.604s]
+Masking low complexity seeds...  [0.82s]
+Searching alignments...  [7.262s]
+Building query seed array...  [11.795s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [1.359s]
+Building query seed array...  [7.648s]
+Computing hash join...  [0.892s]
+Computing hash join...  [2.907s]
+Masking low complexity seeds...  [0.35s]
+Searching alignments...  [6.133s]
+Masking low complexity seeds...  [0.657s]
+Searching alignments...  [14.096s]
+Deallocating buffers...  [0.88s]
+Clearing query masking...  [0.291s]
+Opening temporary output file...  [0s]
+Computing alignments...  [15.488s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [6.385s]
+Building query seed array...  [4.956s]
+Computing hash join...  [3.416s]
+Masking low complexity seeds...  [1.014s]
+Searching alignments...  [18.871s]
+Processing query block 1, reference block 1/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [7.259s]
+Building query seed array...  [6.508s]
+Computing hash join...  [4.086s]
+Masking low complexity seeds...  [2.45s]
+Searching alignments...  [19.556s]
+Deallocating buffers...  [3.47s]
+Clearing query masking...  [0.28s]
+Opening temporary output file...  [0s]
+Computing alignments...  [524.464s]
+Deallocating reference...  [1.728s]
+Loading reference sequences...  [8.22s]
+Masking reference...  [1.426s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [1.513s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [3.393s]
+Building query seed array...  [4.378s]
+Computing hash join...  [2.076s]
+Masking low complexity seeds...  [0.252s]
+Searching alignments...  [6.973s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [1.235s]
+Building query seed array...  [0.722s]
+Computing hash join...  [2.504s]
+Masking low complexity seeds...  [1.17s]
+Searching alignments...  [6.279s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [4.431s]
+Building query seed array...  [0.714s]
+Computing hash join...  [2.122s]
+Masking low complexity seeds...  [0.328s]
+Searching alignments...  [6.862s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [0.735s]
+Building query seed array...  [5.373s]
+Computing hash join...  [2.783s]
+Masking low complexity seeds...  [0.254s]
+Searching alignments...  [7.371s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [0.754s]
+Building query seed array...  [3.014s]
+Computing hash join...  [2.717s]
+Masking low complexity seeds...  [0.257s]
+Searching alignments...  [8.83s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [0.878s]
+Building query seed array...  [3.83s]
+Computing hash join...  [3.534s]
+Masking low complexity seeds...  [0.374s]
+Searching alignments...  [7.192s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [4.893s]
+Building query seed array...  [6.829s]
+Computing hash join...  [2.009s]
+Masking low complexity seeds...  [0.267s]
+Searching alignments...  [5.379s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [0.759s]
+Building query seed array...  [1.303s]
+Computing hash join...  [2.308s]
+Masking low complexity seeds...  [0.268s]
+Searching alignments...  [4.88s]
+Deallocating buffers...  [0.621s]
+Clearing query masking...  [0.226s]
+Opening temporary output file...  [0s]
+Computing alignments...  [666.928s]
+Deallocating reference...  [0.755s]
+Loading reference sequences...  [2.197s]
+Masking reference...  [1.954s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [1.614s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [4.243s]
+Building query seed array...  [6.763s]
+Computing hash join...  [2.757s]
+Masking low complexity seeds...  [0.463s]
+Searching alignments...  [7.704s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [0.709s]
+Building query seed array...  [0.791s]
+Computing hash join...  [1.929s]
+Masking low complexity seeds...  [0.586s]
+Searching alignments...  [10.097s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [1.479s]
+Building query seed array...  [1.166s]
+Computing hash join...  [1.92s]
+Masking low complexity seeds...  [0.53s]
+Searching alignments...  [718.087s]
+Deallocating reference...  [0.998s]
+Loading reference sequences...  [6.763s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [0.79s]
+Building query seed array...  [0.704s]
+Computing hash join...  [2.351s]
+Masking reference...  [1.378s]
+Masking low complexity seeds...  [0.213s]
+Searching alignments...  [1.796s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [1.523s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [4.869s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [0.86s]
+Building query seed array...  [0.882s]
+Computing hash join...  [1.331s]
+Masking low complexity seeds...  [0.268s]
+Searching alignments...  [6.694s]
+Building query seed array...  [5.759s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [0.747s]
+Building query seed array...  [0.909s]
+Computing hash join...  [1.246s]
+Masking low complexity seeds...  [0.276s]
+Searching alignments...  [9.016s]
+Computing hash join...  [1.104s]
+Masking low complexity seeds...  [0.433s]
+Searching alignments...  [5.513s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [617.355s]
+Deallocating reference...  [0.562s]
+Loading reference sequences...  [0.777s]
+Building query seed array...  [1.277s]
+Computing hash join...  [1.27s]
+Masking low complexity seeds...  [0.282s]
+Searching alignments...  [6.408s]
+Masking reference...  [1.719s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [5.65s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [12.847s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [0.774s]
+Building query seed array...  [1.663s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [1.041s]
+Computing hash join...  [1.395s]
+Masking low complexity seeds...  [0.248s]
+Searching alignments...  [149.8s]
+Deallocating reference...  [0.902s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [4.283s]
+Building query seed array...  [0.751s]
+Joining output blocks...  [5.839s]
+Building query seed array...  [3.781s]
+Deallocating buffers...  [0.909s]
+Computing hash join...  [0.832s]
+Clearing query masking...  [1.123s]
+Masking low complexity seeds...  [0.265s]
+Searching alignments...  [0.785s]
+Opening temporary output file...  [0s]
+Computing alignments...  [4.722s]
+Computing hash join...  [1.945s]
+Masking low complexity seeds...  [0.346s]
+Searching alignments... Joining output blocks...  [8.74s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [5.331s]
+Building query seed array...  [13.295s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [3.932s]
+Building query seed array...  [7.613s]
+Computing hash join...  [0.864s]
+Masking low complexity seeds...  [0.222s]
+Searching alignments...  [6.194s]
+Computing hash join...  [1.661s]
+Masking low complexity seeds...  [6.158s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [0.388s]
+Searching alignments...  [0.752s]
+Building query seed array...  [7.277s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [0.715s]
+Building query seed array...  [8.545s]
+Computing hash join...  [1.472s]
+Masking low complexity seeds...  [0.195s]
+Searching alignments...  [6.46s]
+Computing hash join...  [4.707s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [1.134s]
+Masking low complexity seeds...  [0.242s]
+Searching alignments...  [0.53s]
+Building query seed array...  [5.698s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [5.785s]
+Computing hash join...  [0.695s]
+Building query seed array...  [0.814s]
+Computing hash join...  [1.193s]
+Masking low complexity seeds...  [0.223s]
+Searching alignments...  [1.39s]
+Masking low complexity seeds...  [0.366s]
+Searching alignments...  [774.806s]
+Deallocating reference...  [6.694s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [1.353s]
+Loading reference sequences...  [0.921s]
+Building query seed array...  [6.484s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [0.609s]
+Building query seed array...  [1.849s]
+Masking reference...  [0.834s]
+Computing hash join...  [1.837s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [1.537s]
+Masking low complexity seeds...  [0.28s]
+Searching alignments...  [1.443s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [8.408s]
+Computing hash join...  [5.093s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [0.467s]
+Building query seed array...  [4.824s]
+Building query seed array...  [1.308s]
+Masking low complexity seeds...  [0.719s]
+Computing hash join...  [0.372s]
+Searching alignments...  [1.288s]
+Masking low complexity seeds...  [0.252s]
+Searching alignments...  [5.568s]
+Computing hash join...  [6.002s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [0.705s]
+Building query seed array...  [6.028s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [2.359s]
+Masking low complexity seeds...  [0.835s]
+Computing hash join...  [0.275s]
+Searching alignments...  [0.843s]
+Building query seed array...  [1.237s]
+Masking low complexity seeds...  [0.359s]
+Searching alignments...  [2.038s]
+Computing hash join...  [2.565s]
+Masking low complexity seeds...  [0.259s]
+Searching alignments...  [6.617s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [0.68s]
+Building query seed array...  [0.713s]
+Computing hash join...  [4.894s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [1.308s]
+Masking low complexity seeds...  [0.478s]
+Building query seed array...  [0.24s]
+Searching alignments...  [0.837s]
+Computing hash join...  [12.495s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [1.565s]
+Masking low complexity seeds...  [0.21s]
+Searching alignments...  [5.57s]
+Deallocating buffers...  [0.346s]
+Clearing query masking...  [88.976s]
+ [98.056s]
+Deallocating queries...  [3.742s]
+Deallocating buffers...  [0.254s]
+Opening temporary output file...  [0s]
+Computing alignments...  [0.37s]
+Clearing query masking...  [0.744s]
+Loading query sequences...  [0s]
+Closing the input file...  [0s]
+Closing the output file...  [0.069s]
+Cleaning up...  [0s]
+Total time = 1121.52s
+Reported 49487751 pairwise alignments, 49487751 HSPs.
+2545816 queries aligned.
+ [0.277s]
+Opening temporary output file...  [0s]
+Computing alignments...  [6.429s]
+Building query seed array...  [0.75s]
+Computing hash join...  [1.32s]
+Masking low complexity seeds...  [0.236s]
+Searching alignments...  [8.378s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [5.153s]
+Building query seed array...  [1.012s]
+Computing hash join...  [1.353s]
+Masking low complexity seeds...  [0.248s]
+Searching alignments...  [6.705s]
+Processing query block 1, reference block 2/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [0.511s]
+Building query seed array...  [6.149s]
+Computing hash join...  [1.866s]
+Masking low complexity seeds...  [0.6s]
+Searching alignments...  [7.109s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [0.741s]
+Building query seed array...  [6.28s]
+Computing hash join...  [2.421s]
+Masking low complexity seeds...  [0.251s]
+Searching alignments...  [8.197s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [1.115s]
+Building query seed array...  [157.861s]
+Deallocating reference...  [0.205s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0.874s]
+Joining output blocks...  [2.622s]
+Computing hash join...  [1.433s]
+Masking low complexity seeds...  [0.671s]
+Searching alignments... Joining output blocks...  [4.636s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [0.536s]
+Building query seed array...  [0.776s]
+Computing hash join...  [1.471s]
+Masking low complexity seeds...  [0.265s]
+Searching alignments...  [5.637s]
+Processing query block 1, reference block 2/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [0.689s]
+Building query seed array...  [0.841s]
+Computing hash join...  [1.098s]
+Masking low complexity seeds...  [0.345s]
+Searching alignments...  [4.57s]
+Deallocating buffers...  [0.642s]
+Clearing query masking...  [0.74s]
+Opening temporary output file...  [0.007s]
+Computing alignments...  [186.668s]
+Deallocating reference...  [0.199s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0.542s]
+Joining output blocks... Joining output blocks...  [195.206s]
+Deallocating reference...  [0.179s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0.492s]
+Joining output blocks... Joining output blocks...  [135.597s]
+ [141.734s]
+Deallocating queries...  [0.502s]
+Loading query sequences...  [0s]
+Closing the input file...  [0s]
+Closing the output file...  [0.031s]
+Cleaning up...  [0s]
+Total time = 1322.95s
+Reported 62320432 pairwise alignments, 62320432 HSPs.
+3168177 queries aligned.
+ [92.843s]
+ [96.048s]
+Deallocating queries...  [2.255s]
+Loading query sequences...  [0s]
+Closing the input file...  [0s]
+Closing the output file...  [0.179s]
+Cleaning up...  [0s]
+Total time = 1410.68s
+Reported 74729730 pairwise alignments, 74729730 HSPs.
+3800460 queries aligned.
+ [103.441s]
+ [107.248s]
+Deallocating queries...  [0.836s]
+Loading query sequences...  [3.547s]
+Masking queries...  [0.961s]
+Building query histograms...  [0.826s]
+Allocating buffers...  [0.001s]
+Loading reference sequences...  [213.053s]
+Deallocating reference...  [0.514s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0.525s]
+Joining output blocks... Joining output blocks...  [8.199s]
+Masking reference...  [3.632s]
+Initializing dictionary...  [0.006s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [2.719s]
+Allocating buffers...  [0.001s]
+Processing query block 2, reference block 1/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [3.806s]
+Building query seed array...  [2.293s]
+Computing hash join...  [1.743s]
+Masking low complexity seeds...  [0.088s]
+Searching alignments...  [4.511s]
+Processing query block 2, reference block 1/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [1.568s]
+Building query seed array...  [0.222s]
+Computing hash join...  [1.425s]
+Masking low complexity seeds...  [0.099s]
+Searching alignments...  [2.431s]
+Processing query block 2, reference block 1/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [1.093s]
+Building query seed array...  [0.22s]
+Computing hash join...  [1.334s]
+Masking low complexity seeds...  [0.103s]
+Searching alignments...  [1.981s]
+Processing query block 2, reference block 1/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [1.377s]
+Building query seed array...  [0.274s]
+Computing hash join...  [1.876s]
+Masking low complexity seeds...  [0.096s]
+Searching alignments...  [1.754s]
+Processing query block 2, reference block 1/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [0.942s]
+Building query seed array...  [0.208s]
+Computing hash join...  [1.022s]
+Masking low complexity seeds...  [0.098s]
+Searching alignments...  [2.423s]
+Processing query block 2, reference block 1/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [1.063s]
+Building query seed array...  [0.236s]
+Computing hash join...  [0.925s]
+Masking low complexity seeds...  [0.078s]
+Searching alignments...  [1.721s]
+Processing query block 2, reference block 1/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [1.152s]
+Building query seed array...  [0.221s]
+Computing hash join...  [1.084s]
+Masking low complexity seeds...  [0.086s]
+Searching alignments...  [1.794s]
+Processing query block 2, reference block 1/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [0.931s]
+Building query seed array...  [0.161s]
+Computing hash join...  [0.735s]
+Masking low complexity seeds...  [0.086s]
+Searching alignments...  [1.505s]
+Deallocating buffers...  [0.801s]
+Clearing query masking...  [0.048s]
+Opening temporary output file...  [0s]
+Computing alignments...  [100.839s]
+ [103.902s]
+Deallocating queries...  [0.81s]
+Loading query sequences...  [51.517s]
+Deallocating reference...  [0.492s]
+Loading reference sequences...  [7.468s]
+Masking queries...  [1.82s]
+Masking reference...  [1.347s]
+ [1.267s]
+Initializing dictionary...  [0.003s]
+Initializing temporary storage...  [0s]
+Building reference histograms... Building query histograms...  [1.208s]
+Allocating buffers...  [0.001s]
+Processing query block 2, reference block 2/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [1.186s]
+Allocating buffers...  [0.001s]
+Loading reference sequences...  [2.928s]
+Building query seed array...  [1.406s]
+Computing hash join...  [0.413s]
+Masking low complexity seeds...  [0.072s]
+Searching alignments...  [1.308s]
+Processing query block 2, reference block 2/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [6.372s]
+Masking reference...  [0.48s]
+Building query seed array...  [0.217s]
+Computing hash join...  [0.53s]
+Masking low complexity seeds...  [0.126s]
+Searching alignments...  [1.427s]
+Processing query block 2, reference block 2/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [0.663s]
+Building query seed array...  [0.237s]
+Computing hash join...  [0.258s]
+Masking low complexity seeds...  [0.101s]
+Searching alignments...  [4.091s]
+Initializing dictionary...  [0.001s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [2.061s]
+Processing query block 2, reference block 2/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [0.624s]
+Building query seed array...  [2.468s]
+Allocating buffers...  [0.001s]
+Processing query block 2, reference block 1/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [0.209s]
+Computing hash join...  [0.329s]
+Masking low complexity seeds...  [0.099s]
+Searching alignments...  [1.02s]
+Processing query block 2, reference block 2/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [0.441s]
+Building query seed array...  [0.176s]
+Computing hash join...  [0.269s]
+Masking low complexity seeds...  [0.07s]
+Searching alignments...  [2.843s]
+Building query seed array...  [0.7s]
+Processing query block 2, reference block 2/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [0.436s]
+Building query seed array...  [0.195s]
+Computing hash join...  [0.209s]
+Masking low complexity seeds...  [0.067s]
+Searching alignments...  [0.733s]
+Processing query block 2, reference block 2/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [0.429s]
+Building query seed array...  [0.306s]
+Computing hash join...  [0.2s]
+Masking low complexity seeds...  [0.078s]
+Searching alignments...  [3.085s]
+Computing hash join...  [0.74s]
+Processing query block 2, reference block 2/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [0.492s]
+Building query seed array...  [0.316s]
+Computing hash join...  [0.444s]
+Masking low complexity seeds...  [0.13s]
+Searching alignments...  [2.726s]
+Masking low complexity seeds...  [0.208s]
+Searching alignments...  [1.027s]
+Deallocating buffers...  [0.914s]
+Clearing query masking...  [0.06s]
+Opening temporary output file...  [0s]
+Computing alignments...  [5.234s]
+Processing query block 2, reference block 1/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [1.637s]
+Building query seed array...  [0.377s]
+Computing hash join...  [1.553s]
+Masking low complexity seeds...  [0.142s]
+Searching alignments...  [6.09s]
+Processing query block 2, reference block 1/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [1.584s]
+Building query seed array...  [0.496s]
+Computing hash join...  [1.537s]
+Masking low complexity seeds...  [0.247s]
+Searching alignments...  [5.85s]
+Processing query block 2, reference block 1/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [1.231s]
+Building query seed array...  [0.268s]
+Computing hash join...  [1.433s]
+Masking low complexity seeds...  [0.122s]
+Searching alignments...  [3.485s]
+Processing query block 2, reference block 1/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [31.344s]
+Deallocating reference...  [0.167s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [1.363s]
+Building query seed array...  [0.061s]
+Joining output blocks...  [0.284s]
+Computing hash join...  [1.685s]
+Masking low complexity seeds...  [0.14s]
+Searching alignments... Joining output blocks...  [3.155s]
+Processing query block 2, reference block 1/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [1.174s]
+Building query seed array...  [0.307s]
+Computing hash join...  [1.38s]
+Masking low complexity seeds...  [0.114s]
+Searching alignments...  [3.052s]
+Processing query block 2, reference block 1/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [1.06s]
+Building query seed array...  [0.284s]
+Computing hash join...  [1.316s]
+Masking low complexity seeds...  [0.122s]
+Searching alignments...  [3.004s]
+Processing query block 2, reference block 1/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [1s]
+Building query seed array...  [0.293s]
+Computing hash join...  [1.171s]
+Masking low complexity seeds...  [0.16s]
+Searching alignments...                                                      qseqid  ... bitscore
+22369194  SYN_1806821_7559576_7559725_0_-_437633575_1_._...  ...     79.3
+41485558  SYN_3352471_1622177_1622326_0_-_515368158_1_._...  ...     78.6
+3766791   SYN_304907_4430187_4430336_0_-_468641993_5_._$...  ...     58.2
+41739922  SYN_3373057_1380123_1380272_0_-_3412203_4_._$C...  ...     99.4
+2041324   SYN_165169_2289764_2289913_0_+_462529368_7_._$...  ...     49.7
+47490593  SYN_3838560_1514649_1514798_0_-_127559730_2_._...  ...     48.9
+23808458  SYN_1923293_2125084_2125233_0_-_257836034_2_._...  ...     76.3
+45113733  SYN_3645667_974729_974878_0_-_462337522_6_._$C...  ...     86.3
+25163438  SYN_2033213_1287796_1287945_0_+_426464623_6_._...  ...     57.8
+23043325  SYN_1861660_2572801_2572950_0_+_61557722_3_._$...  ...     67.8
+
+[10 rows x 12 columns]
+                                                     qseqid  ... bitscore
+10250581  SYN_828460_1559330_1559479_0_+_253962713_6_._$...  ...    107.0
+18715644  SYN_1512065_3338579_3338728_0_+_485773713_2_._...  ...     67.4
+43596660  SYN_3522923_311260_311409_0_+_154050529_6_._$C...  ...     94.0
+18943152  SYN_1530463_1502319_1502468_0_-_55220255_5_._$...  ...     94.4
+38452838  SYN_3106925_3902626_3902775_0_+_275098082_3_._...  ...     85.9
+3335196   SYN_269940_1732909_1733058_0_+_25041615_1_._$C...  ...    106.0
+3165480   SYN_256241_1758007_1758156_0_+_1766007_6_._$AL...  ...     92.8
+42731396  SYN_3453270_1280245_1280394_0_+_194693515_2_._...  ...    100.0
+2523895   SYN_204181_1164517_1164666_0_+_127209598_2_._$...  ...     92.4
+23296411  SYN_1881920_1461797_1461946_0_+_100679885_1_._...  ...     98.2
+
+[10 rows x 12 columns]
+[Sun Jul 23 12:48:49 2023]
+Finished job 158.
+5 of 379 steps (1%) done
+ [3.25s]
+Deallocating buffers...  [20s]
+ [24.443s]
+Deallocating queries...  [0.137s]
+Loading query sequences...  [0s]
+Closing the input file...  [0s]
+Closing the output file...  [0.053s]
+Cleaning up...  [0s]
+Total time = 1606.63s
+Reported 99649379 pairwise alignments, 99649379 HSPs.
+5046547 queries aligned.
+ [1.97s]
+Clearing query masking...  [0.17s]
+Opening temporary output file...  [0s]
+Computing alignments...  [98.237s]
+Deallocating reference...  [0.207s]
+Loading reference sequences...  [1.74s]
+Masking reference...  [1.002s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [0.994s]
+Allocating buffers...  [0.001s]
+Processing query block 2, reference block 2/2, shape 1/2, index chunk 1/4.
+Building reference seed array...  [4.21s]
+Building query seed array...  [2.72s]
+Computing hash join...  [0.508s]
+Masking low complexity seeds...  [0.107s]
+Searching alignments...  [2.878s]
+Processing query block 2, reference block 2/2, shape 1/2, index chunk 2/4.
+Building reference seed array...  [0.509s]
+Building query seed array...  [0.277s]
+Computing hash join...  [0.417s]
+Masking low complexity seeds...  [0.094s]
+Searching alignments...  [1.948s]
+Processing query block 2, reference block 2/2, shape 1/2, index chunk 3/4.
+Building reference seed array...  [0.469s]
+Building query seed array...  [0.254s]
+Computing hash join...  [0.393s]
+Masking low complexity seeds...  [0.093s]
+Searching alignments...  [1.469s]
+Processing query block 2, reference block 2/2, shape 1/2, index chunk 4/4.
+Building reference seed array...  [0.444s]
+Building query seed array...  [0.356s]
+Computing hash join...  [0.468s]
+Masking low complexity seeds...  [0.093s]
+Searching alignments...  [1.697s]
+Processing query block 2, reference block 2/2, shape 2/2, index chunk 1/4.
+Building reference seed array...  [0.407s]
+Building query seed array...  [0.265s]
+Computing hash join...  [0.36s]
+Masking low complexity seeds...  [0.099s]
+Searching alignments...  [1.518s]
+Processing query block 2, reference block 2/2, shape 2/2, index chunk 2/4.
+Building reference seed array...  [0.438s]
+Building query seed array...  [0.233s]
+Computing hash join...  [0.378s]
+Masking low complexity seeds...  [0.085s]
+Searching alignments...  [1.349s]
+Processing query block 2, reference block 2/2, shape 2/2, index chunk 3/4.
+Building reference seed array...  [0.508s]
+Building query seed array...  [0.298s]
+Computing hash join...  [0.325s]
+Masking low complexity seeds...  [0.089s]
+Searching alignments...  [1.364s]
+Processing query block 2, reference block 2/2, shape 2/2, index chunk 4/4.
+Building reference seed array...  [0.496s]
+Building query seed array...  [0.232s]
+Computing hash join...  [0.302s]
+Masking low complexity seeds...  [0.106s]
+Searching alignments...  [1.195s]
+Deallocating buffers...  [0.286s]
+Clearing query masking...  [0.082s]
+Opening temporary output file...  [0s]
+Computing alignments...  [45.466s]
+Deallocating reference...  [0.143s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0.053s]
+Joining output blocks... Joining output blocks...  [27.551s]
+ [30.185s]
+Deallocating queries...  [0.323s]
+Loading query sequences...  [0s]
+Closing the input file...  [0s]
+Closing the output file...  [0.102s]
+Cleaning up...  [0s]
+Total time = 1820.86s
+Reported 112793400 pairwise alignments, 112793400 HSPs.
+5702104 queries aligned.
+                                                     qseqid  ... bitscore
+30268391  SYN_2429351_2278829_2278978_0_+_278564575_1_._...  ...     45.1
+33967224  SYN_2725953_1507069_1507218_0_-_115141048_1_._...  ...     97.4
+56372008  SYN_4523386_1001162_1001311_0_+_221787556_5_._...  ...    103.0
+3341201   SYN_268247_1575633_1575782_0_-_144140168_4_._$...  ...     43.1
+21809881  SYN_1750307_4035155_4035304_0_+_253659116_7_._...  ...     75.5
+46208733  SYN_3708652_4176665_4176814_0_-_264389675_2_._...  ...     95.1
+1525890   SYN_122493_636690_636839_0_-_461356861_6_._$CP...  ...     91.3
+36613848  SYN_2939054_255976_256125_0_+_239488174_1_._$A...  ...     70.1
+60403890  SYN_4846497_2511495_2511644_0_-_298526599_7_._...  ...     83.2
+1110219   SYN_89267_3524549_3524698_0_+_280924887_2_._$C...  ...     66.2
+
+[10 rows x 12 columns]
+                                                     qseqid  ... bitscore
+13238685  SYN_1061535_4104549_4104698_0_+_345345329_3_._...  ...    107.0
+46966750  SYN_3769179_118598_118747_0_+_514193749_6_._$C...  ...     95.5
+18977223  SYN_1522661_1822615_1822764_0_+_149208053_5_._...  ...     97.8
+43777086  SYN_3513501_851983_852132_0_+_382684031_5_._$C...  ...     58.5
+4095018   SYN_328359_3111107_3111256_0_-_442726480_6_._$...  ...    116.0
+54461894  SYN_4370371_4874501_4874650_0_+_137175067_3_._...  ...     99.0
+44567365  SYN_3576907_3849524_3849673_0_-_427818369_2_._...  ...     55.8
+19840036  SYN_1591742_2332031_2332180_0_-_2340031_6_._$A...  ...    105.0
+41680327  SYN_3345441_1286154_1286303_0_+_500910102_2_._...  ...    110.0
+58070214  SYN_4659236_853153_853302_0_-_190268592_3_._$C...  ...     99.8
+
+[10 rows x 12 columns]
+[Sun Jul 23 12:53:38 2023]
+Finished job 218.
+6 of 379 steps (2%) done
+                                                     qseqid  ... bitscore
+37537981  SYN_3013892_1021791_1021940_0_-_527077948_6_._...  ...     96.3
+47886260  SYN_3844760_1317258_1317407_0_+_464478761_7_._...  ...    101.0
+37532210  SYN_3013436_2436693_2436842_0_-_51846790_5_._$...  ...     57.4
+52054609  SYN_4179917_7198389_7198538_0_+_163770807_1_._...  ...     83.6
+69406772  SYN_5572608_1517945_1518094_0_-_512783765_4_._...  ...     86.7
+62878130  SYN_5049175_2556101_2556250_0_+_368619579_5_._...  ...     82.4
+43962178  SYN_3529726_624509_624658_0_-_519405085_5_._$L...  ...    100.0
+52692669  SYN_4231176_4521103_4521252_0_-_32379731_5_._$...  ...     79.7
+67950619  SYN_5456124_989977_990126_0_+_296705377_3_._$C...  ...     83.6
+57010081  SYN_4577181_2019315_2019464_0_-_65893239_5_._$...  ...     97.1
+
+[10 rows x 12 columns]
+                                                     qseqid  ... bitscore
+67499686  SYN_5419885_335407_335556_0_-_469215673_1_._$C...  ...     86.3
+41133711  SYN_3302422_1072658_1072807_0_-_291536679_2_._...  ...     80.5
+39833505  SYN_3198217_1358482_1358631_0_+_291822503_2_._...  ...    100.0
+41089332  SYN_3298993_2367413_2367562_0_+_472688885_3_._...  ...    105.0
+48329713  SYN_3880088_4664354_4664503_0_-_187818591_3_._...  ...     94.4
+19776817  SYN_1588169_1995657_1995806_0_-_38457214_5_._$...  ...    102.0
+55852970  SYN_4484517_2431501_2431650_0_+_315529579_2_._...  ...    106.0
+28498324  SYN_2288334_3167678_3167827_0_+_357467336_6_._...  ...     50.8
+49064211  SYN_3939321_98043_98192_0_-_381930091_5_._$CP0...  ...    102.0
+11120897  SYN_893715_1747917_1748066_0_-_186284549_5_._$...  ...     70.9
+
+[10 rows x 12 columns]
+[Sun Jul 23 12:54:55 2023]
+Finished job 278.
+7 of 379 steps (2%) done
+                                                     qseqid  ... bitscore
+68680532  SYN_5513398_918824_918973_0_+_503446378_2_._$C...  ...     48.5
+96398914  SYN_7739833_3193653_3193802_0_-_335906199_7_._...  ...     77.8
+16860653  SYN_1353115_1687075_1687224_0_+_52179291_7_._$...  ...     80.5
+16902197  SYN_1356459_1657051_1657200_0_-_33892078_1_._$...  ...     68.9
+83789736  SYN_6726760_2799361_2799510_0_+_413247413_3_._...  ...     59.3
+70755978  SYN_5679412_95701_95850_0_-_152152144_5_._$CP0...  ...     84.0
+50737055  SYN_4072949_5073825_5073974_0_-_301088929_7_._...  ...     77.0
+59178729  SYN_4750266_522562_522711_0_-_461242733_6_._$C...  ...     90.9
+87286417  SYN_7007560_2457613_2457762_0_+_530463078_5_._...  ...     45.8
+50150883  SYN_4025819_3953826_3953975_0_+_318324528_1_._...  ...    107.0
+
+[10 rows x 12 columns]
+                                                     qseqid  ... bitscore
+67865782  SYN_5448094_1483986_1484135_0_+_103190971_4_._...  ...     94.7
+96375390  SYN_7738057_1308113_1308262_0_-_152035395_2_._...  ...    100.0
+59689439  SYN_4791502_1577800_1577949_0_-_383409848_5_._...  ...    103.0
+42947560  SYN_3447596_1736365_1736514_0_-_268846729_4_._...  ...     42.7
+91295823  SYN_7330349_203129_203278_0_-_478037878_5_._$C...  ...     99.8
+20245401  SYN_1625400_1962332_1962481_0_+_428796542_4_._...  ...    105.0
+89605584  SYN_7194240_1165027_1165176_0_-_467162559_1_._...  ...     99.4
+25164877  SYN_2019909_1388717_1388866_0_+_231141270_1_._...  ...     67.4
+2049886   SYN_164368_2263726_2263875_0_+_527178328_5_._$...  ...     97.1
+99033442  SYN_7950575_1118420_1118569_0_+_400266391_7_._...  ...     97.1
+
+[10 rows x 12 columns]
+[Sun Jul 23 13:04:34 2023]
+Finished job 353.
+8 of 379 steps (2%) done
+                                                     qseqid  ... bitscore
+57712120  SYN_4604656_2183860_2184009_0_+_40029458_4_._$...  ...     91.7
+82397799  SYN_6573657_1071719_1071868_0_-_356135769_5_._...  ...    109.0
+27237693  SYN_2173182_899568_899717_0_+_393152849_3_._$C...  ...    102.0
+56771974  SYN_4529927_1406453_1406602_0_+_283068647_4_._...  ...     62.0
+87977086  SYN_7019178_388337_388486_0_+_175233447_4_._$C...  ...     94.7
+99420586  SYN_7932924_5157891_5158040_0_+_210052524_5_._...  ...     94.4
+63562422  SYN_5070888_684507_684656_0_-_107731314_7_._$C...  ...     87.4
+5870063   SYN_468729_2315333_2315482_0_+_36148570_5_._$L...  ...    100.0
+42039301  SYN_3353354_94212_94361_0_+_114528682_3_._$CP0...  ...     54.3
+94207061  SYN_7516271_1473739_1473888_0_-_343764494_6_._...  ...     92.8
+
+[10 rows x 12 columns]
+                                                     qseqid  ... bitscore
+35023529  SYN_2793727_4403922_4404071_0_+_459993304_5_._...  ...     96.7
+76924473  SYN_6135989_888221_888370_0_-_135229045_5_._$A...  ...     90.1
+15719519  SYN_1253744_2125780_2125929_0_+_349038695_2_._...  ...     90.9
+93675683  SYN_7473469_4693706_4693855_0_+_152237123_4_._...  ...    102.0
+1617807   SYN_129440_2191774_2191923_0_-_286006268_2_._$...  ...     92.4
+88207343  SYN_7037400_163562_163711_0_+_248313721_7_._$C...  ...    102.0
+318560    SYN_25494_2417961_2418110_0_+_504804378_1_._$C...  ...     90.1
+30949580  SYN_2468763_713059_713208_0_+_347625974_2_._$H...  ...     43.5
+92014910  SYN_7340628_2109025_2109174_0_-_368556668_2_._...  ...    104.0
+35135120  SYN_2802640_2376232_2376381_0_-_246162543_4_._...  ...     62.0
+
+[10 rows x 12 columns]
+[Sun Jul 23 13:06:44 2023]
+Finished job 438.
+9 of 379 steps (2%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-07-23T122125.963551.snakemake.log
