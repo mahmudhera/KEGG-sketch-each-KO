@@ -26,6 +26,15 @@ pident_threshold = 0.1 # used in Diamond
 # top 95%: line 7
 line_number = 7
 
+def get_diamond_memory(num_reads, seed):
+    filename = data_dir+f'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
+    f = open(filename, 'r')
+    all_lines = f.readlines()
+    f.close()
+    mem_mb = float(all_lines[1].split('\t')[2])
+
+    return mem_mb/1024.0
+
 def get_diamond_running_time(num_reads, seed):
     filename = data_dir+f'/diamond_benchmark_num_reads_{num_reads}_seed_{seed}'
     f = open(filename, 'r')
@@ -55,6 +64,16 @@ def get_sourmash_running_time(num_reads, ksize, seed):
 
     time_1 = float(all_lines[1].split('\t')[0])
     return time_1
+
+def get_sourmash_memory(num_reads, ksize, seed):
+    filename = data_dir + f"/sourmash_gather_benchmark_{num_reads}_seed_{seed}_k_{ksize}"
+    f = open(filename, 'r')
+    all_lines = f.readlines()
+    f.close()
+
+    mem_mb = float(all_lines[1].split('\t')[2])
+
+    return mem_mb/1024.0
 
 def get_all_sourmash_running_times(num_reads, ksize):
     return [get_sourmash_running_time(num_reads, ksize, seed) for seed in seeds_list]
@@ -214,5 +233,27 @@ if __name__ == "__main__":
     for k in kmer_sizes:
         for num_reads in num_reads_list:
             res = [get_sourmash_running_time(num_reads, k, seed) for seed in seeds_list]
+            print(np.std(res), end = ' ')
+        print('')
+
+    print('Memory to run the tools:')
+    for num_reads in num_reads_list:
+        res = [get_diamond_memory(num_reads, seed) for seed in seeds_list]
+        print(np.mean(res), end = ' ')
+    print('')
+    for k in kmer_sizes:
+        for num_reads in num_reads_list:
+            res = [get_sourmash_memory(num_reads, k, seed) for seed in seeds_list]
+            print(np.mean(res), end = ' ')
+        print('')
+
+    print('StdDev of memory to run the tools:')
+    for num_reads in num_reads_list:
+        res = [get_diamond_memory(num_reads, seed) for seed in seeds_list]
+        print(np.std(res), end = ' ')
+    print('')
+    for k in kmer_sizes:
+        for num_reads in num_reads_list:
+            res = [get_sourmash_memory(num_reads, k, seed) for seed in seeds_list]
             print(np.std(res), end = ' ')
         print('')
