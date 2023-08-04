@@ -63,7 +63,7 @@ def main():
     out_file = diamond_file
     if out_file is None:
         out_file = os.path.join(out_dir, f"{os.path.basename(metagenome_file)}_{os.path.basename(ref_db)}_matches.csv")
-    run_diamond_blastx(metagenome_file, ref_db, out_file)
+    run_diamond_blastx(metagenome_file, ref_db, out_file, num_threads = 1)
 
     diamond_results = parse_diamond_results(diamond_file, pident_threshold+1)
     gene_names = diamond_results['name'].tolist()
