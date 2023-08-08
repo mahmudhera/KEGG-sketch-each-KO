@@ -10,7 +10,8 @@ num_organisms = 1000
 num_genomes_full_db = 1000
 num_genomes_truncated_db = 1000
 #num_reads_list = [str((i+1)*10000) for i in range(5)]
-num_reads_list = [str((i+1)*1000000) for i in range(10)]
+#num_reads_list = [str((i+1)*1000000) for i in range(10)]
+num_reads_list = [str((i+1)*1000000) for i in [1,3,5,7,9]]
 seeds_list = [str(i) for i in range(10)]
 kmer_sizes = [str(ksize) for ksize in [7, 11, 15] ]
 k = 7
@@ -214,25 +215,29 @@ if __name__ == "__main__":
             print(np.std(res), end = ' ')
         print('')
 
-    print('Time to run the tools:')
+    print('Time to run the tools: (log(10) of seconds)')
     for num_reads in num_reads_list:
         res = [get_diamond_running_time(num_reads, seed) for seed in seeds_list]
+        res = np.log(res) / np.log(10)
         print(np.mean(res), end = ' ')
     print('')
     for k in kmer_sizes:
         for num_reads in num_reads_list:
             res = [get_sourmash_running_time(num_reads, k, seed) for seed in seeds_list]
+            res = np.log(res) / np.log(10)
             print(np.mean(res), end = ' ')
         print('')
 
     print('StdDev of time to run the tools:')
     for num_reads in num_reads_list:
         res = [get_diamond_running_time(num_reads, seed) for seed in seeds_list]
+        res = np.log(res) / np.log(10)
         print(np.std(res), end = ' ')
     print('')
     for k in kmer_sizes:
         for num_reads in num_reads_list:
             res = [get_sourmash_running_time(num_reads, k, seed) for seed in seeds_list]
+            res = np.log(res) / np.log(10)
             print(np.std(res), end = ' ')
         print('')
 

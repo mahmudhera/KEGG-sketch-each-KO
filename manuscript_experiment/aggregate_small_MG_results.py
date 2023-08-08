@@ -219,32 +219,38 @@ if __name__ == "__main__":
             print(np.std(res), end = ' ')
         print('')
 
-    print('Time to run the tools:')
+    print('Time to run the tools: (log10 of seconds)')
     for num_reads in num_reads_list:
         res = [get_diamond_running_time(num_reads, seed) for seed in seeds_list]
+        res = np.log(res) / np.log(10)
         print(np.mean(res), end = ' ')
     print('')
     for num_reads in num_reads_list:
         res = [get_kofam_running_time(num_reads, seed) for seed in seeds_list]
+        res = np.log(res) / np.log(10)
         print(np.mean(res), end = ' ')
     print('')
     for k in kmer_sizes:
         for num_reads in num_reads_list:
             res = [get_sourmash_running_time(num_reads, k, seed) for seed in seeds_list]
+            res = np.log(res) / np.log(10)
             print(np.mean(res), end = ' ')
         print('')
 
     print('StdDev of time to run the tools:')
     for num_reads in num_reads_list:
         res = [get_diamond_running_time(num_reads, seed) for seed in seeds_list]
+        res = np.log(res) / np.log(10)
         print(np.std(res), end = ' ')
     print('')
     for num_reads in num_reads_list:
         res = [get_kofam_running_time(num_reads, seed) for seed in seeds_list]
+        res = np.log(res) / np.log(10)
         print(np.std(res), end = ' ')
     print('')
     for k in kmer_sizes:
         for num_reads in num_reads_list:
             res = [get_sourmash_running_time(num_reads, k, seed) for seed in seeds_list]
+            res = np.log(res) / np.log(10)
             print(np.std(res), end = ' ')
         print('')
