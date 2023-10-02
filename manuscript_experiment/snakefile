@@ -109,7 +109,7 @@ rule run_sourmash:
     benchmark:
         data_dir + "/sourmash_gather_benchmark_{num_reads}_seed_{seed}_k_{k}"
     shell:
-        'python {input[0]} --ksize {wildcards.k} --threshold ' + str(threshold_bp) + ' --metagenome ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq' + ' --kosig ' + ko_sbt_file_prefix+{wildcards.k}+'.sbt.zip' + ' --gatherfile ' + data_dir+'/sourmash_gather_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}_k_{wildcards.k}' + ' --outfile ' + data_dir+'/sourmash_kos_{wildcards.num_reads}_seed_{wildcards.seed}_k_{wildcards.k}' + ' --scaled ' + str(query_scale)
+        'python {input[0]} --ksize {wildcards.k} --threshold ' + str(threshold_bp) + ' --metagenome ' + data_dir+'/simulated_metagenome_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}.fastq' + ' --kosig ' + f'{ko_sbt_file_prefix}{wildcards.k}.sbt.zip' + ' --gatherfile ' + data_dir+'/sourmash_gather_num_reads_{wildcards.num_reads}_seed_{wildcards.seed}_k_{wildcards.k}' + ' --outfile ' + data_dir+'/sourmash_kos_{wildcards.num_reads}_seed_{wildcards.seed}_k_{wildcards.k}' + ' --scaled ' + str(query_scale)
 
 rule create_all_ko_ground_truths:
     input:
