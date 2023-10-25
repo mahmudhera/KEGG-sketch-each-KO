@@ -15,7 +15,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 4, 3]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -32,11 +32,11 @@ set(gca,'xticklabel',cat_label);
 legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'Best');
 
 %title('Memory usage', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Average memory usage (GB)', 'FontSize', 10);
+xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
+ylabel('Average memory\nusage (GB)', 'FontSize', 10);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [4 3]);
 print(gcf, 'large_MGs_memory.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -57,7 +57,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 8.5, 4]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -73,13 +73,13 @@ hold off
 set(gca,'xticklabel',cat_label);
 legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'Best');
 
-%title('Running time for identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Avg runtime (seconds)', 'FontSize', 10);
+title('Running time for identifying KOs by various approaches', 'FontSize', 11);
+xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
+ylabel('Average running time (seconds)', 'FontSize', 10);
 yticklabels({'10^0', '', '10^1', '', '10^2', '', '10^3', '', '10^4'})
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [8.5 4]);
 print(gcf, 'large_MGs_runtime.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -100,7 +100,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 8.5, 4]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -115,12 +115,12 @@ errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorba
 hold off
 set(gca,'xticklabel',cat_label);
 legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'west');
-%title('F1 scores in identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
+title('F1 scores in identifying KOs by various approaches', 'FontSize', 11);
+xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
 ylabel('Average F1 score', 'FontSize', 10);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [8.5 4]);
 print(gcf, 'large_MGs_F1.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -141,7 +141,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf,'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf,'units', 'inch', 'position',[0, 0, 8.5, 4]);
 set(gca, 'FontName', 'Arial');
 hold on
 grid on
@@ -156,12 +156,12 @@ errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorba
 hold off
 set(gca,'xticklabel',cat_label);
 legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'Best');
-%title('Recalls (completeness scores) in identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Average completeness', 'FontSize', 10);
+title('Recalls (completeness scores) in identifying KOs by various approaches', 'FontSize', 11);
+xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
+ylabel('Average recall (completeness)', 'FontSize', 10);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4, 2]);
+set(gcf, 'PaperSize', [8.5 4]);
 print(gcf, 'large_MGs_recall.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -183,7 +183,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 8.5, 4]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -198,12 +198,12 @@ errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorba
 hold off;
 set(gca,'xticklabel',cat_label);
 legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'Best');
-%title('Precisions (purity scores) in identifying KOs by various tools', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Average purity', 'FontSize', 10);
+title('Precisions (purity scores) in identifying KOs by various tools', 'FontSize', 11);
+xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
+ylabel('Average precision (purity) in identifying KOs', 'FontSize', 10);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [8.5 4]);
 print(gcf, 'large_MGs_precision.pdf', '-dpdf', '-bestfit');
 %%
 
@@ -225,7 +225,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 8.5, 4]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -241,14 +241,14 @@ hold off
 set(gca,'xticklabel',cat_label);
 legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'Best');
 
-%title('Running time for identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Avg. runtime (seconds)', 'FontSize', 10);
+title('Running time for identifying KOs by various approaches', 'FontSize', 11);
+xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
+ylabel('Average running time (seconds)', 'FontSize', 10);
 
 yticklabels({'10^0', '', '10^1', '', '10^2', '', '10^3'});
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [8.5 4]);
 print(gcf, 'small_MGs_runtime.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -271,7 +271,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 8.5, 4]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -286,12 +286,12 @@ errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorba
 hold off
 set(gca,'xticklabel',cat_label);
 legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'west');
-%title('F1 scores in identifying KOs by various approaches', 'FontSize', 11);
+title('F1 scores in identifying KOs by various approaches', 'FontSize', 11);
 xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
 ylabel('Average F1 score', 'FontSize', 10);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [8.5 4]);
 print(gcf, 'small_MGs_F1.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -318,7 +318,7 @@ x0 = 10;
 y0 = 10;
 width = 1200;
 height = 400;
-set(gcf,'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf,'units', 'inch', 'position',[0, 0, 8.5, 4]);
 set(gca, 'FontName', 'Arial');
 hold on
 grid on
@@ -333,12 +333,12 @@ errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorba
 hold off
 set(gca,'xticklabel',cat_label);
 legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'Best');
-%title('Recalls (completeness scores) in identifying KOs by various approaches', 'FontSize', 11);
+title('Recalls (completeness scores) in identifying KOs by various approaches', 'FontSize', 11);
 xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
-ylabel('Average completeness', 'FontSize', 10);
+ylabel('Average recall (completeness)', 'FontSize', 10);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [8.5 4]);
 print(gcf, 'small_MGs_recall.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -361,7 +361,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 8.5, 4]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -376,54 +376,10 @@ errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorba
 hold off;
 set(gca,'xticklabel',cat_label);
 legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'Best');
-%title('Precisions (purity scores) in identifying KOs by various tools', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Average purity', 'FontSize', 10);
+title('Precisions (purity scores) in identifying KOs by various tools', 'FontSize', 11);
+xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
+ylabel('Average precision (purity) in identifying KOs', 'FontSize', 10);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [8.5 4]);
 print(gcf, 'small_MGs_precision.pdf', '-dpdf', '-bestfit');
-
-%%
-memories = [5.9491298828125 6.1965478515625 6.6535048828125 7.7702880859375 7.130114257812501 
-0.001 0.003 0.005 0.0124267578125 0.0495556640625 
-0.001 0.003 0.005 0.018765625 0.024819335937500003
-0.4626083984374999 0.593201171875 0.775306640625 0.8631181640625 1.0842841796875 ];
-
-meories_error = [1.4905613537103028 0.9097874133228497 0.4732348353630898 0.978617945421153 0.9219428126029695  
-0.0 0.0 0.0 0.02485351648836565 0.024778133951667343 
-0.0 0.0 0.0 0.028669423576976286 0.030397655076011672
-0.0560115021150011 0.09427716731309237 0.2015409120907425 0.1570877652505174 0.12633986615767337];
-
-category_names = { '10K' '20K' '30K' '40K' '50K'};
-
-Y = memories';
-Y_er = meories_error';
-cat_label = categorical(category_names); %The Group Label
-cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
-b = bar(Y,'grouped', 'BarWidth', 1.0);
-
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
-set(gca, 'FontName', 'Arial');
-hold on;
-grid on;
-% Calculate the number of groups and number of bars in each group
-[ngroups,nbars] = size(Y);
-% Get the x coordinate of the bars
-x = nan(nbars, ngroups);
-for i = 1:nbars
-    x(i,:) = b(i).XEndPoints;
-end
-errorbar(x',Y,Y_er,'k','linestyle','none','LineWidth', 0.9);%Adding the errorbars
-hold off
-set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'Best');
-
-%title('Memory usage', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Avg. memory usage (GB)', 'FontSize', 10);
-ylim([0 15]);
-
-set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
-print(gcf, 'small_MGs_memory.pdf', '-dpdf', '-bestfit');
