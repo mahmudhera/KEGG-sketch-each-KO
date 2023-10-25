@@ -1,11 +1,11 @@
 
-memories = [16.7821259765625 32.90168359375 48.365880859375 64.68860058593751 80.5376474609375
-12.985487304687501 29.6420615234375 44.3457734375 57.6894658203125 67.2266748046875
-11.549642578124999 26.8338740234375 41.062966796874996 52.589518554687494 64.2343212890625];
+memories = [15.474451171875 32.13496875 47.1231767578125 64.7082021484375 80.60047558593749 
+12.762083007812501 29.408337890625 43.8183291015625 57.265997070312494 67.42272460937498 
+12.642191406250001 27.714394531249997 40.6554931640625 52.30454296875 63.90098437499999];
 
-meories_error = [0.6655918573723082 0.18063641544159276 1.3523711538784613 0.3645597571183638 0.3998017528270802
-1.241129518195058 2.1306704943053445 2.771234240037759 2.204723801682021 1.300557503090423
-1.6257741669687804 1.724752229173223 1.6481250756331345 1.7108956592815001 2.4085038556186276];
+meories_error = [1.6771329896464617 1.4624015779800275 4.986660718686601 0.36367639816732894 0.4489181975641962 
+0.44409146296566077 2.2411693070148067 1.7665847650077358 0.8699335116975963 1.4873306800836272 
+1.9650838952061351 2.099529020192009 0.7011823900408739 2.4994344231339367 2.608778003459343 ];
 
 category_names = {'2M', '4M', '6M', '8M', '10M'};
 
@@ -15,7 +15,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -29,25 +29,25 @@ end
 errorbar(x',Y,Y_er,'k','linestyle','none','LineWidth', 0.9);%Adding the errorbars
 hold off
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'Best');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'northoutside', 'Fontsize', 8);
 
 %title('Memory usage', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Average memory usage (GB)', 'FontSize', 10);
+xlabel('Number of reads in metagenome', 'FontSize', 9);
+ylabel('Average memory usage (GB)', 'FontSize', 9);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [5 3]);
 print(gcf, 'large_MGs_memory.pdf', '-dpdf', '-bestfit');
 
 %%
 
-times = [3.5993085382663232 3.8262561770789496 3.8418426701995676 4.05441311016134 3.95584178246067
-2.4397964634832663 2.6782403267595845 2.8162918271475537 2.911012680955343 2.981098333177502
-2.4073683879566192 2.6536512990334544 2.7920375409043032 2.885635057490548 2.960218350367012];
+times = [3.952505334414095 4.229146373780905 4.398058096977327 4.52986328905765 4.61563279778133 
+2.314145630024391 2.6199848200583298 2.7606487134818054 2.8552888336793005 2.9262171276157476 
+2.2877409090520753 2.5993392238444537 2.7388198657895435 2.8300136980439423 2.908300721486597];
 
-times_error = [0.1242151715460859 0.1342966963402152 0.17215207697473198 0.008907589798558012 0.14883567594966893
-0.008712704651757925 0.004507182739907113 0.005410083590945953 0.009132579495130577 0.014616710598757214
-0.008150532475872 0.0059428637930367696 0.0054949526674289255 0.006635973444802325 0.012926315922547824];
+times_error = [0.01786696059073064 0.017615553298760293 0.015303129553673833 0.0044527605168704415 0.01462879114302703 
+0.01871597650427767 0.019526183366307383 0.009508540005907118 0.0007780972514998738 0.006932913959106646 
+0.031318829716757084 0.017564254502681106 0.004082516828665632 0.009241991530398166 0.006771054224015415 ];
 
 category_names = {'2M', '4M', '6M', '8M', '10M'};
 
@@ -57,7 +57,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -71,15 +71,15 @@ end
 errorbar(x',Y,Y_er,'k','linestyle','none','LineWidth', 0.9);%Adding the errorbars
 hold off
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'Best');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'northoutside', 'Fontsize', 8);
 
 %title('Running time for identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Avg runtime (seconds)', 'FontSize', 10);
-yticklabels({'10^0', '', '10^1', '', '10^2', '', '10^3', '', '10^4'})
+xlabel('Number of reads in metagenome', 'FontSize', 9);
+ylabel('Avg CPU time (seconds)', 'FontSize', 9);
+yticklabels({'10^0', '10^1', '10^2', '10^3', '10^4', '10^5'})
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [5 3]);
 print(gcf, 'large_MGs_runtime.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -100,7 +100,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -114,13 +114,13 @@ end
 errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorbars
 hold off
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'west');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'northoutside', 'Fontsize', 8);
 %title('F1 scores in identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Average F1 score', 'FontSize', 10);
+xlabel('Number of reads in metagenome', 'FontSize', 9);
+ylabel('Average F1 score', 'FontSize', 9);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [5 3]);
 print(gcf, 'large_MGs_F1.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -141,7 +141,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf,'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf,'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on
 grid on
@@ -155,13 +155,13 @@ end
 errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorbars
 hold off
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'Best');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'northoutside', 'Fontsize', 8);
 %title('Recalls (completeness scores) in identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Average completeness', 'FontSize', 10);
+xlabel('Number of reads in metagenome', 'FontSize', 9);
+ylabel('Average completeness', 'FontSize', 9);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4, 2]);
+set(gcf, 'PaperSize', [5, 3]);
 print(gcf, 'large_MGs_recall.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -183,7 +183,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -197,13 +197,13 @@ end
 errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorbars
 hold off;
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'Best');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'Location', 'northoutside', 'Fontsize', 8);
 %title('Precisions (purity scores) in identifying KOs by various tools', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Average purity', 'FontSize', 10);
+xlabel('Number of reads in metagenome', 'FontSize', 9);
+ylabel('Average purity', 'FontSize', 9);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [5 3]);
 print(gcf, 'large_MGs_precision.pdf', '-dpdf', '-bestfit');
 %%
 
@@ -225,7 +225,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -239,16 +239,16 @@ end
 errorbar(x',Y,Y_er,'k','linestyle','none','LineWidth', 0.9);%Adding the errorbars
 hold off
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'Best');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'northoutside', 'Fontsize', 8, 'NumColumns', 2);
 
 %title('Running time for identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Avg. runtime (seconds)', 'FontSize', 10);
+xlabel('Number of reads in metagenome', 'FontSize', 9);
+ylabel('Avg. runtime (seconds)', 'FontSize', 9);
 
-yticklabels({'10^0', '', '10^1', '', '10^2', '', '10^3'});
+yticklabels({'10^0', '10^1', '10^2', '10^3'});
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [5 3]);
 print(gcf, 'small_MGs_runtime.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -271,7 +271,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -285,13 +285,13 @@ end
 errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorbars
 hold off
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'west');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'northoutside', 'Fontsize', 8, 'NumColumns', 2);
 %title('F1 scores in identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
-ylabel('Average F1 score', 'FontSize', 10);
+xlabel('Number of reads in simulated metagenome', 'FontSize', 9);
+ylabel('Average F1 score', 'FontSize', 9);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [5 3]);
 print(gcf, 'small_MGs_F1.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -318,7 +318,7 @@ x0 = 10;
 y0 = 10;
 width = 1200;
 height = 400;
-set(gcf,'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf,'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on
 grid on
@@ -332,13 +332,13 @@ end
 errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorbars
 hold off
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'Best');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'northoutside', 'Fontsize', 8, 'NumColumns', 2);
 %title('Recalls (completeness scores) in identifying KOs by various approaches', 'FontSize', 11);
-xlabel('Number of reads in simulated metagenome', 'FontSize', 10);
-ylabel('Average completeness', 'FontSize', 10);
+xlabel('Number of reads in simulated metagenome', 'FontSize', 9);
+ylabel('Average completeness', 'FontSize', 9);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [5 3]);
 print(gcf, 'small_MGs_recall.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -361,7 +361,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -372,16 +372,16 @@ x = nan(nbars, ngroups);
 for i = 1:nbars
     x(i,:) = b(i).XEndPoints;
 end
-errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorbars
+errorbar(x',Y,Y_er,'k','linestyle','none', 'LineWidth', 0.9);%Adding the errorbar
 hold off;
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'Best');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'northoutside', 'Fontsize', 8, 'NumColumns', 2);
 %title('Precisions (purity scores) in identifying KOs by various tools', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Average purity', 'FontSize', 10);
+xlabel('Number of reads in metagenome', 'FontSize', 9);
+ylabel('Average purity', 'FontSize', 9);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [5 3]);
 print(gcf, 'small_MGs_precision.pdf', '-dpdf', '-bestfit');
 
 %%
@@ -403,7 +403,7 @@ cat_label = categorical(category_names); %The Group Label
 cat_label = reordercats(cat_label,category_names);%To Preserve Label Order
 b = bar(Y,'grouped', 'BarWidth', 1.0);
 
-set(gcf, 'units', 'inch', 'position',[0, 0, 4, 2]);
+set(gcf, 'units', 'inch', 'position',[0, 0, 5, 3]);
 set(gca, 'FontName', 'Arial');
 hold on;
 grid on;
@@ -417,13 +417,13 @@ end
 errorbar(x',Y,Y_er,'k','linestyle','none','LineWidth', 0.9);%Adding the errorbars
 hold off
 set(gca,'xticklabel',cat_label);
-legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'Best');
+legend('Diamond', 'sourmash, k=11', 'sourmash, k=15', 'KofamScan', 'Location', 'northoutside', 'Fontsize', 8, 'NumColumns', 2);
 
 %title('Memory usage', 'FontSize', 11);
-xlabel('Number of reads in metagenome', 'FontSize', 10);
-ylabel('Avg. memory usage (GB)', 'FontSize', 10);
+xlabel('Number of reads in metagenome', 'FontSize', 9);
+ylabel('Avg. memory usage (GB)', 'FontSize', 9);
 ylim([0 15]);
 
 set(gcf, 'PaperUnits', 'inches');
-set(gcf, 'PaperSize', [4 2]);
+set(gcf, 'PaperSize', [5 3]);
 print(gcf, 'small_MGs_memory.pdf', '-dpdf', '-bestfit');
