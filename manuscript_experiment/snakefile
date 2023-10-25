@@ -15,15 +15,15 @@ num_organisms = 1000
 num_genomes_full_db = 1000
 num_genomes_truncated_db = 1000
 genome_path = '/scratch/mbr5797/genomes_extracted_from_kegg'
-#num_reads_list = [str((i+1)*10000) for i in range(5)]
-num_reads_list = [str((i+1)*1000000) for i in range(10)]
+num_reads_list = [str((i+1)*10000) for i in range(5)]
+#num_reads_list = [str((i+1)*1000000) for i in range(10)]
 seeds_list = [str(i) for i in range(10)]
 kmer_sizes = [str(ksize) for ksize in [7, 11, 15] ]
 k = 7
 
 pident_threshold = 0.1
 
-num_threads_diamond = 64
+num_threads_diamond = 32
 
 rule all:
     input:
@@ -106,6 +106,8 @@ rule run_sourmash:
     output:
         data_dir+'/sourmash_gather_num_reads_{num_reads}_seed_{seed}_k_{k}',
         data_dir+'/sourmash_kos_{num_reads}_seed_{seed}_k_{k}'
+    resources:
+        mem_mb=4000
     benchmark:
         data_dir + "/sourmash_gather_benchmark_{num_reads}_seed_{seed}_k_{k}"
     shell:
