@@ -17,7 +17,7 @@ if __name__ == '__main__':
     output_filename = args.output_filename
 
     # read KO ids from ground truth
-    filter_abundances = [ 1.0*i/100 for i in range(11) ]
+    filter_abundances = [ 1.0*i/100 for i in range(21) ]
     df_ground_truth = pd.read_csv(ground_truth_ko_abundance_filename)
     ground_truth_abundance_columns = ['abund_by_num_reads', 'abund_by_nts_covered_in_reads', 'abund_by_mean_cov', 'abund_by_median_cov']
 
