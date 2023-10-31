@@ -55,6 +55,8 @@ if __name__ == '__main__':
             tool_filtered_df = df_tool[ df_tool['abundance'] > threshold ]
             kos_tool_list = tool_filtered_df[ 'ko_id' ].tolist()
             kos_tool_set = set(kos_tool_list)
+            # testing
+            kos_tool_set = set(df_tool['ko_id'].tolist())
 
             # TP = intersection of these two sets
             # FP = tool_set minus ground_truth_set
