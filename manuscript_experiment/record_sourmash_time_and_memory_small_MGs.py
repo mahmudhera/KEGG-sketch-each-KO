@@ -3,7 +3,7 @@ import subprocess
 script_dir = '../scripts'
 python_script = script_dir + '/run_sourmash_gather.py'
 threshold_bp = 1000
-data_dir = '../data'
+data_dir = './data'
 scaled = 1000
 
 if __name__ == '__main__':
